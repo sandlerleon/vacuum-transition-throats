@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Front matter, introduction, model, null-energy argument and the exact thin-wall analysis."""
+"""Front matter, introduction, model, null-energy argument and the thin-wall analysis (revision 1)."""
 from pcommon import *
 
 R_dS = TW["R_dS_Gpc"]
@@ -10,6 +10,11 @@ THICK = TW["thickness_over_RdS"]
 PER = VAL["per_A"]
 TST = VAL["vacuum_tests"]
 SC = VAL["scan"]
+FT = TW["finite_tension"]
+CRE = VE["creation"]
+resolved = sum(1 for r in VE["inconclusive"] if any(v["first_trapped"] is not None for k, v in r.items() if k.startswith("refined")))
+N_TRAP = SC["n_trapped"] + resolved
+N_UNRES = SC["n_runs"] - N_TRAP
 
 add(("title", TITLE))
 add(("author", "Leon Sandler"))
@@ -19,19 +24,18 @@ add(("small", "Corresponding author: leon.sandler@alumni.swinburne.edu"))
 add(("blank",))
 add(("h1", "Abstract"))
 ABSTRACT = (
-    "Rebirth scenarios invoke a spacetime throat carrying matter from a collapsing region into a new expanding one. We ask whether this can occur when the only matter is a canonical "
-    "scalar field coupled to dark matter, whose false vacuum has the observed dark-energy density and whose true vacuum lies below it. The null energy condition holds, so no traversable throat can form: "
-    "no null ray has a minimum of the areal radius. The closest allowed structure is a non-traversable bridge to a black-hole exterior. For a thin wall the Israel "
-    "junction conditions give an exact critical exterior mass %s, below which every regular configuration collapses; at that mass the exterior horizon and the interior de Sitter horizon "
-    "have equal area, so the threshold is the equality of their entropies. A spherically symmetric Einstein–scalar code, checked against exact solutions, "
-    "forms a trapped surface in %d of %d runs, within %s (median) of the analytic horizon radius. An expanding core survives beside the trapped region only when the false-vacuum region extends beyond "
-    "its own de Sitter radius. At the observed dark-energy scale that is %s Gpc, and the vacuum-energy deficit of such a region, %s solar masses, is %s times the matter inside a sphere of that radius today. "
-    "Localized collapse therefore cannot produce a daughter, and matter is not transferred to it: the daughter is a pre-existing, horizon-sized false-vacuum region that its collapsing surroundings isolate. "
-    "The mechanism is not supported as a cosmological reset."
-    % ("$m_c=(1+q)R_{dS}$", SC["n_trapped"], SC["n_runs"], pc(abs(SC["dev_median"]), 1), n(R_dS, 1), "%s × 10$^{%d}$" % (n(M1["M_c_Msun"] / 10 ** 23, 1), 23), n(M1["deficit_over_matter_in_RdS_sphere"], 1)))
+    "Rebirth scenarios invoke a wormhole that carries matter from a collapsing region into a new expanding one. We ask whether a density-triggered vacuum transition can form one when the only matter is a canonical "
+    "scalar field coupled to dark matter, whose false vacuum has the observed dark-energy density. The null energy condition holds, so no traversable throat can form: no null ray has a minimum of the areal "
+    "radius. The closest allowed structure is a non-traversable bridge to a black-hole exterior. For a thin wall the Israel junction conditions give a finite-tension critical exterior mass, equal to "
+    "%s up to corrections of order $\\hat\\sigma^2$ (negligible here), below which every regular configuration collapses; the equality of the exterior and interior horizon areas at that mass is a geometric "
+    "coincidence of the limit, not a thermodynamic criterion. A spherically symmetric Einstein–scalar code, second-order convergent and checked against exact solutions, forms trapped surfaces in %d of %d runs. "
+    "An expanding core appears only when the initial data already contain a false-vacuum core larger than its own de Sitter radius; in the %d runs that start with a smaller core none develops, so the "
+    "simulations show persistence of an existing expanding region, not creation of a daughter universe. At the observed dark-energy scale that core has a radius of %s Gpc, and its vacuum-energy deficit, %s solar masses, "
+    "is %s times the matter inside such a sphere today. Matter is not transferred, and the mechanism is not supported as a cosmological reset."
+    % ("$(1+q)R_{dS}$", N_TRAP, SC["n_runs"], CRE["n_initially_normal_core"], n(R_dS, 1), "%s × 10$^{%d}$" % (n(M1["M_c_Msun"] / 10 ** 23, 1), 23), n(M1["deficit_over_matter_in_RdS_sphere"], 1)))
 add(("p0", ABSTRACT))
 add(("h1", "Keywords"))
-add(("p0", "Spacetime throats; Vacuum decay; False-vacuum bubbles; Baby universes; Null energy condition; Gravitational collapse"))
+add(("p0", "Wormholes; Spacetime throats; Vacuum decay; False-vacuum bubbles; Null energy condition; Gravitational collapse"))
 
 # ------------------------------------------------------------------------------------------------ 1
 add(("h1", "1. Introduction"))
@@ -47,38 +51,51 @@ add(("p", "This paper states and answers such questions for one model. The model
           "create a localized gravitational configuration that, under explicit conditions, develops a spacetime throat connecting a contracting region to a new expanding daughter region."))
 add(("p", "Three outcomes are distinguished throughout and are not allowed to blur. In outcome A the collapse is ordinary: a trapped region forms and no regular expanding region does. In outcome B a bridge-like "
           "geometry exists but nothing can cross it. In outcome C an expanding region exists behind a horizon. A collapsing region can produce a trapped surface without producing either a traversable wormhole or a new "
-          "universe, and the distinction is the content of the paper. Even outcome C would establish cosmological reproduction, not a cyclic return of the same universe: that additionally needs a daughter that reconnects "
-          "with or replaces its parent, which no part of this work provides."))
+          "universe, and the distinction is the content of the paper. A second distinction is made as sharply: an expanding region that is present in the initial data and persists beside a collapse is not a daughter "
+          "universe that the collapse has created. Even a created daughter would establish cosmological reproduction, not a cyclic return of the same universe, which additionally needs a daughter that reconnects "
+          "with or replaces its parent; no part of this work provides that."))
 add(("p", "The mechanism is not new in its geometry. Thin false-vacuum bubbles in general relativity were analysed in detail in the 1980s [@Blau1987; @Berezin1987], the possibility of a baby universe attached to a "
           "black hole by a throat was explored in classical and quantum form [@Frolov1989; @Farhi1990; @Fischler1990], and the obstacle that regular initial data do not lead to one was identified at the time "
           "[@FarhiGuth1987]. What is new here is the application to a specific density-triggered model with a fixed vacuum scale. The vacuum energy is the observed dark-energy density, so the critical sizes and masses "
           "are numbers rather than free parameters, and they can be compared with the matter that the universe actually contains. The paper makes four contributions."))
 add(("bullet", "A null-energy argument for the whole model (Section 3): no traversable throat can form, and no null ray has a minimum of the areal radius."))
-add(("bullet", "An exact thin-wall criterion (Section 4): a critical exterior mass $m_c$ below which a false-vacuum region is confined and collapses, with a threshold that coincides with the equality of the "
-               "horizon entropies of the interior and the exterior (Section 6)."))
-add(("bullet", "A numerical Einstein–scalar experiment with a regular centre (Section 5), validated against exact solutions, that tests the criterion with thick walls and maps the outcomes."))
-add(("bullet", "An accounting of the size, mass and entropy that the criterion requires at the observed dark-energy scale, with the conclusion that matter cannot supply them (Sections 6 and 7), and falsification criteria (Section 8)."))
+add(("bullet", "A finite-tension thin-wall criterion (Section 4): a critical exterior mass $m_c(\\hat\\sigma)$ below which a false-vacuum region is confined and collapses, with its small-tension limit $(1+q)R_{dS}$ and a coincidence of "
+               "horizon areas at that limit (Section 6)."))
+add(("bullet", "A numerical Einstein–scalar experiment with a regular centre (Section 5), validated against exact solutions and by the convergence of its constraints, that tests the criterion with thick walls, separates "
+               "expanding regions that persist from those that could be created, and compares exteriors of different vacuum depth."))
+add(("bullet", "An accounting of the size, mass and energy budget that the criterion requires at the observed dark-energy scale, with the conclusion that matter cannot supply it (Section 7), and falsification criteria (Section 8)."))
 
 # ------------------------------------------------------------------------------------------------ 2
-add(("h1", "2. Model and scales"))
+add(("h1", "2. Model, inputs and scales"))
 add(("p", "Units are $8\\pi G = 1$ ($M_{\\rm Pl}$ is the reduced Planck mass) and $c = \\hbar = 1$ unless stated. The action is"))
 add(("eq", "S=\\int d^4x\\sqrt{-g}\\left[\\frac{M_{\\rm Pl}^{2}}{2}R-\\frac12(\\nabla\\phi)^2-V_0(\\phi)\\right]+S_{\\rm dm}\\left[A^2(\\phi)g_{\\mu\\nu},\\psi_{\\rm dm}\\right]", "1"))
 add(("p", "with $A(\\phi)=1+\\phi^2/2M^2$ the coupling to dark matter alone. For pressureless dark matter of conserved density $\\rho_*\\propto a^{-3}$ the scalar moves in $V_{\\rm eff}=V_0(\\phi)+\\rho_*A(\\phi)$. "
           "While $\\rho_*$ exceeds a critical value $\\rho_{\\rm crit}=\\mu^2M^2$ the symmetric point of $V_0=V_c-\\mu^2\\phi^2/2+\\lambda\\phi^4/4$ is a minimum and holds the field in a false vacuum of density "
           "$V_f$. When the expansion has diluted the matter below $\\rho_{\\rm crit}$ the point becomes a maximum and the field can roll to a lower vacuum. Two numbers fix the gravitational problem, and nothing else of the "
-          "particle physics enters it: the false-vacuum density $V_f$, which is set equal to the observed dark-energy density, and the depth of the true vacuum, $V_t=-qV_f$ with $q>0$ (the baseline has $q=1$). "
-          "The relevant length is the de Sitter radius of the false vacuum,"))
+          "particle physics enters it: the false-vacuum density $V_f$, which is set equal to the observed dark-energy density, and the depth of the true vacuum, $V_t=-qV_f$. The baseline is $q=1$; $q>0$ is an anti-de Sitter "
+          "true vacuum, $q=0$ a Minkowski one and $-1<q<0$ a lower de Sitter vacuum. The relevant length is the de Sitter radius of the false vacuum,"))
 add(("eq", "R_{dS}=\\sqrt{3/V_f}=H_{\\Lambda}^{-1}", "2"))
 add(("p", "which for the Planck 2018 values [@Planck2020] $H_0=67.66$ km s$^{-1}$ Mpc$^{-1}$ and $\\Omega_\\Lambda=0.6889$ is %s Gpc ($H_\\Lambda=%s$ km s$^{-1}$ Mpc$^{-1}$). The gravitational effect of a wall between the vacua is set "
           "by its tension $\\sigma$. A scalar whose potential scale is the dark-energy scale, $V_f^{1/4}\\approx 2.2$ meV, has a wall tension of the order of $V_f^{3/4}$, that is of order 10 meV$^3$; a bounce calculation for a "
-          "potential of this kind gives 19 meV$^3$ and a thickness of 0.24 mm, and the conclusions depend only on the wall being a probe, not on these values. In units of the de Sitter radius this is $\\hat\\sigma=\\sigma R_{dS}/M_{\\rm Pl}^2$ = %s and $\\delta/R_{dS}$ = %s, so that the wall's own gravity, "
-          "measured by $3\\hat\\sigma^2/4$ for $q=1$, is %s. The wall is a probe, and its thickness is invisible to any gravitational observable of the size of the de Sitter radius. That fact organizes the "
-          "paper: the exact thin-wall treatment of Section 4 is controlled by these two numbers, and the numerical experiments of Section 5 can only reach thick, heavy walls and therefore test the structure of the "
-          "solution, not the physical values." % (n(R_dS, 2), n(TW["H_Lambda_km_s_Mpc"], 1), sci(SIGMA, 1), sci(THICK, 1), sci(GRAVP, 1))))
-add(("p", "Table 1 lists the scales. Two processes are of interest. The forward process is the nucleation of a bubble of true vacuum (lower density) inside the false vacuum [@Coleman1980]; its interior is anti-de Sitter and "
-          "ends in a crunch [@Abbott1985], which settles outcome A for that direction without further work. The reverse process is a region of false vacuum (higher density) inside a true-vacuum exterior, as arises when a "
-          "region's matter density returns above $\\rho_{\\rm crit}$ and the field is pinned in its false minimum. The false-vacuum region is then a de Sitter ball in an exterior of lower vacuum energy and "
-          "positive mass $m$, which is the configuration of the false-vacuum bubbles of Refs. [@Blau1987; @Farhi1990]. The rest of the paper concerns this direction."))
+          "potential of this kind gives 19 meV$^3$ and a thickness of 0.24 mm, and the conclusions depend only on the wall being a probe, not on these values. In units of the de Sitter radius this is "
+          "$\\hat\\sigma=\\sigma R_{dS}/M_{\\rm Pl}^2$ = %s and $\\delta/R_{dS}$ = %s, so that the wall's own gravity, measured by $3\\hat\\sigma^2/4$ for $q=1$, is %s. The wall is a probe, and its thickness is invisible to any "
+          "gravitational observable of the size of the de Sitter radius. That fact organizes the paper: the thin-wall treatment of Section 4 is controlled by these two numbers, and the numerical experiments of Section 5 can only "
+          "reach thick, heavy walls and therefore test the structure of the solution, not the physical values." % (n(R_dS, 2), n(TW["H_Lambda_km_s_Mpc"], 1), sci(SIGMA, 1), sci(THICK, 1), sci(GRAVP, 1))))
+add(("h2", "2.1 Inputs and what is derived here"))
+add(("p", "The inputs taken from the benchmark dilution-triggered model are the false-vacuum density $V_f$ (the observed dark energy), the depth $q$ of the true vacuum (baseline 1, varied from $-0.5$ to 2 in Section 5.5) "
+          "and the order of magnitude of the wall tension. Everything else is derived or computed in this paper: the energy-condition argument (Section 3), the junction analysis (Section 4), the numerical solver and its "
+          "experiments (Section 5), and the size, mass and entropy accounting (Sections 6 and 7); none of it relies on a result of the benchmark model's cosmology. One limit of scope follows. The dark matter is not "
+          "simulated: the numerical experiments evolve the scalar field alone in a prescribed double-well potential, so they study the gravitational problem of a false-vacuum region bounded by a wall and not the "
+          "complete matter-triggered process. The dark-matter coupling enters only through the existence of the false vacuum, and the claim that the whole process has been simulated is not made."))
+add(("h2", "2.2 The exterior vacuum"))
+add(("p", "The thin-wall model of Section 4 and the experiments of Section 5 place a false-vacuum region (positive density $V_f$) inside an exterior of lower vacuum energy. That exterior is not the late-time de Sitter state "
+          "of the parent universe: the parent's heat-death state is the false vacuum itself. The exterior is the region in which the field has rolled to the true vacuum, which for $q>0$ is anti-de Sitter and recollapsing "
+          "and for $q\\le0$ is not. A false-vacuum region inside it arises when a region returns to the false vacuum, as when its matter density rises above $\\rho_{\\rm crit}$ and pins the field, while its surroundings have "
+          "already made the transition; the nucleation of a bubble of the true vacuum inside the false vacuum [@Coleman1980] is the opposite configuration, whose interior is anti-de Sitter and ends in a crunch "
+          "[@Abbott1985], so that it settles outcome A for that direction without further work. How such a region is reached, and whether a negative exterior is cosmologically viable, are not decided by this "
+          "paper. What it can do is test how much the conclusions depend on the sign of the exterior vacuum energy: the thin-wall criterion holds for any $q>-1$ (Section 4), and the numerical experiments are repeated "
+          "for a Minkowski exterior and a de Sitter exterior of lower energy in Section 5.5."))
+add(("p", "Table 1 lists the scales."))
 add(("table", "Table 1. Scales of the benchmark model ($q=1$, Planck 2018 cosmology).",
      ["Quantity", "Symbol", "Value"],
      [["de Sitter radius of the false vacuum", "$R_{dS}=H_\\Lambda^{-1}$", "%s Gpc (%s m)" % (n(R_dS, 2), sci(TW["R_dS_m"], 2))],
@@ -102,19 +119,19 @@ add(("eq", "r_{vv}-\\left(\\ln f\\right)_{v}r_v=-\\frac{r}{2}T^{\\rm dust}_{vv}-
 add(("eq", "r_{uv}=-\\frac{r_ur_v}{r}-\\frac{f}{4r}+\\frac{Ufr}{4}", "5"))
 add(("p", "where $U$ is the total potential (the dust term is omitted in the numerical experiments, Section 5, where the field alone is evolved) and Eq. (4) is the constraint along $v$ (and the analogue along $u$). "
           "The sign of the right-hand side of Eq. (4) is the whole story about throats. For every term of the model the null energy condition holds. For a null vector $k$, "
-          "$T_{\\mu\\nu}k^\\mu k^\\nu=(k^\\mu\\partial_\\mu\\phi)^2+\\rho_{\\rm dm}(k\\cdot u)^2\\ge0$: the potential terms $-g_{\\mu\\nu}V$ drop out because $k$ is null, whatever the sign of $V$ (including the negative "
+          "$T_{\\mu\\nu}k^\\mu k^\\nu=(k^\\mu\\partial_\\mu\\phi)^2+\\rho_{\\rm dm}(k\\cdot u)^2\\ge0$: the potential terms $-g_{\\mu\\nu}V$ drop out because $k$ is null, whatever the sign of $V$ (including a negative "
           "true-vacuum density), and the dark matter is dust of non-negative density in the Einstein frame."))
 add(("p", "Proposition 1. In spherical symmetry with $T_{\\mu\\nu}k^\\mu k^\\nu\\ge0$, no null geodesic has a strict local minimum of the areal radius. Proof. A minimum along an outgoing ray requires "
           "$r_v=0$ and $r_{vv}\\ge0$ there. Eq. (4) at $r_v=0$ gives $r_{vv}=-(r/2)T_{vv}\\le0$, so $r_{vv}\\ge0$ forces $T_{vv}=0$ and the minimum is not strict; the same argument with $u$ and $v$ exchanged "
-          "applies to ingoing rays. $\\square$ This is the local content of the focusing theorem. It means that a throat in the sense of Morris and Thorne, a minimal sphere that a traveller can cross, "
+          "applies to ingoing rays. □ This is the local content of the focusing theorem. It means that a throat in the sense of Morris and Thorne, a minimal sphere that a traveller can cross, "
           "or a timelike marginal surface of Hayward's dynamic definition, needs matter that violates the null energy condition [@Hochberg1997; @Hayward1999; @Hayward1994]. "
           "The model has none, so a traversable throat cannot form in it for any parameter values or any wall profile. Outcome B survives only as a non-traversable bridge: a minimal sphere on a spacelike slice "
           "(as in the Einstein–Rosen bridge, where the null energy condition holds trivially) that is hidden behind horizons, and outcome C only as an expanding region attached to such a bridge."))
 add(("p", "That settles the central obstacle identified at the outset, and it narrows the question to what such a bridge needs. Because the question does not involve exotic matter, it can be put to the ordinary "
-          "Einstein–scalar system exactly (thin wall) and numerically (thick wall)."))
+          "Einstein–scalar system within a thin-wall treatment and numerically with a thick wall."))
 
 # ------------------------------------------------------------------------------------------------ 4
-add(("h1", "4. Exact thin-wall criterion"))
+add(("h1", "4. Thin-wall criterion"))
 add(("p", "A thin shell of tension $\\sigma$ at areal radius $R(\\tau)$, with $U=dR/d\\tau$, separates an interior de Sitter region of density $\\rho_{in}=V_f$ from an exterior Schwarzschild–(anti-)de Sitter region of mass "
           "parameter $m$ and density $\\rho_{out}=-q\\rho_{in}$ [@Israel1966; @Blau1987]. With $\\Delta=\\rho_{in}-\\rho_{out}=(1+q)V_f$ the Israel junction condition takes the form"))
 add(("eq", "\\Gamma_{in}-\\Gamma_{out}=\\frac{\\sigma R}{2},\\quad \\Gamma_{in}^2=1+U^2-\\frac{R^2}{R_{dS}^2},\\quad \\Gamma_{out}^2=1+U^2-\\frac{m}{R}-\\frac{\\rho_{out}R^2}{3}", "6"))
@@ -123,20 +140,31 @@ add(("p", "where $\\Gamma=dR/dn$ is the derivative of the areal radius along the
 add(("eq", "\\Gamma_{in}=\\frac{\\sigma R}{4}+\\frac{m}{\\sigma R^2}-\\frac{\\Delta R}{3\\sigma}", "7"))
 add(("p", "Motion is possible only where $U^2\\ge0$. For $R<R_{dS}$ this reads $m\\ge m_+(R)$ or $m\\le m_-(R)$ with"))
 add(("eq", "m_{\\pm}(R)=\\left(\\frac{\\Delta}{3}-\\frac{\\sigma^2}{4}\\right)R^3\\pm\\sigma R^2\\sqrt{1-R^2/R_{dS}^2}", "8"))
-add(("p", "and for $R\\ge R_{dS}$ it is always satisfied. The curves $m_\\pm$ bound a band of forbidden radii (Fig. 1). The band reaches up to the exact critical mass $m_c=\\max_{R\\le R_{dS}}m_+(R)$, "
-          "which equals $(1+q)R_{dS}\\,[1+O(\\hat\\sigma^2)]$. For $m<m_c$ every wall lies either at $R\\le R_1(m)$ or at $R\\ge R_2(m)$, with a forbidden window $R_1<R<R_2$ around "
-          "$R_M=(3m/\\Delta)^{1/3}$ that no trajectory crosses. For $m>m_c$ there is no window. A numerical scan of $R$ confirms this at nine combinations of tension and depth: a window exists at $m=m_c(1-10^{-3})$ "
-          "and none at $m=m_c(1+10^{-3})$ in every case (Table S0 of the supplementary information). For the model's tension the correction is of order $10^{-60}$, so"))
-add(("eq", "m_c=(1+q)\\,R_{dS}", "9"))
-add(("p", "to all practical purposes: $m_c=%s\\,R_{dS}$ for $q=1$." % n(M1["m_c_over_RdS"], 0)))
-add(("fig", "Fig1_thin_wall.png", "Fig. 1. Allowed and forbidden wall radii for $q=1$ and two values of the wall tension. The shaded band is forbidden; the dashed line is the exact critical mass $m_c$. "
+add(("p", "and for $R\\ge R_{dS}$ it is always satisfied. The curves $m_\\pm$ bound a band of forbidden radii (Fig. 1). The band reaches up to the finite-tension critical mass"))
+add(("eq", "m_c(\\hat\\sigma)=\\max_{R\\le R_{dS}}m_+(R)=(1+q)R_{dS}-\\hat\\sigma^2\\left[\\frac14-\\frac{1}{6(1+q)}\\right]R_{dS}+O(\\hat\\sigma^4)", "9"))
+add(("p", "which is exact within the junction equations (the maximum is found numerically; the expansion is that of the maximum of Eq. (8) near $R=R_{dS}$ and is checked against it in Table 2). The simple form "
+          "$m_c=(1+q)R_{dS}$ is the limit of vanishing tension, not an additional result: its relative error is of order $\\hat\\sigma^2$ (%s for $q=1$ and the model's tension), and the two are indistinguishable there. "
+          "For $m<m_c$ every wall lies either at $R\\le R_1(m)$ or at $R\\ge R_2(m)$, with a forbidden window $R_1<R<R_2$ around $R_M=(3m/\\Delta)^{1/3}$ that no trajectory crosses. For $m>m_c$ there is no window. "
+          "A numerical scan of $R$ confirms this at nine combinations of tension and depth: a window exists at $m=m_c(1-10^{-3})$ and none at $m=m_c(1+10^{-3})$ in every case (Table S0 of the supplementary information)."
+          % sci(SIGMA ** 2 / 12.0, 1)))
+add(("table", "Table 2. Finite-tension critical mass for $q=1$ (units of $R_{dS}$): the numerically maximized $m_c(\\hat\\sigma)$, its small-tension expansion of Eq. (9), the radius of the exterior horizon at $m_c$ and the ratio "
+              "of the de Sitter and black-hole horizon entropies, $(R_{dS}/r_h)^2$, which equals 1 only in the limit.",
+     ["$\\hat\\sigma$", "$m_c(\\hat\\sigma)$", "Expansion, Eq. (9)", "$r_h(m_c)$", "$S_{dS}/S_{BH}$"],
+     [[n(f["sigma"], 2), n(f["m_c_exact"], 5), n(f["m_c_series"], 5), n(f["r_h"], 5), n(f["entropy_ratio_dS_over_BH"], 5)] for f in FT if f["sigma"] > 0] +
+     [["%s (model)" % sci(SIGMA, 1), "2 − %s" % sci(SIGMA ** 2 / 6.0, 1), "2 − %s" % sci(SIGMA ** 2 / 6.0, 1), "1 − %s" % sci(SIGMA ** 2 / 24.0, 1), "1 + %s" % sci(SIGMA ** 2 / 12.0, 1)]],
+     [1.5, 1.4, 1.4, 1.3, 1.3]))
+add(("fig", "Fig1_thin_wall.png", "Fig. 1. Allowed and forbidden wall radii for $q=1$ and two values of the wall tension. The shaded band is forbidden; the dashed line is the finite-tension critical mass $m_c(\\hat\\sigma)$. "
                                    "For $m<m_c$ a horizontal line crosses the band, which a wall cannot cross; for $m>m_c$ it does not.", 6.5))
 add(("p", "The consequences follow from which side of the window a wall can be on and what a regular initial slice looks like. A slice that is regular, in the sense that the interior is a de Sitter ball "
           "less than half of its 3-sphere ($\\Gamma_{in}>0$) and the exterior is an asymptotic region ($\\Gamma_{out}>0$), has $R<R_M(1-O(\\hat\\sigma))$. If $m<m_c$ it therefore lies at $R\\le R_1$, "
           "can never reach $R_2$, and collapses to $R=0$, where the singularity theorem applies [@Penrose1965]: outcome A for every regular configuration of subcritical mass, with no assumption on the initial velocity. The branch $R\\ge R_2$ needs $\\Gamma_{in}<0$, "
-          "an interior beyond the equator of its own de Sitter space, which has a neck on every slice that crosses it. That is the configuration of the baby-universe solutions of Refs. [@Blau1987; @Farhi1990], and it cannot be "
-          "reached from regular data; this is the obstacle of Ref. [@FarhiGuth1987]. For $m>m_c$ the window is absent, so a wall that starts regular can move out through $R_M$, where $\\Gamma_{in}$ changes sign. The solution then "
-          "develops a neck at the wall: a minimal sphere on a spacelike slice, not forbidden by Proposition 1, whose two sides are the expanding interior and the far side of the exterior bridge."))
-add(("p", "Two statements are therefore exact in the thin-wall model. First, $m>m_c$ is necessary for any regular configuration to develop a neck. Second, because $m_c=(1+q)R_{dS}$ is fixed by the vacuum energy, "
+          "an interior beyond the equator of its own de Sitter space, which is not a regular ball; that is the configuration of the baby-universe solutions of Refs. [@Blau1987; @Farhi1990], and it cannot be "
+          "reached from regular data, which is the obstacle of Ref. [@FarhiGuth1987]. For $m>m_c$ the window is absent, so a wall that starts regular can move out through $R_M$, where $\\Gamma_{in}$ changes sign."))
+add(("p", "The bridge in these solutions needs to be stated precisely, because the wall is not where the minimal sphere is. On the time-symmetric slice through a turning point with $\\Gamma_{in}<0$ and $\\Gamma_{out}<0$, the "
+          "areal radius is zero at the pole of the de Sitter cap, rises to $R_{dS}$ at its equator (a maximal sphere), decreases across the wall, and continues to decrease through the exterior to its minimum at the "
+          "bifurcation sphere of the exterior solution, $r=r_h$, beyond which it increases again to the second asymptotic region. The minimal sphere is therefore the bifurcation sphere of the exterior's horizons, "
+          "which is a marginal surface and not a throat that can be crossed; the bridge is non-traversable, as Proposition 1 requires. This construction rests on the thin-wall solution and its literature: "
+          "the numerical evolution of Section 5 starts on a null cone and ends at the singularity, and does not construct such a slice, so no throat is claimed for it."))
+add(("p", "Two statements follow. First, $m>m_c(\\hat\\sigma)$ is necessary for any regular configuration to reach $\\Gamma_{in}<0$. Second, because $m_c$ is fixed by the vacuum energy through $R_{dS}$, "
           "the necessary mass is a property of the observed dark-energy scale, not of the particle physics. Whether the condition is also sufficient, and what thick walls do, is a question for the numerical evolution of the "
           "next section."))

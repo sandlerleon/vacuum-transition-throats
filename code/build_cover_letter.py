@@ -39,26 +39,30 @@ para("I submit the manuscript “%s” as a Paper for consideration in Classical
 para("Proposals for cyclic and rebirth cosmologies often rely on a spacetime throat that forms near the end of the universe and carries matter into a new expanding region. The manuscript asks whether a "
      "specific, density-triggered vacuum transition can produce such a throat, and answers by calculation. The model is a canonical scalar field coupled to dark matter, whose false vacuum carries the "
      "observed dark-energy density and whose true vacuum lies below it, so that the critical sizes and masses are numbers fixed by the observed dark-energy scale and not free parameters.")
-para("The manuscript makes four contributions. (i) A short proof that the whole model satisfies the null energy condition, so that no null ray can have a minimum of the areal radius and no traversable "
-     "throat can form; the question is narrowed to a non-traversable bridge. (ii) An exact thin-wall criterion from the Israel junction conditions: a critical exterior mass m_c = (1+q) R_dS "
-     "(q the depth of the true vacuum, R_dS the de Sitter radius), below which every regular false-vacuum configuration is confined and collapses, together with the observation that at m_c the "
-     "exterior black-hole horizon and the interior de Sitter horizon have equal area, so that the threshold is the equality of the two horizon entropies. (iii) A spherically symmetric Einstein–scalar "
-     "code in double-null coordinates with a regular centre, validated against exact de Sitter and anti-de Sitter solutions at second order, which forms a trapped surface in %d of %d runs with a radius "
-     "that agrees with the analytic horizon radius to a median of %s, finds no null-ray minimum of the areal radius in any of the %s rows evaluated, and shows that an expanding core coexists with the trapped "
-     "region only when the false-vacuum region extends beyond its own de Sitter radius. (iv) An accounting at the observed dark-energy scale: the required region has a radius of %s Gpc and a "
-     "vacuum-energy deficit of %s solar masses, %s times the matter inside a sphere of that radius today."
-     % (SC["n_trapped"], SC["n_runs"], pc(abs(SC["dev_median"]), 1), n(VAL["null_ray_minima"]["rows"]), n(TW["R_dS_Gpc"], 1), "%s × 10^23" % n(M1["M_c_Msun"] / 1e23, 1),
+resolved = sum(1 for r in VE["inconclusive"] if any(v["first_trapped"] is not None for k, v in r.items() if k.startswith("refined")))
+CRE = VE["creation"]
+para("The manuscript makes five contributions. (i) A short proof that the whole model satisfies the null energy condition, so that no null ray can have a minimum of the areal radius and no traversable "
+     "throat can form; the question is narrowed to a non-traversable bridge. (ii) A finite-tension thin-wall criterion from the Israel junction conditions: a critical exterior mass m_c(sigma), "
+     "equal to (1+q) R_dS up to corrections of order sigma^2 (q the depth of the true vacuum, R_dS the de Sitter radius), below which every regular false-vacuum configuration is confined and collapses, "
+     "and the observation, stated as a geometric coincidence of the small-tension limit and not as a thermodynamic criterion, that at that limit the exterior horizon and the interior de Sitter horizon have "
+     "equal area. (iii) A spherically symmetric Einstein–scalar code in double-null coordinates with a regular centre, validated against exact de Sitter and anti-de Sitter solutions, whose constraints and "
+     "null expansions converge on the dynamical solutions, and which forms a trapped surface in %d of %d runs. (iv) A separation of persistence from creation: an expanding core coexists with the trapped "
+     "region only when the initial data already contain a false-vacuum core larger than its own de Sitter radius, and in none of the %d runs that start with a smaller core does one appear; the simulations "
+     "therefore do not show the dynamical creation of a daughter universe. (v) An accounting at the observed dark-energy scale: the required region has a radius of %s Gpc and a "
+     "vacuum-energy deficit of %s solar masses, %s times the matter inside a sphere of that radius today. The conclusions are also tested for a Minkowski and a lower de Sitter exterior."
+     % (SC["n_trapped"] + resolved, SC["n_runs"], CRE["n_initially_normal_core"], n(TW["R_dS_Gpc"], 1), "%s × 10^23" % n(M1["M_c_Msun"] / 1e23, 1),
         n(M1["deficit_over_matter_in_RdS_sphere"], 1)))
-para("The main finding is a conditional negative, stated as such. Localized collapse cannot produce a daughter region, matter is not transferred to it, and the daughter that does exist in the model is a "
-     "pre-existing, horizon-sized false-vacuum region that the collapse of its surroundings isolates; the mechanism is therefore not supported as a cosmological reset, and even a daughter would be "
+para("The main finding is a conditional negative, stated as such. Localized collapse does not produce a daughter region, matter is not transferred to it, and the expanding region that does exist in the model is a "
+     "pre-existing, horizon-sized false-vacuum core that the collapse of its surroundings isolates; the mechanism is therefore not supported as a cosmological reset, and even a created daughter would be "
      "cosmological reproduction, not a cycle. The manuscript is explicit about what the numerical work is and is not: the walls it can resolve are far thicker and heavier than the physical wall "
-     "(by thirty and sixty orders of magnitude), so the experiments test the structure of the thin-wall solution and not the physical values; the evolution is spherical and classical; and the code "
-     "does not follow the solution beyond the singularity. It lists five criteria by which each of its statements can be falsified.")
+     "(by thirty and sixty orders of magnitude), so the experiments test the structure of the thin-wall solution and not the physical values; the evolution is spherical and classical; the dark matter that "
+     "motivates the transition is not simulated; no spacelike slice through the bridge is constructed numerically; and the code does not follow the solution beyond the singularity. "
+     "It lists six criteria by which each of its statements can be falsified.")
 para("The geometry of false-vacuum bubbles, baby universes and the obstacle to creating them from regular data is classical, and the manuscript credits it (Blau, Guendelman and Guth; Farhi and Guth; "
      "Farhi, Guth and Guven; Fischler, Morgan and Polchinski). The contribution is the application to a model with a fixed vacuum scale, the exact critical mass and its entropy interpretation, "
      "and the numerical test with a regular centre.")
 para("The code and results are openly available at %s and archived at https://doi.org/%s (code, all versions); the manuscript and its Supplementary Information are archived at https://doi.org/%s "
-     "(all versions). Every number in the text is read from the result files that the scripts write, nine automated checks run on the stored results, and one command per script regenerates each figure and table."
+     "(all versions). Every number in the text is read from the result files that the scripts write, fifteen automated checks run on the stored results, and one command per script regenerates each figure and table."
      % (GITHUB, DOIS["code_concept"], DOIS["paper_concept"]))
 para("Author affiliation and email address. I am an independent researcher with no current institutional affiliation, and I am the sole author. My contact and corresponding-author address is the alumni "
      "email address provided by my former university (Swinburne University of Technology, leon.sandler@alumni.swinburne.edu); it identifies me as a graduate and does not indicate a current "

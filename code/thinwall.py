@@ -62,6 +62,18 @@ def horizon_radius(m, q, rho_in=3.0):
     return float(np.roots([1.0 / L2, 0.0, 1.0, -m]).real.max())
 
 
+def exterior_roots(m, q):
+    """Positive real roots (R_dS = 1) of the horizon condition q r^3 + r - m = 0 of f(r) = 1 - m/r + q r^2, sorted (black-hole horizon first)."""
+    if q == 0:
+        return [float(m)]
+    return sorted(float(x.real) for x in np.roots([q, 0.0, 1.0, -m]) if abs(x.imag) < 1e-12 and x.real > 0)
+
+
+def m_crit_series(sigma, q):
+    """Small-tension expansion of the exact critical mass: (1 + q) - sigma^2 [1/4 - 1/(6 (1 + q))]  (R_dS = 1)."""
+    return (1.0 + q) - sigma ** 2 * (0.25 - 1.0 / (6.0 * (1.0 + q)))
+
+
 def main():
     out = {}
     # ------------------------------------------------------------ critical mass check (moderate tension, then the model's)
@@ -74,6 +86,20 @@ def main():
             chk.append(dict(q=q, sigma=sigma, m_c=float(mc), analytic_leading=float((1 + q)), window_below=below, window_above=above,
                             r_h_at_mc=horizon_radius(mc, q)))
     out["critical_mass_check"] = chk
+    # ------------------------------------------------------------ finite-tension critical mass and the horizon-area coincidence
+    fin = []
+    for q in (1.0,):
+        for sigma in (0.0, 0.01, 0.1, 0.3, 0.9):
+            mc = m_crit(sigma, q) if sigma > 0 else (1.0 + q)
+            rh = horizon_radius(mc, q)
+            fin.append(dict(q=q, sigma=sigma, m_c_exact=float(mc), m_c_series=float(m_crit_series(sigma, q)), m_c_limit=float(1 + q), rel_dev_from_limit=float(mc / (1 + q) - 1),
+                            r_h=float(rh), entropy_ratio_dS_over_BH=float(1.0 / rh ** 2), series_entropy_ratio=float(1.0 + 2.0 * (1 + q - m_crit_series(sigma, q)) / (1 + 3 * q))))
+    out["finite_tension"] = fin
+    ext = []
+    for q in (-0.5, 0.0, 0.5, 1.0, 2.0):
+        m = 1.0 + q
+        ext.append(dict(q=q, m=m, roots=exterior_roots(m, q), nariai_mass=(float(2.0 / (3.0 * np.sqrt(3.0 * -q))) if q < 0 else None)))
+    out["exterior_horizons_at_mc"] = ext
     # ------------------------------------------------------------ the model's wall (physical)
     RdS_gev = 1.0                                                        # set below
     H_L = np.sqrt(OM_L) * H0                                              # 1/s (rho_Lambda = V_f = Omega_L rho_crit)
@@ -115,6 +141,10 @@ def main():
     for r in rows:
         print("q=%.2f: m_c = %.3f R_dS, M_c = %.2e Msun = %.2f x matter in a Hubble sphere, r_h(m_c)/R_dS = %.4f, density ratio %.2f" %
               (r["q"], r["m_c_over_RdS"], r["M_c_Msun"], r["M_c_over_matter_in_Hubble_sphere"], r["r_h_over_RdS_at_mc"], r["deficit_over_matter_in_RdS_sphere"]))
+    for f in fin:
+        print("finite tension q=%.1f sigma=%.2f: m_c=%.5f (series %.5f), r_h/R_dS=%.5f, S_dS/S_BH=%.5f" % (f["q"], f["sigma"], f["m_c_exact"], f["m_c_series"], f["r_h"], f["entropy_ratio_dS_over_BH"]))
+    for e in ext:
+        print("exterior roots at m=(1+q)R_dS:", e)
     for c in chk:
         print("check q=%.1f sigma=%.2f m_c=%.5f window below %s above %s r_h/R_dS %.5f" % (c["q"], c["sigma"], c["m_c"], c["window_below"], c["window_above"], c["r_h_at_mc"]))
 

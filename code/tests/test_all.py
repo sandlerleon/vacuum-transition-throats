@@ -108,6 +108,62 @@ def null_energy_sign():
     assert np.max(np.abs(resid[5:-5])) < 0.02 * np.max(0.5 * r * pv ** 2)
 
 
+VE = json.load(open(os.path.join(CODE, "validation_extra.json")))
+
+
+@check
+def finite_tension_series():
+    """The small-tension expansion of the critical mass (Eq. 9) reproduces the numerically maximized m_+(R) to O(sigma^4)."""
+    for q in (0.5, 1.0, 2.0):
+        for s in (0.05, 0.1, 0.3):
+            assert abs(TW.m_crit(s, q) - TW.m_crit_series(s, q)) < 2 * s ** 4, (q, s)
+
+
+@check
+def horizon_coincidence_finite_tension():
+    """At finite tension the exterior horizon radius at m_c is R_dS {1 - sigma^2 [1/4 - 1/(6(1+q))]/(1+3q)} to second order, so the area coincidence holds only in the limit."""
+    for q in (0.5, 1.0, 2.0):
+        s = 0.2
+        rh = TW.horizon_radius(TW.m_crit(s, q), q)
+        pred = 1 - s ** 2 * (0.25 - 1 / (6 * (1 + q))) / (1 + 3 * q)
+        assert abs(rh - pred) < 2e-3, (q, rh, pred)
+        assert rh < 1.0
+
+
+@check
+def exterior_roots_at_critical_mass():
+    """R_dS is a root of the exterior horizon equation at m = (1+q) R_dS for every q > -1; for q < 0 it is the cosmological (larger) root."""
+    for q in (-0.5, 0.0, 0.5, 1.0, 2.0):
+        roots = TW.exterior_roots(1.0 + q, q)
+        assert any(abs(x - 1.0) < 1e-9 for x in roots), (q, roots)
+        if q < 0:
+            assert max(roots) == roots[-1] and abs(roots[-1] - 1.0) < 1e-9 and roots[0] < 1.0
+
+
+@check
+def no_dynamical_creation_of_expanding_core():
+    """None of the runs that start with a normal core develops an anti-trapped point at a later row (persistence, not creation)."""
+    c = VE["creation"]
+    assert c["n_initially_normal_core"] == 42 and c["n_created_later"] == 0 and c["n_initially_expanding_core"] == 30
+
+
+@check
+def constraints_and_expansions_converge():
+    """RMS constraint residuals of the dynamical solutions fall with the grid step at order >= 1.3, and the signs of the null expansions agree between resolutions."""
+    for key in ("constraint_orders", "constraint_orders_AT"):
+        for k in ("vv", "uu"):
+            assert min(VE[key][k]) > 1.3, (key, k, VE[key][k])
+    assert VE["expansions"]["normal_core"]["sign_agreement"] and VE["expansions"]["expanding_core"]["sign_agreement"]
+
+
+@check
+def refinement_of_unresolved_runs():
+    """Six of the seven runs without a trapped surface at the base resolution form one after refinement; the seventh is reported as unresolved."""
+    inc = VE["inconclusive"]
+    assert len(inc) == 7
+    assert sum(1 for r in inc if any(v["first_trapped"] is not None for k, v in r.items() if k.startswith("refined"))) == 6
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()

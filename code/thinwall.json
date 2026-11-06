@@ -109,6 +109,106 @@
    "r_h_at_mc": 0.9773974557889735
   }
  ],
+ "finite_tension": [
+  {
+   "q": 1.0,
+   "sigma": 0.0,
+   "m_c_exact": 2.0,
+   "m_c_series": 2.0,
+   "m_c_limit": 2.0,
+   "rel_dev_from_limit": 0.0,
+   "r_h": 1.0000000000000002,
+   "entropy_ratio_dS_over_BH": 0.9999999999999996,
+   "series_entropy_ratio": 1.0
+  },
+  {
+   "q": 1.0,
+   "sigma": 0.01,
+   "m_c_exact": 1.999983320575619,
+   "m_c_series": 1.9999833333333332,
+   "m_c_limit": 2.0,
+   "rel_dev_from_limit": -8.339712190497117e-06,
+   "r_h": 0.9999958301308638,
+   "entropy_ratio_dS_over_BH": 1.0000083397904362,
+   "series_entropy_ratio": 1.0000083333333334
+  },
+  {
+   "q": 1.0,
+   "sigma": 0.1,
+   "m_c_exact": 1.998333970064637,
+   "m_c_series": 1.9983333333333333,
+   "m_c_limit": 2.0,
+   "rel_dev_from_limit": -0.0008330149676815113,
+   "r_h": 0.9995833623440376,
+   "entropy_ratio_dS_over_BH": 1.000833796362176,
+   "series_entropy_ratio": 1.0008333333333335
+  },
+  {
+   "q": 1.0,
+   "sigma": 0.3,
+   "m_c_exact": 1.9850516981913338,
+   "m_c_series": 1.985,
+   "m_c_limit": 2.0,
+   "rel_dev_from_limit": -0.007474150904333121,
+   "r_h": 0.9962524043512249,
+   "entropy_ratio_dS_over_BH": 1.0075375362397072,
+   "series_entropy_ratio": 1.0074999999999998
+  },
+  {
+   "q": 1.0,
+   "sigma": 0.9,
+   "m_c_exact": 1.8692690633030926,
+   "m_c_series": 1.865,
+   "m_c_limit": 2.0,
+   "rel_dev_from_limit": -0.06536546834845369,
+   "r_h": 0.9664841961467584,
+   "entropy_ratio_dS_over_BH": 1.0705587026409398,
+   "series_entropy_ratio": 1.0675
+  }
+ ],
+ "exterior_horizons_at_mc": [
+  {
+   "q": -0.5,
+   "m": 0.5,
+   "roots": [
+    0.6180339887498948,
+    1.0000000000000004
+   ],
+   "nariai_mass": 0.5443310539518174
+  },
+  {
+   "q": 0.0,
+   "m": 1.0,
+   "roots": [
+    1.0
+   ],
+   "nariai_mass": null
+  },
+  {
+   "q": 0.5,
+   "m": 1.5,
+   "roots": [
+    1.0
+   ],
+   "nariai_mass": null
+  },
+  {
+   "q": 1.0,
+   "m": 2.0,
+   "roots": [
+    1.0000000000000002
+   ],
+   "nariai_mass": null
+  },
+  {
+   "q": 2.0,
+   "m": 3.0,
+   "roots": [
+    1.0000000000000004
+   ],
+   "nariai_mass": null
+  }
+ ],
  "R_dS_Gpc": 5.3383939185651865,
  "R_dS_m": 1.647256243568645e+26,
  "sigma_model_hat": 2.7091120705488397e-30,

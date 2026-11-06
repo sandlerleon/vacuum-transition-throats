@@ -10,10 +10,12 @@ OUT = os.path.join(ROOT, "manuscript")
 TW = json.load(open(os.path.join(HERE, "thinwall.json"), encoding="utf-8"))
 VAL = json.load(open(os.path.join(HERE, "validation.json"), encoding="utf-8"))
 SCAN = json.load(open(os.path.join(HERE, "collapse_scan.json"), encoding="utf-8"))
+SCANQ = json.load(open(os.path.join(HERE, "collapse_scan_q.json"), encoding="utf-8"))
+VE = json.load(open(os.path.join(HERE, "validation_extra.json"), encoding="utf-8"))
 DOIS = json.load(open(os.path.join(HERE, "dois.json"), encoding="utf-8"))
 GITHUB = "https://github.com/sandlerleon/vacuum-transition-throats"
-VERSION = "1.0.0"
-TITLE = "Vacuum-Transition-Induced Spacetime Throats: Gravitational Collapse, Matter Transfer, and Conditional Cosmological Rebirth"
+VERSION = "1.1.0"
+TITLE = "Wormhole Formation in Matter-Coupled Vacuum Transitions: Gravitational Collapse, Horizon Constraints, and the Limits of Cosmological Rebirth"
 
 
 def n(x, d=0):
