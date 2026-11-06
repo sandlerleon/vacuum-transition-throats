@@ -85,6 +85,29 @@ add(("p", "The work also leaves things undone. The numerical solution is spheric
           "the present model has neither. Perturbations of the exterior and of the wall are not studied, and a nonspherical collapse could form different horizons. "
           "A global numerical evolution through the horizon, with excision of the singularity, would settle whether the core is a separate region and would test the bridge directly; it is the most useful extension."))
 
+add(("h2", "9.1 Primordial bridges and observationally hidden continuations"))
+add(("p", "The results leave a different hypothesis untouched. The expanding cores that persist in the runs are in the initial data, so the experiments say nothing about their origin. The bridge, if there is one, might be primordial, formed in an earlier epoch or part of "
+          "the global spacetime, and a late-time vacuum transition might then act on an existing bridge instead of creating one. Stated so that it can fail, the hypothesis is that a pre-existing, non-traversable bridge connects a late-time "
+          "vacuum-transition region to an expanding region, with the connection hidden from observers in the parent universe. It does not require matter that violates the null energy condition, and it does not require a throat to form spontaneously at the end "
+          "of the cosmic evolution. It is not tested here."))
+add(("p", "Three reasons why such a bridge could be unobservable should be kept apart. It may lie behind an event horizon: a non-traversable Einstein–Rosen-type bridge can be part of the global geometry without letting signals reach distant observers. It may lie beyond "
+          "our cosmological horizon, where no signal will ever reach us. Or its exterior may mimic an ordinary black hole while its interior topology stays hidden. None of these makes the bridge usable: a bridge behind a horizon is not a passage, and an object beyond our horizon is not "
+          "an observable mechanism without additional causal assumptions."))
+add(("p", "A pre-existing bridge is also not sufficient by itself. A geometric connection between spatial slices is not a causal path, and matter can be transferred only if some future-directed causal curve joins the parent to the expanding region. In the numerical solutions of Section 5 "
+          "none does (Section 5.4). That is a property of those solutions and does not settle the primordial case, for which the causal structure of the whole spacetime has to be computed, for example from radial null geodesics. For a traversable throat the energy-condition obstruction of "
+          "Section 3 applies however the throat arose."))
+add(("p", "The natural test is a comparison of three kinds of initial data: (A) regular, localized data, as in this paper; (B) data that already contain an Einstein–Rosen-type bridge, followed by the vacuum transition, to ask whether the bridge stays regular, pinches off or "
+          "develops trapped surfaces; and (C) a bridge with an explicitly defined quantum or modified-gravity correction, to ask whether anything can cross it and whether the geometry is stable. Table 5 sets out the levels of success and what this paper does and does not provide at each. "
+          "The decisive question is whether a pre-existing non-traversable bridge can support an expanding region without matter traversing it; if it can, it could support cosmological reproduction even though it cannot recycle matter. A prediction worth testing must be one that can fail, "
+          "such as a stability boundary, a causal-accessibility criterion or a quantitative distinction from ordinary black-hole collapse; being undetectable is not one."))
+add(("table", "Table 5. Levels of success for a pre-existing bridge and the status of each in this paper.",
+     ["Level", "Achievement", "Status here"],
+     [["1", "A mathematically consistent hidden bridge exists", "Thin-wall solution (Section 4, with its literature); not constructed numerically"],
+      ["2", "The bridge survives a density-triggered vacuum transition", "Not tested"],
+      ["3", "A causal path carries energy or matter into the expanding region", "Absent in the present solutions (Section 5.4); open for a primordial bridge"],
+      ["4", "The expanding region develops a hot cosmology", "Not addressed (the core is a cold de Sitter region)"],
+      ["5", "The process repeats under the same laws", "Not addressed"]],
+     [0.6, 3.0, 3.6]))
 add(("h1", "10. Conclusions"))
 add(("p", "The question was whether a matter-dilution-triggered vacuum transition can form a wormhole, a non-singular gravitational bridge to an expanding daughter universe, or whether the energy conditions and causal "
           "structure of the model forbid it. For this model the answer has three parts. Ordinary traversable throats are forbidden in this classical canonical-scalar and non-negative-density dust model: the null energy condition holds, and no null ray has a minimum of the areal radius. This does not exclude non-traversable bridges, quantum or semiclassical continuations, or baby-universe scenarios that rest on them. "
@@ -93,7 +116,7 @@ add(("p", "The question was whether a matter-dilution-triggered vacuum transitio
           "At the observed dark-energy scale that core has a radius of %s Gpc and a vacuum-energy deficit of %s $M_\\odot$, %s times the matter within a sphere of that radius today. The critical mass is dominated by the vacuum-energy difference and not by matter; a localized collapse cannot supply a region of that size, "
           "and the matter of the parent does not pass into the core. The threshold itself is established for the thin-wall junction branches with regular initial data; for thick walls the experiments show its pattern but do not measure $m_c$, "
           "the physical wall is thinner than any numerically resolved wall by thirty orders of magnitude, and for other exterior cosmologies only the thin-wall statement and the incomplete experiments of Section 5.5 apply. The mechanism is therefore best described as the isolation of a horizon-sized false-vacuum patch, not as a cyclic reset, and it is not supported as an "
-          "end-of-universe process of the model." % (n(R_dS, 1), sci(M1["M_c_Msun"], 1), n(M1["deficit_over_matter_in_RdS_sphere"], 1))))
+          "end-of-universe process of the model. A pre-existing, non-traversable bridge is not excluded; it is the natural next step, and it would need a causal path to carry matter (Section 9.1)." % (n(R_dS, 1), sci(M1["M_c_Msun"], 1), n(M1["deficit_over_matter_in_RdS_sphere"], 1))))
 add(("h1", "Declarations"))
 add(("p0", "Funding: this work received no external funding."))
 add(("p0", "Competing interests: the author declares no competing interests."))

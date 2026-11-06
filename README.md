@@ -4,7 +4,7 @@ Leon Sandler, Independent Researcher — leon.sandler@alumni.swinburne.edu — O
 
 Code, data and manuscript for the paper of the same title, prepared for **Classical and Quantum Gravity** (IOP Publishing; Paper).
 Manuscript: `manuscript/CQG_Wormhole_Formation_Vacuum_Transitions.{docx,pdf}`, supplementary information `manuscript/CQG_Supplementary_Information.{docx,pdf}`, cover letter `manuscript/CQG_Cover_Letter.docx`.
-Archived on Zenodo: paper 10.5281/zenodo.24020303, code 10.5281/zenodo.24020304 (version 1.1.2; all versions: 10.5281/zenodo.23995978 / 10.5281/zenodo.23995982). Earlier versions: 1.1.1 (10.5281/zenodo.24012315 / 10.5281/zenodo.24012317); 1.1.0 (10.5281/zenodo.24011178 / 10.5281/zenodo.24011179); 1.0.0, first release with the earlier title (10.5281/zenodo.23995979 / 10.5281/zenodo.23995983).
+Archived on Zenodo: paper 10.5281/zenodo.24020378, code 10.5281/zenodo.24020381 (version 1.2.0; all versions: 10.5281/zenodo.23995978 / 10.5281/zenodo.23995982). Earlier versions: 1.1.2 (10.5281/zenodo.24020303 / 10.5281/zenodo.24020304); 1.1.1 (10.5281/zenodo.24012315 / 10.5281/zenodo.24012317); 1.1.0 (10.5281/zenodo.24011178 / 10.5281/zenodo.24011179); 1.0.0, first release with the earlier title (10.5281/zenodo.23995979 / 10.5281/zenodo.23995983).
 
 ## What the paper does
 
@@ -54,6 +54,10 @@ python paper_build.py && python build_cover_letter.py
 ```
 
 Every number in the manuscript is read from the JSON files these scripts write.
+
+## Version 1.2.0
+
+Adds Section 9.1 (primordial bridges and observationally hidden continuations, with Table 5 of success levels) and a causal-accessibility statement for the numerical solutions (no future-directed causal curve leads from the exterior into the expanding core). No change to the simulations. `docs/PRIMORDIAL_BRIDGE_PLAN.md` is a work plan for the separate investigation of pre-existing bridges (plan only, nothing computed).
 
 ## Version 1.1.2
 

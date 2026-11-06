@@ -24,14 +24,14 @@ add(("small", "Corresponding author: leon.sandler@alumni.swinburne.edu"))
 add(("blank",))
 add(("h1", "Abstract"))
 ABSTRACT = (
-    "Rebirth scenarios invoke a wormhole carrying matter from a collapsing region into a new expanding one. We ask whether a density-triggered vacuum transition can form one when the only matter is a canonical "
+    "Rebirth scenarios invoke a wormhole carrying matter into a new expanding region. We ask whether a density-triggered vacuum transition can form one when the only matter is a canonical "
     "scalar field coupled to dark matter, whose false vacuum has the observed dark-energy density. In this classical model the null energy condition holds, so no ordinary traversable throat can form: no null ray has a "
     "minimum of the areal radius. Non-traversable bridges and quantum or baby-universe continuations are not excluded. For a thin wall the Israel junction conditions give a finite-tension critical exterior mass, "
     "equal to %s up to corrections of order $\\hat\\sigma^2$, below which every regular configuration collapses; the equality of horizon areas there is a geometric "
     "coincidence of the limit. A spherical Einstein–scalar code checked against exact solutions identified trapped surfaces in %d of %d runs "
     "at the base resolution and in %d more after refinement; one stayed unresolved. A persistent expanding false-vacuum core appears only when the initial data already contain a core larger than its own de Sitter "
     "radius; none develops in the %d runs that start smaller, so the simulations show persistence, not creation. At the observed dark-energy scale that core has a radius of %s Gpc and a critical mass of "
-    "%s solar masses, dominated by the vacuum-energy difference: today's matter in such a sphere is %s of it. Matter is not transferred; a reset is not supported. "
+    "%s solar masses, dominated by the vacuum-energy difference: today's matter in such a sphere is %s of it. No causal curve carries exterior matter into the core; a reset is not supported. "
     "The numerical evidence is complete only for anti-de Sitter exteriors."
     % ("$(1+q)R_{dS}$", SC["n_trapped"], SC["n_runs"], resolved, CRE["n_initially_normal_core"], n(R_dS, 1), "%s × 10$^{%d}$" % (n(M1["M_c_Msun"] / 10 ** 23, 1), 23), pc(M1["matter_fraction"], 0)))
 add(("p0", ABSTRACT))
@@ -54,7 +54,7 @@ add(("p", "Three outcomes are distinguished throughout and are not allowed to bl
           "geometry exists but nothing can cross it. In outcome C an expanding region exists behind a horizon. A collapsing region can produce a trapped surface without producing either a traversable wormhole or a new "
           "universe, and the distinction is the content of the paper. A second distinction is made as sharply: an expanding region that is present in the initial data and persists beside a collapse is not a daughter "
           "universe that the collapse has created. Even a created daughter would establish cosmological reproduction, not a cyclic return of the same universe, which additionally needs a daughter that reconnects "
-          "with or replaces its parent; no part of this work provides that."))
+          "with or replaces its parent; no part of this work provides that. Section 9.1 discusses the alternative that the bridge is primordial rather than formed by the collapse."))
 add(("p", "The mechanism is not new in its geometry. Thin false-vacuum bubbles in general relativity were analysed in detail in the 1980s [@Blau1987; @Berezin1987], the possibility of a baby universe attached to a "
           "black hole by a throat was explored in classical and quantum form [@Frolov1989; @Farhi1990; @Fischler1990], and the obstacle that regular initial data do not lead to one was identified at the time "
           "[@FarhiGuth1987]. What is new here is the application to a specific density-triggered model with a fixed vacuum scale. The vacuum energy is the observed dark-energy density, so the critical sizes and masses "
