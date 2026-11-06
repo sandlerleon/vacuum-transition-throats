@@ -15,7 +15,7 @@ add(("p", "The plan to carry all of a universe's matter through a throat to a ne
           "surface is not a conserved mass unless a time-flow vector and a hypersurface are specified. The unambiguous quantity in spherical symmetry is the Misner–Sharp mass of Eq. (3), which is conserved in "
           "vacuum and changes only by the flux of matter, and the exterior mass parameter $m_{\\rm ext}=2GM$ that it defines. In the small-tension limit the critical mass $m_c\\to(1+q)R_{dS}$ has a simple meaning: it is "
           "$\\Delta R_{dS}^3/3$, the vacuum-energy difference $\\Delta=(1+q)V_f$ integrated over a de Sitter volume of radius $R_{dS}$, $M_c=(4\\pi/3)\\Delta R_{dS}^3$. A false-vacuum region of radius "
-          "$R_w$ has an exterior mass of at least $\\Delta R_w^3/3$ because of its vacuum energy alone, so that $m>m_c$ is automatic for $R_w>R_{dS}$ and no matter is needed to supply it. In the configurations analysed the daughter is vacuum "
+          "$R_w$ has an exterior mass of at least $\\Delta R_w^3/3$ because of its vacuum energy alone, so that $m>m_c$ is automatic for $R_w>R_{dS}$ and no matter is needed to supply it. In the configurations analysed the expanding core is vacuum "
           "energy and nothing else: none of the parent's matter enters it, and none has to. Matter is transferred in no sense, and the exterior black hole is what is left of the parent's vacuum-energy deficit."))
 add(("p", "The horizon of the exterior at the critical mass has a property that deserves a precise statement. The exterior has $f(r)=1-m/r+q\\,r^2/R_{dS}^2$ (for $\\rho_{out}=-q\\rho_{in}$ the anti-de Sitter radius satisfies $L^2=R_{dS}^2/q$), and "
           "its horizons obey $r-m+q\\,r^3/R_{dS}^2=0$. At $m=(1+q)R_{dS}$ one root is exactly"))
@@ -71,14 +71,14 @@ add(("num", "A regular, global evolution through the horizon that shows the expa
 
 add(("h1", "9. Discussion"))
 add(("p", "The result is a conditional negative, and the paper has tried to state exactly what is and is not shown. Shown: the null energy condition removes traversable throats from this model; below a finite-tension critical mass "
-          "every regular configuration collapses; at the limit of vanishing tension the critical mass is $(1+q)R_{dS}$, at which the horizon areas coincide; trapped surfaces form in %d of the %d numerical runs, whose constraints and "
-          "null expansions converge; and an expanding core coexists with the trapped region when the core is larger than its own de Sitter radius. Not shown: that collapse creates a daughter universe. The expanding core is in the initial "
-          "data of every run in which it is found, and none of the %d runs with a smaller core develops one; the simulations show persistence beside a collapse, not creation by it." % (len(resolved) + SC["n_trapped"], SC["n_runs"], CRE["n_initially_normal_core"])))
+          "every regular configuration collapses; at the limit of vanishing tension the critical mass is $(1+q)R_{dS}$, at which the horizon areas coincide; trapped surfaces were identified in %d of the %d numerical runs at the base resolution and in %d more after refinement, and the constraints and "
+          "null expansions converge; and a persistent expanding false-vacuum core coexists with the trapped region when the core is larger than its own de Sitter radius. Not shown: that collapse creates a daughter universe. The expanding core is in the initial "
+          "data of every run in which it is found, and none of the %d runs with a smaller core develops one; the simulations show persistence beside a collapse, not creation by it." % (SC["n_trapped"], SC["n_runs"], len(resolved), CRE["n_initially_normal_core"])))
 add(("p", "Four caveats limit even the persistence result. The exterior vacuum of the baseline is anti-de Sitter, which is not the late-time state of a universe that approaches heat death; the experiments with a Minkowski and a lower de Sitter "
           "exterior (Section 5.5) support the threshold and the dependence of the expanding core on its size, but are largely unresolved with respect to trapped surfaces, and for a de Sitter exterior of large mass there is no black-hole "
           "horizon to hide behind. The dark matter that motivates the transition is not simulated: the experiments evolve the scalar field in a prescribed double-well potential, so the complete matter-triggered process has not been "
-          "simulated. The daughter obtained is a cold de Sitter region with the vacuum energy $V_f$; producing a hot big bang inside it needs a reheating process, and none is included. And it does not reconnect with the parent: to call the "
-          "process a cycle one would have to show that the daughter replaces or re-enters the parent, which the geometry does not suggest, because the daughter is behind the horizon of an exterior black hole whose mass is at least $M_c$."))
+          "simulated. The expanding core is a cold de Sitter region with the vacuum energy $V_f$. If it were interpreted globally as a daughter universe, producing a hot big bang inside it would need a reheating process, and none is included; and it would not reconnect with the parent: to call the "
+          "process a cycle one would have to show that the daughter replaces or re-enters the parent, which the geometry does not suggest, because the core is behind the horizon of an exterior black hole whose mass is at least $M_c$."))
 add(("p", "The work also leaves things undone. The numerical solution is spherically symmetric and classical, the walls are not as thin as the physical wall, the evolution ends at the singularity, and the "
           "bridge of Section 4 is a thin-wall construction: no spacelike slice through it is built from the numerical solutions. The tunnelling route to a baby universe "
           "[@Farhi1990; @Fischler1990] is outside the classical treatment, and a quantum or semiclassical stress-energy that violates the null energy condition locally could in principle allow a throat; "
@@ -87,11 +87,11 @@ add(("p", "The work also leaves things undone. The numerical solution is spheric
 
 add(("h1", "10. Conclusions"))
 add(("p", "The question was whether a matter-dilution-triggered vacuum transition can form a wormhole, a non-singular gravitational bridge to an expanding daughter universe, or whether the energy conditions and causal "
-          "structure of the model forbid it. For this model the answer has three parts. A traversable throat is forbidden: the null energy condition holds, and no null ray has a minimum of the areal radius. "
+          "structure of the model forbid it. For this model the answer has three parts. Ordinary traversable throats are forbidden in this classical canonical-scalar and non-negative-density dust model: the null energy condition holds, and no null ray has a minimum of the areal radius. This does not exclude non-traversable bridges, quantum or semiclassical continuations, or baby-universe scenarios that rest on them. "
           "A non-traversable bridge with an expanding region requires an exterior mass above the finite-tension critical value, which is $(1+q)R_{dS}$ in the limit of a probe wall, where the exterior and interior horizon areas coincide; "
           "and in the numerical runs the expanding region is present only where the initial data already contain a false-vacuum core larger than its own de Sitter radius, so that the runs show persistence and not creation. "
           "At the observed dark-energy scale that core has a radius of %s Gpc and a vacuum-energy deficit of %s $M_\\odot$, %s times the matter within a sphere of that radius today. A localized collapse cannot supply it, "
-          "and the matter of the parent does not pass to the daughter. The mechanism is therefore best described as the isolation of a horizon-sized false-vacuum patch, not as a cyclic reset, and it is not supported as an "
+          "and the matter of the parent does not pass into the core. The mechanism is therefore best described as the isolation of a horizon-sized false-vacuum patch, not as a cyclic reset, and it is not supported as an "
           "end-of-universe process of the model." % (n(R_dS, 1), sci(M1["M_c_Msun"], 1), n(M1["deficit_over_matter_in_RdS_sphere"], 1))))
 add(("h1", "Declarations"))
 add(("p0", "Funding: this work received no external funding."))

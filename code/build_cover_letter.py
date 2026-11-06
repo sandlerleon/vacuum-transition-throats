@@ -41,16 +41,16 @@ para("Proposals for cyclic and rebirth cosmologies often rely on a spacetime thr
      "observed dark-energy density and whose true vacuum lies below it, so that the critical sizes and masses are numbers fixed by the observed dark-energy scale and not free parameters.")
 resolved = sum(1 for r in VE["inconclusive"] if any(v["first_trapped"] is not None for k, v in r.items() if k.startswith("refined")))
 CRE = VE["creation"]
-para("The manuscript makes five contributions. (i) A short proof that the whole model satisfies the null energy condition, so that no null ray can have a minimum of the areal radius and no traversable "
-     "throat can form; the question is narrowed to a non-traversable bridge. (ii) A finite-tension thin-wall criterion from the Israel junction conditions: a critical exterior mass m_c(sigma), "
+para("The manuscript makes five contributions. (i) A short proof that the whole model satisfies the null energy condition, so that no null ray can have a minimum of the areal radius and no ordinary traversable "
+     "throat can form in this classical model (non-traversable bridges and quantum or baby-universe continuations are not excluded); the question is narrowed to a non-traversable bridge. (ii) A finite-tension thin-wall criterion from the Israel junction conditions: a critical exterior mass m_c(sigma), "
      "equal to (1+q) R_dS up to corrections of order sigma^2 (q the depth of the true vacuum, R_dS the de Sitter radius), below which every regular false-vacuum configuration is confined and collapses, "
      "and the observation, stated as a geometric coincidence of the small-tension limit and not as a thermodynamic criterion, that at that limit the exterior horizon and the interior de Sitter horizon have "
      "equal area. (iii) A spherically symmetric Einstein–scalar code in double-null coordinates with a regular centre, validated against exact de Sitter and anti-de Sitter solutions, whose constraints and "
-     "null expansions converge on the dynamical solutions, and which forms a trapped surface in %d of %d runs. (iv) A separation of persistence from creation: an expanding core coexists with the trapped "
+     "null expansions converge on the dynamical solutions, and which identifies trapped surfaces in %d of %d runs at the base resolution and in %d more after refinement (one remains unresolved). (iv) A separation of persistence from creation: a persistent expanding false-vacuum core coexists with the trapped "
      "region only when the initial data already contain a false-vacuum core larger than its own de Sitter radius, and in none of the %d runs that start with a smaller core does one appear; the simulations "
      "therefore do not show the dynamical creation of a daughter universe. (v) An accounting at the observed dark-energy scale: the required region has a radius of %s Gpc and a "
      "vacuum-energy deficit of %s solar masses, %s times the matter inside a sphere of that radius today. The conclusions are also tested for a Minkowski and a lower de Sitter exterior."
-     % (SC["n_trapped"] + resolved, SC["n_runs"], CRE["n_initially_normal_core"], n(TW["R_dS_Gpc"], 1), "%s × 10^23" % n(M1["M_c_Msun"] / 1e23, 1),
+     % (SC["n_trapped"], SC["n_runs"], resolved, CRE["n_initially_normal_core"], n(TW["R_dS_Gpc"], 1), "%s × 10^23" % n(M1["M_c_Msun"] / 1e23, 1),
         n(M1["deficit_over_matter_in_RdS_sphere"], 1)))
 para("The main finding is a conditional negative, stated as such. Localized collapse does not produce a daughter region, matter is not transferred to it, and the expanding region that does exist in the model is a "
      "pre-existing, horizon-sized false-vacuum core that the collapse of its surroundings isolates; the mechanism is therefore not supported as a cosmological reset, and even a created daughter would be "

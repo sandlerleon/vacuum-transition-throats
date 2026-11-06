@@ -4,7 +4,7 @@ Leon Sandler, Independent Researcher — leon.sandler@alumni.swinburne.edu — O
 
 Code, data and manuscript for the paper of the same title, prepared for **Classical and Quantum Gravity** (IOP Publishing; Paper).
 Manuscript: `manuscript/CQG_Wormhole_Formation_Vacuum_Transitions.{docx,pdf}`, supplementary information `manuscript/CQG_Supplementary_Information.{docx,pdf}`, cover letter `manuscript/CQG_Cover_Letter.docx`.
-Archived on Zenodo: paper 10.5281/zenodo.24011178, code 10.5281/zenodo.24011179 (version 1.1.0; all versions: 10.5281/zenodo.23995978 / 10.5281/zenodo.23995982). Version 1.0.0 (first release, earlier title): 10.5281/zenodo.23995979 / 10.5281/zenodo.23995983.
+Archived on Zenodo: paper 10.5281/zenodo.24012315, code 10.5281/zenodo.24012317 (version 1.1.1; all versions: 10.5281/zenodo.23995978 / 10.5281/zenodo.23995982). Earlier versions: 1.1.0 (10.5281/zenodo.24011178 / 10.5281/zenodo.24011179); 1.0.0, first release with the earlier title (10.5281/zenodo.23995979 / 10.5281/zenodo.23995983).
 
 ## What the paper does
 
@@ -12,8 +12,8 @@ It asks whether a density-triggered vacuum transition can form a wormhole, a spa
 matter (false vacuum = observed dark-energy density, true vacuum below it). It shows that (i) the null energy condition holds, so no null ray has a minimum of the areal radius and no traversable throat
 forms; (ii) a finite-tension thin-wall (Israel) analysis gives a critical exterior mass m_c(σ) that equals (1+q) R_dS up to corrections of order σ², where the exterior horizon and the interior de Sitter horizon have
 equal area (a geometric coincidence of the small-tension limit, not a thermodynamic criterion); (iii) a spherically symmetric Einstein–scalar solver in double-null coordinates with a regular centre, validated against
-exact solutions and by the convergence of its constraints, forms trapped surfaces in 71 of 72 runs; (iv) an expanding core appears only where the initial data already contain a false-vacuum core larger than its own
-de Sitter radius, and in none of the 42 runs that start with a smaller core does one appear, so the runs show persistence, not creation, of an expanding region; (v) at the observed dark-energy scale that region has a radius
+exact solutions and by the convergence of its constraints, identifies trapped surfaces in 65 of 72 runs at the base resolution and in six more after refinement (one remains unresolved); (iv) a persistent expanding false-vacuum core appears only where the initial data already contain a false-vacuum core larger than its own
+de Sitter radius, and in none of the 42 runs that start with a smaller core does one appear, so the runs show persistence, not creation, of the expanding core; (v) at the observed dark-energy scale that region has a radius
 of 5.3 Gpc and a vacuum-energy deficit of 1.1×10²³ solar masses, 4.4 times the matter inside such a sphere today, so matter is not transferred.
 
 The numerical walls are far thicker and heavier than the physical wall (the physical wall is thinner by about 10⁻³⁰ and lighter by about 10⁻⁶⁰ in units of the de Sitter radius), the evolution is spherical and
@@ -53,6 +53,10 @@ python paper_build.py && python build_cover_letter.py
 ```
 
 Every number in the manuscript is read from the JSON files these scripts write.
+
+## Version 1.1.1
+
+Manuscript wording only (no change to code or results): the 71/72 result is stated as 65 at the base resolution plus six after refinement; the null-energy no-go is limited to ordinary traversable throats in the classical model; the numerical result is called a persistent expanding false-vacuum core; the limits of the q = 0 and q = −0.5 comparisons are stated.
 
 ## Revision 1.1.0
 

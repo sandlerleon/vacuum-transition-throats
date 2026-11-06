@@ -24,15 +24,15 @@ add(("small", "Corresponding author: leon.sandler@alumni.swinburne.edu"))
 add(("blank",))
 add(("h1", "Abstract"))
 ABSTRACT = (
-    "Rebirth scenarios invoke a wormhole that carries matter from a collapsing region into a new expanding one. We ask whether a density-triggered vacuum transition can form one when the only matter is a canonical "
-    "scalar field coupled to dark matter, whose false vacuum has the observed dark-energy density. The null energy condition holds, so no traversable throat can form: no null ray has a minimum of the areal "
-    "radius. The closest allowed structure is a non-traversable bridge to a black-hole exterior. For a thin wall the Israel junction conditions give a finite-tension critical exterior mass, equal to "
-    "%s up to corrections of order $\\hat\\sigma^2$ (negligible here), below which every regular configuration collapses; the equality of the exterior and interior horizon areas at that mass is a geometric "
-    "coincidence of the limit, not a thermodynamic criterion. A spherically symmetric Einstein–scalar code, second-order convergent and checked against exact solutions, forms trapped surfaces in %d of %d runs. "
-    "An expanding core appears only when the initial data already contain a false-vacuum core larger than its own de Sitter radius; in the %d runs that start with a smaller core none develops, so the "
-    "simulations show persistence of an existing expanding region, not creation of a daughter universe. At the observed dark-energy scale that core has a radius of %s Gpc, and its vacuum-energy deficit, %s solar masses, "
-    "is %s times the matter inside such a sphere today. Matter is not transferred, and the mechanism is not supported as a cosmological reset."
-    % ("$(1+q)R_{dS}$", N_TRAP, SC["n_runs"], CRE["n_initially_normal_core"], n(R_dS, 1), "%s × 10$^{%d}$" % (n(M1["M_c_Msun"] / 10 ** 23, 1), 23), n(M1["deficit_over_matter_in_RdS_sphere"], 1)))
+    "Rebirth scenarios invoke a wormhole carrying matter from a collapsing region into a new expanding one. We ask whether a density-triggered vacuum transition can form one when the only matter is a canonical "
+    "scalar field coupled to dark matter, whose false vacuum has the observed dark-energy density. In this classical model the null energy condition holds, so no ordinary traversable throat can form: no null ray has a "
+    "minimum of the areal radius. Non-traversable bridges and quantum or baby-universe continuations are not excluded. For a thin wall the Israel junction conditions give a finite-tension critical exterior mass, "
+    "equal to %s up to corrections of order $\\hat\\sigma^2$, below which every regular configuration collapses; the equality of exterior and interior horizon areas there is a geometric "
+    "coincidence of the limit, not a thermodynamic criterion. A spherically symmetric Einstein–scalar code, second-order convergent and checked against exact solutions, identified trapped surfaces in %d of %d runs "
+    "at the base resolution and in %d more after refinement; one stayed unresolved. A persistent expanding false-vacuum core appears only when the initial data already contain a core larger than its own de Sitter "
+    "radius; none develops in the %d runs that start smaller, so the simulations show persistence, not creation. At the observed dark-energy scale that core has a radius of %s Gpc and a vacuum-energy deficit of "
+    "%s solar masses, %s times the matter inside such a sphere today. Matter is not transferred, and a cosmological reset is not supported."
+    % ("$(1+q)R_{dS}$", SC["n_trapped"], SC["n_runs"], resolved, CRE["n_initially_normal_core"], n(R_dS, 1), "%s × 10$^{%d}$" % (n(M1["M_c_Msun"] / 10 ** 23, 1), 23), n(M1["deficit_over_matter_in_RdS_sphere"], 1)))
 add(("p0", ABSTRACT))
 add(("h1", "Keywords"))
 add(("p0", "Wormholes; Spacetime throats; Vacuum decay; False-vacuum bubbles; Null energy condition; Gravitational collapse"))
@@ -125,7 +125,7 @@ add(("p", "Proposition 1. In spherical symmetry with $T_{\\mu\\nu}k^\\mu k^\\nu\
           "$r_v=0$ and $r_{vv}\\ge0$ there. Eq. (4) at $r_v=0$ gives $r_{vv}=-(r/2)T_{vv}\\le0$, so $r_{vv}\\ge0$ forces $T_{vv}=0$ and the minimum is not strict; the same argument with $u$ and $v$ exchanged "
           "applies to ingoing rays. □ This is the local content of the focusing theorem. It means that a throat in the sense of Morris and Thorne, a minimal sphere that a traveller can cross, "
           "or a timelike marginal surface of Hayward's dynamic definition, needs matter that violates the null energy condition [@Hochberg1997; @Hayward1999; @Hayward1994]. "
-          "The model has none, so a traversable throat cannot form in it for any parameter values or any wall profile. Outcome B survives only as a non-traversable bridge: a minimal sphere on a spacelike slice "
+          "The model has none, so an ordinary traversable throat cannot form in it for any parameter values or any wall profile. The statement is limited to this classical model of a canonical scalar and non-negative-density dust: it does not exclude non-traversable bridges, quantum or semiclassical continuations that violate the null energy condition locally, or baby-universe scenarios that rest on them. Outcome B survives only as a non-traversable bridge: a minimal sphere on a spacelike slice "
           "(as in the Einstein–Rosen bridge, where the null energy condition holds trivially) that is hidden behind horizons, and outcome C only as an expanding region attached to such a bridge."))
 add(("p", "That settles the central obstacle identified at the outset, and it narrows the question to what such a bridge needs. Because the question does not involve exotic matter, it can be put to the ordinary "
           "Einstein–scalar system within a thin-wall treatment and numerically with a thick wall."))
