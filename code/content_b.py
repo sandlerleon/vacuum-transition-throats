@@ -25,6 +25,14 @@ no_AT_thick = max(t["R_w_no_AT"] for t in TH if t["w"] > 0.05)
 AT_thick = min(t["R_w_AT"] for t in TH if t["w"] > 0.05)
 rich = (CONV[0]["r"], CONV[1]["r"], CONV[2]["r"])
 rext = rich[2] + (rich[2] - rich[1]) / 3.0
+def _r(c, k):
+    return "%s (%s of its terms)" % (sci(c["rms_" + k], 1), pc(c["rms_" + k] / c["scale_" + k], 2 if c["rms_" + k] / c["scale_" + k] < 0.01 else (1 if c["rms_" + k] / c["scale_" + k] < 0.1 else 0)))
+
+
+resid_txt = ("For the core inside its de Sitter radius $C_{vv}$ has RMS %s at $h=0.02$, %s at $h=0.01$ and %s at $h=0.005$ and $C_{uu}$ %s, %s and %s; the largest values lie at the wall, whose width of 0.1 is resolved by about 5, 10 and 20 points. "
+             "For the core outside it $C_{vv}$ is %s, %s and %s and $C_{uu}$ %s, %s and %s. The base-resolution scans use $h=\\min(0.01,w/8)$, so that the middle values apply to the thinner walls: at that resolution the constraint along $v$ is "
+             "satisfied near the wall to about 12%% of its terms, and quantities that depend on the detail of the wall, such as the exact radius of a first trapped point inside a wall that is still passing, carry that uncertainty, whereas the exterior mass and the horizon structure are less sensitive (Section 5.3)."
+             % tuple([_r(c, "vv") for c in CON] + [_r(c, "uu") for c in CON] + [_r(c, "vv") for c in CONA] + [_r(c, "uu") for c in CONA]))
 ratio_ok = lambda e: "%s, %s and %s" % (n(e["r"]["ratio"], 1), n(e["r_u"]["ratio"], 1), n(e["r_v"]["ratio"], 1))
 
 add(("h1", "5. Numerical experiment: collapse of a false-vacuum core with a regular centre"))
@@ -58,11 +66,11 @@ add(("table", "Table 3. Verification against exact vacuum solutions: largest rel
 add(("p", "Exact vacuum solutions do not test the dynamics of a scalar wall, so the constraints were evaluated on the dynamical solutions. The constraint of Eq. (4) along $v$ and its analogue along $u$ are imposed only "
           "within six points of the centre, and elsewhere the evolved fields are free to violate them. Their root-mean-square residuals over the region $0.05\\le u\\le0.28$, $u+0.4\\le v\\le3$ of the run with a core inside its de Sitter "
           "radius ($R_w=1$) fall with the grid step at orders %s and %s for $C_{vv}$ and %s and %s for $C_{uu}$ between $h=0.02$, $0.01$ and $0.005$, and for the run with a core outside it ($R_w=2$) at orders %s and %s for $C_{vv}$ and %s and %s "
-          "for $C_{uu}$ (Fig. S1). The residual of $C_{vv}$ in the first case is larger (RMS %s at $h=0.02$) because the region includes the wall, whose profile is resolved by only a few points at that step. "
+          "for $C_{uu}$ (Fig. S1). The residuals are absolute (units $R_{dS}=1$); for scale each is also given relative to the RMS of the largest of the three terms of that constraint over the same region. %s "
           "The null expansions converge as well: the maximum difference of $r$, $r_u$ and $r_v$ at $u=0.2$ between successive resolutions falls with Cauchy ratios %s for the core inside its de Sitter radius (the ratio of $r_v$ is lower, "
           "about order 1.3, because of the sharp wall) and %s for the core outside it, at $u=0.12$ and with the same signs of $r_u$ and $r_v$ at all points." %
           (n(CO["vv"][0], 1), n(CO["vv"][1], 1), n(CO["uu"][0], 1), n(CO["uu"][1], 1), n(COA["vv"][0], 1), n(COA["vv"][1], 1), n(COA["uu"][0], 1), n(COA["uu"][1], 1),
-           n(CON[0]["rms_vv"], 2), ratio_ok(EXP["normal_core"]), ratio_ok(EXP["expanding_core"]))))
+           resid_txt, ratio_ok(EXP["normal_core"]), ratio_ok(EXP["expanding_core"]))))
 add(("h2", "5.3 Horizon formation"))
 add(("p", "A scan of %d runs varies the field amplitude ($A=0.05$, 0.1 and 0.2), the wall width ($w=0.05$, 0.1 and 0.2) and the core radius $R_w/R_{dS}$ from 0.4 to 3 (Supplementary Table S1). Each run measures the "
           "exterior mass $m_{\\rm ext}$ on the initial cone beyond the wall, from the Misner–Sharp mass (constant across the exterior to within 2%% in 70 of the 72 runs, at most 9.5%%), and the radius of the first trapped point. "

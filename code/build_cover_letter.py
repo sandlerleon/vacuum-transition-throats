@@ -49,9 +49,10 @@ para("The manuscript makes five contributions. (i) A short proof that the whole 
      "null expansions converge on the dynamical solutions, and which identifies trapped surfaces in %d of %d runs at the base resolution and in %d more after refinement (one remains unresolved). (iv) A separation of persistence from creation: a persistent expanding false-vacuum core coexists with the trapped "
      "region only when the initial data already contain a false-vacuum core larger than its own de Sitter radius, and in none of the %d runs that start with a smaller core does one appear; the simulations "
      "therefore do not show the dynamical creation of a daughter universe. (v) An accounting at the observed dark-energy scale: the required region has a radius of %s Gpc and a "
-     "vacuum-energy deficit of %s solar masses, %s times the matter inside a sphere of that radius today. The conclusions are also tested for a Minkowski and a lower de Sitter exterior."
+     "critical mass of %s solar masses that is dominated by the vacuum-energy difference (today's matter in a sphere of that radius is %s of it). The conclusions are also tested for a Minkowski and a lower de Sitter exterior, "
+     "where the numerical evidence is less complete than for anti-de Sitter."
      % (SC["n_trapped"], SC["n_runs"], resolved, CRE["n_initially_normal_core"], n(TW["R_dS_Gpc"], 1), "%s × 10^23" % n(M1["M_c_Msun"] / 1e23, 1),
-        n(M1["deficit_over_matter_in_RdS_sphere"], 1)))
+        pc(M1["matter_fraction"], 0)))
 para("The main finding is a conditional negative, stated as such. Localized collapse does not produce a daughter region, matter is not transferred to it, and the expanding region that does exist in the model is a "
      "pre-existing, horizon-sized false-vacuum core that the collapse of its surroundings isolates; the mechanism is therefore not supported as a cosmological reset, and even a created daughter would be "
      "cosmological reproduction, not a cycle. The manuscript is explicit about what the numerical work is and is not: the walls it can resolve are far thicker and heavier than the physical wall "

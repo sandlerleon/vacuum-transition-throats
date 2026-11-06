@@ -27,12 +27,13 @@ ABSTRACT = (
     "Rebirth scenarios invoke a wormhole carrying matter from a collapsing region into a new expanding one. We ask whether a density-triggered vacuum transition can form one when the only matter is a canonical "
     "scalar field coupled to dark matter, whose false vacuum has the observed dark-energy density. In this classical model the null energy condition holds, so no ordinary traversable throat can form: no null ray has a "
     "minimum of the areal radius. Non-traversable bridges and quantum or baby-universe continuations are not excluded. For a thin wall the Israel junction conditions give a finite-tension critical exterior mass, "
-    "equal to %s up to corrections of order $\\hat\\sigma^2$, below which every regular configuration collapses; the equality of exterior and interior horizon areas there is a geometric "
-    "coincidence of the limit, not a thermodynamic criterion. A spherically symmetric Einstein–scalar code, second-order convergent and checked against exact solutions, identified trapped surfaces in %d of %d runs "
+    "equal to %s up to corrections of order $\\hat\\sigma^2$, below which every regular configuration collapses; the equality of horizon areas there is a geometric "
+    "coincidence of the limit. A spherical Einstein–scalar code checked against exact solutions identified trapped surfaces in %d of %d runs "
     "at the base resolution and in %d more after refinement; one stayed unresolved. A persistent expanding false-vacuum core appears only when the initial data already contain a core larger than its own de Sitter "
-    "radius; none develops in the %d runs that start smaller, so the simulations show persistence, not creation. At the observed dark-energy scale that core has a radius of %s Gpc and a vacuum-energy deficit of "
-    "%s solar masses, %s times the matter inside such a sphere today. Matter is not transferred, and a cosmological reset is not supported."
-    % ("$(1+q)R_{dS}$", SC["n_trapped"], SC["n_runs"], resolved, CRE["n_initially_normal_core"], n(R_dS, 1), "%s × 10$^{%d}$" % (n(M1["M_c_Msun"] / 10 ** 23, 1), 23), n(M1["deficit_over_matter_in_RdS_sphere"], 1)))
+    "radius; none develops in the %d runs that start smaller, so the simulations show persistence, not creation. At the observed dark-energy scale that core has a radius of %s Gpc and a critical mass of "
+    "%s solar masses, dominated by the vacuum-energy difference: today's matter in such a sphere is %s of it. Matter is not transferred; a reset is not supported. "
+    "The numerical evidence is complete only for anti-de Sitter exteriors."
+    % ("$(1+q)R_{dS}$", SC["n_trapped"], SC["n_runs"], resolved, CRE["n_initially_normal_core"], n(R_dS, 1), "%s × 10$^{%d}$" % (n(M1["M_c_Msun"] / 10 ** 23, 1), 23), pc(M1["matter_fraction"], 0)))
 add(("p0", ABSTRACT))
 add(("h1", "Keywords"))
 add(("p0", "Wormholes; Spacetime throats; Vacuum decay; False-vacuum bubbles; Null energy condition; Gravitational collapse"))
@@ -63,7 +64,7 @@ add(("bullet", "A finite-tension thin-wall criterion (Section 4): a critical ext
                "horizon areas at that limit (Section 6)."))
 add(("bullet", "A numerical Einstein–scalar experiment with a regular centre (Section 5), validated against exact solutions and by the convergence of its constraints, that tests the criterion with thick walls, separates "
                "expanding regions that persist from those that could be created, and compares exteriors of different vacuum depth."))
-add(("bullet", "An accounting of the size, mass and energy budget that the criterion requires at the observed dark-energy scale, with the conclusion that matter cannot supply it (Section 7), and falsification criteria (Section 8)."))
+add(("bullet", "An accounting of the size, mass and energy budget that the criterion requires at the observed dark-energy scale, showing that the critical mass is dominated by the vacuum-energy difference and not by matter (Section 7), and falsification criteria (Section 8)."))
 
 # ------------------------------------------------------------------------------------------------ 2
 add(("h1", "2. Model, inputs and scales"))

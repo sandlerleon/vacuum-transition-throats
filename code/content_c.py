@@ -30,7 +30,7 @@ add(("p", "Equal horizon areas correspond to equal Bekenstein–Hawking and Gibb
 add(("h1", "7. How large must the region be, and where can it come from?"))
 add(("p", "In the benchmark model with $q=1$ the exterior mass must exceed $m_c=%s\\,R_{dS}$ (to the accuracy of the limit), that is a mass $M_c$ = %s $M_\\odot$, for a region of radius $R_{dS}$ = %s Gpc. "
           "This mass is %s times the matter within one Hubble radius today (%s $M_\\odot$) and %s times the matter within a sphere of radius $R_{dS}$ (%s $M_\\odot$), so that today's matter provides only %s of it. "
-          "The remainder is the vacuum-energy deficit, and no collection of matter within that sphere can make up the difference. In the past the matter in such a sphere was larger, and equalled $M_c$ at $a=%s$ (Fig. 6b); "
+          "The present-day matter content of that region is insufficient to reproduce the critical mass through matter alone; the critical gravitational mass is instead dominated by the vacuum-energy difference, which the false vacuum itself supplies, so the criterion does not require matter to be gathered. In the past the matter in such a sphere was larger, and equalled $M_c$ at $a=%s$ (Fig. 6b); "
           "but then the interior was dominated by matter and not by the false-vacuum energy, which is not the vacuum-dominated expanding core studied here, and with dust inside the threshold radius becomes the Hubble radius of the denser interior, a case that "
           "the thin-wall and numerical analyses of this paper did not treat. Table 4 gives the requirement for other depths of the true vacuum; deeper vacua need more." %
           (n(M1["m_c_over_RdS"], 0), sci(M1["M_c_Msun"], 1), n(R_dS, 1), n(M1["M_c_over_matter_in_Hubble_sphere"], 1), sci(TW["M_Hubble_matter_Msun"], 1),
@@ -90,8 +90,9 @@ add(("p", "The question was whether a matter-dilution-triggered vacuum transitio
           "structure of the model forbid it. For this model the answer has three parts. Ordinary traversable throats are forbidden in this classical canonical-scalar and non-negative-density dust model: the null energy condition holds, and no null ray has a minimum of the areal radius. This does not exclude non-traversable bridges, quantum or semiclassical continuations, or baby-universe scenarios that rest on them. "
           "A non-traversable bridge with an expanding region requires an exterior mass above the finite-tension critical value, which is $(1+q)R_{dS}$ in the limit of a probe wall, where the exterior and interior horizon areas coincide; "
           "and in the numerical runs the expanding region is present only where the initial data already contain a false-vacuum core larger than its own de Sitter radius, so that the runs show persistence and not creation. "
-          "At the observed dark-energy scale that core has a radius of %s Gpc and a vacuum-energy deficit of %s $M_\\odot$, %s times the matter within a sphere of that radius today. A localized collapse cannot supply it, "
-          "and the matter of the parent does not pass into the core. The mechanism is therefore best described as the isolation of a horizon-sized false-vacuum patch, not as a cyclic reset, and it is not supported as an "
+          "At the observed dark-energy scale that core has a radius of %s Gpc and a vacuum-energy deficit of %s $M_\\odot$, %s times the matter within a sphere of that radius today. The critical mass is dominated by the vacuum-energy difference and not by matter; a localized collapse cannot supply a region of that size, "
+          "and the matter of the parent does not pass into the core. The threshold itself is established for the thin-wall junction branches with regular initial data; for thick walls the experiments show its pattern but do not measure $m_c$, "
+          "the physical wall is thinner than any numerically resolved wall by thirty orders of magnitude, and for other exterior cosmologies only the thin-wall statement and the incomplete experiments of Section 5.5 apply. The mechanism is therefore best described as the isolation of a horizon-sized false-vacuum patch, not as a cyclic reset, and it is not supported as an "
           "end-of-universe process of the model." % (n(R_dS, 1), sci(M1["M_c_Msun"], 1), n(M1["deficit_over_matter_in_RdS_sphere"], 1))))
 add(("h1", "Declarations"))
 add(("p0", "Funding: this work received no external funding."))
@@ -159,10 +160,10 @@ adds(("table", "Table S3. Collapse runs with other exterior vacua ($A=0.1$).",
         n(r["at_points_last_row"]), r["ended_by"]] for r in SCANQ], [0.5, 0.5, 0.5, 1.0, 0.8, 1.1, 1.1, 1.6], 14))
 adds(("h1", "S7. Convergence of the constraints and of the null expansions"))
 adds(("p", "Fig. S1 shows the RMS residuals of $C_{vv}$ and $C_{uu}$ against the grid step for the run with a core inside its de Sitter radius ($R_w=1$, region $0.05\\le u\\le0.28$, $u+0.4\\le v\\le3$) and for the run with a core outside it "
-           "($R_w=2$, region $0.05\\le u\\le0.15$, $u+0.4\\le v\\le4$), and the maximum difference of $r_u$ and $r_v$ at $u=0.2$ (first run) and $u=0.12$ (second) between successive resolutions; Table S4 gives the numbers."))
+           "($R_w=2$, region $0.05\\le u\\le0.15$, $u+0.4\\le v\\le4$), and the maximum difference of $r_u$ and $r_v$ at $u=0.2$ (first run) and $u=0.12$ (second) between successive resolutions; Table S4 gives the numbers, absolute and relative to the RMS of the largest term of each constraint."))
 adds(("fig", "FigS1_convergence.png", "Fig. S1. (a) RMS residuals of the constraints against the grid step. (b) Maximum difference of the null expansions between successive resolutions.", 6.5))
 CN = VE["constraints"]; CA = VE["constraints_AT"]
 adds(("table", "Table S4. RMS constraint residuals of the dynamical solutions.",
-      ["Run", "$h$", "Points", "RMS $C_{vv}$", "RMS $C_{uu}$"],
-      [["$R_w=1$", n(c["h"], 3), n(c["n"]), sci(c["rms_vv"], 2), sci(c["rms_uu"], 2)] for c in CN] + [["$R_w=2$", n(c["h"], 3), n(c["n"]), sci(c["rms_vv"], 2), sci(c["rms_uu"], 2)] for c in CA],
-      [1.0, 0.8, 0.9, 1.4, 1.4]))
+      ["Run", "$h$", "Points", "RMS $C_{vv}$", "relative", "RMS $C_{uu}$", "relative"],
+      [["$R_w=1$", n(c["h"], 3), n(c["n"]), sci(c["rms_vv"], 2), pc(c["rms_vv"] / c["scale_vv"], 1), sci(c["rms_uu"], 2), pc(c["rms_uu"] / c["scale_uu"], 2)] for c in CN] + [["$R_w=2$", n(c["h"], 3), n(c["n"]), sci(c["rms_vv"], 2), pc(c["rms_vv"] / c["scale_vv"], 1), sci(c["rms_uu"], 2), pc(c["rms_uu"] / c["scale_uu"], 2)] for c in CA],
+      [1.0, 0.7, 0.8, 1.3, 1.0, 1.3, 1.0]))

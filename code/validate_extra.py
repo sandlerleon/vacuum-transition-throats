@@ -17,11 +17,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 
 
 def constraint_rms(A, Vw, w, h, u_lo=0.05, u_hi=0.28, margin=0.4, v_hi=3.0):
-    """RMS of the two constraints C_vv = r_vv - s_v r_v + (r/2) p_v^2 and C_uu = r_uu - s_u r_u + (r/2) p_u^2 over (u, v) in [u_lo, u_hi] x [u + margin, v_hi]
+    """RMS (absolute, units R_dS = 1) of the two constraints C_vv = r_vv - s_v r_v + (r/2) p_v^2 and C_uu = r_uu - s_u r_u + (r/2) p_u^2 over (u, v) in [u_lo, u_hi] x [u + margin, v_hi]
     (away from the centre, the outer boundary and the horizon)."""
     o = D.run(A=A, V_w=Vw, w=w, h=h, snap_every=1, smax=12.0, stop_after_trap=0)
     R, P, S = o["R"], o["P"], o["S"]
-    cvv, cuu = [], []
+    cvv, cuu, svv, suu = [], [], [], []
     kmax = int(round(u_hi / h))
     for k in range(max(1, int(round(u_lo / h))), min(kmax, R.shape[0] - 2)):
         for i in range(int(round((k * h + margin) / h)), int(round(v_hi / h))):
@@ -29,11 +29,14 @@ def constraint_rms(A, Vw, w, h, u_lo=0.05, u_hi=0.28, margin=0.4, v_hi=3.0):
             rv = (r[i + 1] - r[i - 1]) / (2 * h); rvv = (r[i + 1] - 2 * r[i] + r[i - 1]) / h ** 2
             sv = (s[i + 1] - s[i - 1]) / (2 * h); pv = (p[i + 1] - p[i - 1]) / (2 * h)
             cvv.append(rvv - sv * rv + 0.5 * r[i] * pv ** 2)
+            svv.append(max(abs(rvv), abs(sv * rv), abs(0.5 * r[i] * pv ** 2)))
             ru = (R[k + 1][i] - R[k - 1][i]) / (2 * h); ruu = (R[k + 1][i] - 2 * R[k][i] + R[k - 1][i]) / h ** 2
             su = (S[k + 1][i] - S[k - 1][i]) / (2 * h); pu = (P[k + 1][i] - P[k - 1][i]) / (2 * h)
             cuu.append(ruu - su * ru + 0.5 * r[i] * pu ** 2)
-    cvv, cuu = np.array(cvv), np.array(cuu)
-    return dict(h=h, n=int(len(cvv)), rms_vv=float(np.sqrt(np.mean(cvv ** 2))), rms_uu=float(np.sqrt(np.mean(cuu ** 2))), max_vv=float(np.abs(cvv).max()), max_uu=float(np.abs(cuu).max()))
+            suu.append(max(abs(ruu), abs(su * ru), abs(0.5 * r[i] * pu ** 2)))
+    cvv, cuu, svv, suu = np.array(cvv), np.array(cuu), np.array(svv), np.array(suu)
+    return dict(h=h, n=int(len(cvv)), rms_vv=float(np.sqrt(np.mean(cvv ** 2))), rms_uu=float(np.sqrt(np.mean(cuu ** 2))), max_vv=float(np.abs(cvv).max()), max_uu=float(np.abs(cuu).max()),
+                scale_vv=float(np.sqrt(np.mean(svv ** 2))), scale_uu=float(np.sqrt(np.mean(suu ** 2))))
 
 
 def expansions_at(A, Vw, w, h, u0=0.20, v_lo=0.8, v_hi=3.0, dv=0.1):

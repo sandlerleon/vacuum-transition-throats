@@ -4,7 +4,7 @@ Leon Sandler, Independent Researcher — leon.sandler@alumni.swinburne.edu — O
 
 Code, data and manuscript for the paper of the same title, prepared for **Classical and Quantum Gravity** (IOP Publishing; Paper).
 Manuscript: `manuscript/CQG_Wormhole_Formation_Vacuum_Transitions.{docx,pdf}`, supplementary information `manuscript/CQG_Supplementary_Information.{docx,pdf}`, cover letter `manuscript/CQG_Cover_Letter.docx`.
-Archived on Zenodo: paper 10.5281/zenodo.24012315, code 10.5281/zenodo.24012317 (version 1.1.1; all versions: 10.5281/zenodo.23995978 / 10.5281/zenodo.23995982). Earlier versions: 1.1.0 (10.5281/zenodo.24011178 / 10.5281/zenodo.24011179); 1.0.0, first release with the earlier title (10.5281/zenodo.23995979 / 10.5281/zenodo.23995983).
+Archived on Zenodo: paper 10.5281/zenodo.24020303, code 10.5281/zenodo.24020304 (version 1.1.2; all versions: 10.5281/zenodo.23995978 / 10.5281/zenodo.23995982). Earlier versions: 1.1.1 (10.5281/zenodo.24012315 / 10.5281/zenodo.24012317); 1.1.0 (10.5281/zenodo.24011178 / 10.5281/zenodo.24011179); 1.0.0, first release with the earlier title (10.5281/zenodo.23995979 / 10.5281/zenodo.23995983).
 
 ## What the paper does
 
@@ -33,6 +33,7 @@ statements about this model.
 | Constraint residuals, null-expansion convergence, classification and refinement of the unresolved runs, creation test, other vacua | 5.2–5.5, Tables S2, S4 | `validate_extra.py` |
 | Finite-tension critical mass, exterior horizon roots, entropy-area coincidence, mass and size at the observed scale | 4, 6, 7, Tables 2, 4 | `thinwall.py` |
 | Figures 1–6 and S1 | | `make_figures.py` |
+| Normalization scales of the constraint residuals | 5.2, Table S4 | `update_constraint_scale.py` |
 | Fifteen automated checks | | `tests/test_all.py` |
 | Manuscript, supplement, cover letter | | `paper_build.py`, `build_cover_letter.py` |
 | Reference verification (Crossref) | | `crossref_check.py` |
@@ -53,6 +54,10 @@ python paper_build.py && python build_cover_letter.py
 ```
 
 Every number in the manuscript is read from the JSON files these scripts write.
+
+## Version 1.1.2
+
+Manuscript wording and one added validation field: the critical mass is described as dominated by the vacuum-energy difference (matter is 23% of it, and is not needed); constraint residuals are given in absolute and relative form (`update_constraint_scale.py` adds the normalization scales to `validation_extra.json`); the conclusion qualifies the threshold; the abstract states that the numerical evidence is complete only for anti-de Sitter exteriors.
 
 ## Version 1.1.1
 
