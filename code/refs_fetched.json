@@ -1,0 +1,186 @@
+{
+ "10.1007/BF02710419": {
+  "title": "Singular hypersurfaces and thin shells in general relativity",
+  "authors": "W. Israel",
+  "journal": "Il Nuovo Cimento B Series 10",
+  "volume": "44",
+  "page": "1-14",
+  "year": 1966
+ },
+ "10.1103/PhysRevD.35.1747": {
+  "title": "Dynamics of false-vacuum bubbles",
+  "authors": "S. Blau, E. Guendelman, A. Guth",
+  "journal": "Physical Review D",
+  "volume": "35",
+  "page": "1747-1766",
+  "year": 1987
+ },
+ "10.1103/PhysRevD.41.2638": {
+  "title": "Quantum nucleation of false-vacuum bubbles",
+  "authors": "W. Fischler, D. Morgan, J. Polchinski",
+  "journal": "Physical Review D",
+  "volume": "41",
+  "page": "2638-2641",
+  "year": 1990
+ },
+ "10.1103/PhysRevD.21.3305": {
+  "title": "Gravitational effects on and of vacuum decay",
+  "authors": "S. Coleman, F. De Luccia",
+  "journal": "Physical Review D",
+  "volume": "21",
+  "page": "3305-3315",
+  "year": 1980
+ },
+ "10.1119/1.15620": {
+  "title": "Wormholes in spacetime and their use for interstellar travel: A tool for teaching general relativity",
+  "authors": "M. Morris, K. Thorne",
+  "journal": "American Journal of Physics",
+  "volume": "56",
+  "page": "395-412",
+  "year": 1988
+ },
+ "10.1103/PhysRevD.56.4745": {
+  "title": "Geometric structure of the generic static traversable wormhole throat",
+  "authors": "D. Hochberg, M. Visser",
+  "journal": "Physical Review D",
+  "volume": "56",
+  "page": "4745-4755",
+  "year": 1997
+ },
+ "10.1142/S0218271899000286": {
+  "title": "DYNAMIC WORMHOLES",
+  "authors": "S. HAYWARD",
+  "journal": "International Journal of Modern Physics D",
+  "volume": "08",
+  "page": "373-382",
+  "year": 1999
+ },
+ "10.1103/PhysRevD.49.6467": {
+  "title": "General laws of black-hole dynamics",
+  "authors": "S. Hayward",
+  "journal": "Physical Review D",
+  "volume": "49",
+  "page": "6467-6474",
+  "year": 1994
+ },
+ "10.1103/PhysRev.136.B571": {
+  "title": "Relativistic Equations for Adiabatic, Spherically Symmetric Gravitational Collapse",
+  "authors": "C. Misner, D. Sharp",
+  "journal": "Physical Review",
+  "volume": "136",
+  "page": "B571-B576",
+  "year": 1964
+ },
+ "10.1103/PhysRevD.51.5558": {
+  "title": "Choptuik scaling in null coordinates",
+  "authors": "D. Garfinkle",
+  "journal": "Physical Review D",
+  "volume": "51",
+  "page": "5558-5561",
+  "year": 1995
+ },
+ "10.12942/lrr-2007-5": {
+  "title": "Critical Phenomena in Gravitational Collapse",
+  "authors": "C. Gundlach, J. Mart\u00edn-Garc\u00eda",
+  "journal": "Living Reviews in Relativity",
+  "volume": "10",
+  "page": "5",
+  "year": 2007
+ },
+ "10.1007/BF01205930": {
+  "title": "The problem of a self-gravitating scalar field",
+  "authors": "D. Christodoulou",
+  "journal": "Communications in Mathematical Physics",
+  "volume": "105",
+  "page": "337-361",
+  "year": 1986
+ },
+ "10.1103/PhysRevLett.14.57": {
+  "title": "Gravitational Collapse and Space-Time Singularities",
+  "authors": "R. Penrose",
+  "journal": "Physical Review Letters",
+  "volume": "14",
+  "page": "57-59",
+  "year": 1965
+ },
+ "10.1103/PhysRevD.7.2333": {
+  "title": "Black Holes and Entropy",
+  "authors": "J. Bekenstein",
+  "journal": "Physical Review D",
+  "volume": "7",
+  "page": "2333-2346",
+  "year": 1973
+ },
+ "10.1103/PhysRevD.15.2738": {
+  "title": "Cosmological event horizons, thermodynamics, and particle creation",
+  "authors": "G. Gibbons, S. Hawking",
+  "journal": "Physical Review D",
+  "volume": "15",
+  "page": "2738-2751",
+  "year": 1977
+ },
+ "10.1126/science.1070462": {
+  "title": "A Cyclic Model of the Universe",
+  "authors": "P. Steinhardt, N. Turok",
+  "journal": "Science",
+  "volume": "296",
+  "page": "1436-1439",
+  "year": 2002
+ },
+ "10.1088/0264-9381/9/1/016": {
+  "title": "Did the Universe evolve?",
+  "authors": "L. Smolin",
+  "journal": "Classical and Quantum Gravity",
+  "volume": "9",
+  "page": "173-191",
+  "year": 1992
+ },
+ "10.1016/0370-2693(89)91114-3": {
+  "title": "Through a black hole into a new universe?",
+  "authors": "V. Frolov, M. Markov, V. Mukhanov",
+  "journal": "Physics Letters B",
+  "volume": "216",
+  "page": "272-276",
+  "year": 1989
+ },
+ "10.1051/0004-6361/201833910": {
+  "title": "<i>Planck</i>\n                    2018 results",
+  "authors": ". , N. Aghanim, Y. Akrami, M. Ashdown, J. Aumont, C. Baccigalupi",
+  "journal": "Astronomy &amp; Astrophysics",
+  "volume": "641",
+  "page": "A6",
+  "year": 2020
+ },
+ "10.1103/PhysRevLett.104.231301": {
+  "title": "Screening Long-Range Forces through Local Symmetry Restoration",
+  "authors": "K. Hinterbichler, J. Khoury",
+  "journal": "Physical Review Letters",
+  "volume": "104",
+  "page": "231301",
+  "year": 2010
+ },
+ "10.1103/PhysRevD.36.2919": {
+  "title": "Dynamics of bubbles in general relativity",
+  "authors": "V. Berezin, V. Kuzmin, I. Tkachev",
+  "journal": "Physical Review D",
+  "volume": "36",
+  "page": "2919-2944",
+  "year": 1987
+ },
+ "10.1103/RevModPhys.74.825": {
+  "title": "The holographic principle",
+  "authors": "R. Bousso",
+  "journal": "Reviews of Modern Physics",
+  "volume": "74",
+  "page": "825-874",
+  "year": 2002
+ },
+ "10.1103/PhysRevLett.70.9": {
+  "title": "Universality and scaling in gravitational collapse of a massless scalar field",
+  "authors": "M. Choptuik",
+  "journal": "Physical Review Letters",
+  "volume": "70",
+  "page": "9-12",
+  "year": 1993
+ }
+}

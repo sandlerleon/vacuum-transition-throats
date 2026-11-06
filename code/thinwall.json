@@ -1,0 +1,260 @@
+{
+ "critical_mass_check": [
+  {
+   "q": 0.5,
+   "sigma": 0.01,
+   "m_c": 1.4999861107696209,
+   "analytic_leading": 1.5,
+   "window_below": [
+    0.9996075003925,
+    0.9997200002800001
+   ],
+   "window_above": null,
+   "r_h_at_mc": 0.9999944442893289
+  },
+  {
+   "q": 0.5,
+   "sigma": 0.3,
+   "m_c": 1.4875722117582182,
+   "analytic_leading": 1.5,
+   "window_below": [
+    0.99571000429,
+    0.9991475008525
+   ],
+   "window_above": null,
+   "r_h_at_mc": 0.9950139933365053
+  },
+  {
+   "q": 0.5,
+   "sigma": 0.9,
+   "m_c": 1.3933238688303362,
+   "analytic_leading": 1.5,
+   "window_below": [
+    0.9731175268825001,
+    0.9833175166825
+   ],
+   "window_above": null,
+   "r_h_at_mc": 0.9561950337423638
+  },
+  {
+   "q": 1.0,
+   "sigma": 0.01,
+   "m_c": 1.999983320575619,
+   "analytic_leading": 2.0,
+   "window_below": [
+    0.9996225003775,
+    0.9997075002925
+   ],
+   "window_above": null,
+   "r_h_at_mc": 0.9999958301308638
+  },
+  {
+   "q": 1.0,
+   "sigma": 0.3,
+   "m_c": 1.9850516981913338,
+   "analytic_leading": 2.0,
+   "window_below": [
+    0.9971125028875001,
+    0.9996975003025
+   ],
+   "window_above": null,
+   "r_h_at_mc": 0.9962524043512249
+  },
+  {
+   "q": 1.0,
+   "sigma": 0.9,
+   "m_c": 1.8692690633030926,
+   "analytic_leading": 2.0,
+   "window_below": [
+    0.9834125165875001,
+    0.9912975087025
+   ],
+   "window_above": null,
+   "r_h_at_mc": 0.9664841961467584
+  },
+  {
+   "q": 2.0,
+   "sigma": 0.01,
+   "m_c": 2.9999805000285,
+   "analytic_leading": 3.0,
+   "window_below": [
+    0.9996375003625,
+    0.9996925003075
+   ],
+   "window_above": null,
+   "r_h_at_mc": 0.9999972142831346
+  },
+  {
+   "q": 2.0,
+   "sigma": 0.3,
+   "m_c": 2.982527879199554,
+   "analytic_leading": 3.0,
+   "window_below": [
+    0.9982450017550001,
+    0.99997000003
+   ],
+   "window_above": null,
+   "r_h_at_mc": 0.997498624173575
+  },
+  {
+   "q": 2.0,
+   "sigma": 0.9,
+   "m_c": 2.844824346401917,
+   "analytic_leading": 3.0,
+   "window_below": [
+    0.9915575084425,
+    0.9968825031175
+   ],
+   "window_above": null,
+   "r_h_at_mc": 0.9773974557889735
+  }
+ ],
+ "R_dS_Gpc": 5.3383939185651865,
+ "R_dS_m": 1.647256243568645e+26,
+ "sigma_model_hat": 2.7091120705488397e-30,
+ "wall_thickness_mm": 0.239,
+ "thickness_over_RdS": 1.4508975208509527e-30,
+ "gravity_parameter_model": 5.504466158095067e-60,
+ "mass_table": [
+  {
+   "q": 0.25,
+   "m_c_over_RdS": 1.25,
+   "M_c_kg": 1.3863626893586935e+53,
+   "M_c_Msun": 6.972007067537823e+22,
+   "M_c_over_matter_in_Hubble_sphere": 4.842521210242902,
+   "deficit_over_matter_in_RdS_sphere": 2.7688906752411575,
+   "matter_fraction": 0.3611554652344317,
+   "r_h_over_RdS_at_mc": 1.0000000000000002,
+   "entropy_ratio_dS_over_BH_at_mc": 0.9999999999999996
+  },
+  {
+   "q": 0.5,
+   "m_c_over_RdS": 1.5,
+   "M_c_kg": 1.663635227230432e+53,
+   "M_c_Msun": 8.366408481045386e+22,
+   "M_c_over_matter_in_Hubble_sphere": 5.811025452291482,
+   "deficit_over_matter_in_RdS_sphere": 3.322668810289389,
+   "matter_fraction": 0.3009628876953597,
+   "r_h_over_RdS_at_mc": 1.0,
+   "entropy_ratio_dS_over_BH_at_mc": 1.0
+  },
+  {
+   "q": 1.0,
+   "m_c_over_RdS": 2.0,
+   "M_c_kg": 2.2181803029739093e+53,
+   "M_c_Msun": 1.1155211308060515e+23,
+   "M_c_over_matter_in_Hubble_sphere": 7.748033936388643,
+   "deficit_over_matter_in_RdS_sphere": 4.430225080385852,
+   "matter_fraction": 0.22572216577151982,
+   "r_h_over_RdS_at_mc": 1.0000000000000002,
+   "entropy_ratio_dS_over_BH_at_mc": 0.9999999999999996
+  },
+  {
+   "q": 2.0,
+   "m_c_over_RdS": 3.0,
+   "M_c_kg": 3.327270454460864e+53,
+   "M_c_Msun": 1.6732816962090773e+23,
+   "M_c_over_matter_in_Hubble_sphere": 11.622050904582965,
+   "deficit_over_matter_in_RdS_sphere": 6.645337620578778,
+   "matter_fraction": 0.15048144384767986,
+   "r_h_over_RdS_at_mc": 1.0000000000000004,
+   "entropy_ratio_dS_over_BH_at_mc": 0.9999999999999991
+  },
+  {
+   "q": 4.0,
+   "m_c_over_RdS": 5.0,
+   "M_c_kg": 5.545450757434774e+53,
+   "M_c_Msun": 2.788802827015129e+23,
+   "M_c_over_matter_in_Hubble_sphere": 19.370084840971607,
+   "deficit_over_matter_in_RdS_sphere": 11.07556270096463,
+   "matter_fraction": 0.09028886630860793,
+   "r_h_over_RdS_at_mc": 1.0000000000000002,
+   "entropy_ratio_dS_over_BH_at_mc": 0.9999999999999996
+  }
+ ],
+ "M_Hubble_matter_Msun": 1.4397473474748302e+22,
+ "M_matter_in_RdS_sphere_Msun": 2.5179784560943693e+22,
+ "S_dS": 3.2632655911878025e+122,
+ "Planck_length_m": 1.61625502392855e-35,
+ "H_Lambda_km_s_Mpc": 56.157799999999995,
+ "matter_over_deficit_vs_a": [
+  {
+   "a": 0.4,
+   "ratio": 3.526908840179997
+  },
+  {
+   "a": 0.6000000000000001,
+   "ratio": 1.0450100267199989
+  },
+  {
+   "a": 0.8,
+   "ratio": 0.4408636050224996
+  },
+  {
+   "a": 1.0,
+   "ratio": 0.22572216577151982
+  },
+  {
+   "a": 1.2000000000000002,
+   "ratio": 0.13062625333999986
+  },
+  {
+   "a": 1.4,
+   "ratio": 0.08226026449399412
+  },
+  {
+   "a": 1.6,
+   "ratio": 0.05510795062781245
+  },
+  {
+   "a": 1.8000000000000003,
+   "ratio": 0.03870407506370366
+  },
+  {
+   "a": 2.0,
+   "ratio": 0.028215270721439978
+  },
+  {
+   "a": 2.2,
+   "ratio": 0.021198550504462788
+  },
+  {
+   "a": 2.4,
+   "ratio": 0.01632828166749999
+  },
+  {
+   "a": 2.6,
+   "ratio": 0.012842635740300397
+  },
+  {
+   "a": 2.8000000000000003,
+   "ratio": 0.010282533061749262
+  },
+  {
+   "a": 3.0,
+   "ratio": 0.008360080213759993
+  },
+  {
+   "a": 3.2,
+   "ratio": 0.006888493828476556
+  },
+  {
+   "a": 3.4,
+   "ratio": 0.005742982031638506
+  },
+  {
+   "a": 3.6,
+   "ratio": 0.004838009382962958
+  },
+  {
+   "a": 3.8000000000000003,
+   "ratio": 0.0041136128767225505
+  },
+  {
+   "a": 4.0,
+   "ratio": 0.0035269088401799972
+  }
+ ],
+ "a_matter_equals_deficit": 0.6088702243252081,
+ "matter_fraction_of_Mc_today": 0.22572216577151982
+}
