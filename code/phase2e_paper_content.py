@@ -21,6 +21,9 @@ MUF = L("phase2f_muscan_up_rc0.2_valid.json")
 POT = L("phase2f_potential.json")
 AN = L("phase2f_analysis.json")
 FIG3 = "FigF1_phase2f.png"
+CAP = L("phase2g_cap_spectrum.json")
+SHG = L("phase2g_shell_data.json")
+NEC0 = L("phase2g_comoving_nec.json")
 FIG1 = "FigD1_phase2d.png"
 FIG2 = "FigE1_phase2e.png"
 GITHUB = "https://github.com/sandlerleon/vacuum-transition-throats"
@@ -211,10 +214,19 @@ add(("fig", FIG3, "Figure 3. Attempts to stabilize. (a) Growth per cycle versus 
 add(("h2", "5.4 The shell matter"))
 add(("p", "An isotropic gas of non-interacting, slowly moving Nambu–Goto strings confined to the two-dimensional shell has energy density $\\sigma=\\mu_s n$ ($n$ the length per area) and tension $\\mu_s$ along each string, so $S^{ij}=-\\mu_sn\\langle\\hat t^i\\hat t^j\\rangle=-(\\sigma/2)\\delta^{ij}$ and $p=-\\sigma/2$, the equation of state used for the periodic shells. "
           "Without exchange, string length would be conserved and $(\\sigma R)'=0$. Equation (4) requires otherwise: a shell that moves through the interior fluid must absorb and re-emit bulk energy. Numerically the gross energy exchanged with the bulk per cycle is %.2f, %.0f%% of the shell's mean energy (%.2f–%.2f) and %.0f%% of the energy of the cap; the net over a period is zero. "
-          "A string gas of fixed tension can supply this only if strings are created and destroyed by absorbing dust and scalar quanta, and no such interaction has been specified. The equation of state is motivated, but the shell is not a complete matter model: the energy bookkeeping is satisfied only through an unmodelled interaction." %
+          "A string gas of fixed tension can supply this only if strings are created and destroyed by absorbing dust and scalar quanta, and no such interaction has been specified. The equation of state is motivated, but the shell is not a complete matter model: the energy bookkeeping is satisfied only through an unmodelled interaction. For a comoving shell with the field confined to the cap the exchange vanishes (Section 5.5)." %
           (JG["exchanged_energy_per_cycle_abs"], 100 * JG["exchange_over_shell_energy"], JG["shell_energy_range"][0], JG["shell_energy_range"][1], 100 * JG["exchange_over_cap_energy"])))
 
 # ------------------------------------------------------------------ 6
+add(("h2", "5.5 Boundary conditions on the finite cap"))
+add(("p", "Section 5.2 used the radial harmonics of the full three-sphere, whereas the bridge contains a cap bounded by the shell, and the scalar field must obey some condition there. For the homogeneous interior $\\partial_n\\phi=\\sinh\\beta\\,\\dot\\phi$, so a no-flux condition holds only for a comoving shell ($\\beta=0$); "
+          "the moving shells of Table 2 need an absorbing condition for which no field theory is given. For a comoving shell and a field confined to the cap, zero scalar flux and zero normal dust velocity reduce to $Q_\\nu'(\\chi_0)=0$ for the modes $Q_\\nu=\\sin(\\nu\\chi)/\\sin\\chi$, that is $\\tan(\\nu\\chi_0)=\\nu\\tan\\chi_0$ ($\\nu=1$ is the homogeneous mode). "
+          "Comoving shells with $\\sigma>0$ and $\\sigma+p\\ge0$ over the cycle exist for many exteriors (%d of 9900 combinations), but for the anti-de Sitter exterior that matches the potential, $V(\\pm v)=-V_f$, only for $\\chi_0\\lesssim0.6\\pi$, with $\\sigma\\approx%.1f$–%.1f and $p/\\sigma$ varying between %.2f and %.2f. "
+          "On such caps the lowest mode grows by %.1f–%.1f per cycle (at $\\chi_0=0.6\\pi$ and $0.55\\pi$) and the worst case is unchanged at %s. The growth $G(\\nu)$ exceeds one for every $\\nu>1$, tends to one only at $\\nu=1$, and rises monotonically for $\\nu>2$; a boundary condition only quantizes $\\nu$, so with infinitely many modes at $\\nu\\gtrsim3$ (where $G>14$) none can stabilize the cap. "
+          "A shell with scalar-dependent tension $\\sigma(\\phi)$ would give $p=-\\sigma$ and a Robin condition, but continuity of $\\phi$ across the shell conflicts with a static exterior vacuum: the field would have to equal $v$ at the shell while the interior field varies between %.2f$v$ and %.2f$v$, and the tension of a thin wall between them, %.2f–%.2f, is far below the $\\sigma\\approx2.3$ the shell requires. We did not pursue it." %
+          (NEC0["n_nec_full"], min(r["sigma_range"][0] for r in SHG["shells"]), max(r["sigma_range"][1] for r in SHG["shells"]), min(r["w_range"][0] for r in SHG["shells"]), max(r["w_range"][1] for r in SHG["shells"]),
+           [r for r in CAP if abs(r["chi0_over_pi"] - 0.6) < 1e-9][0]["growth"][0], [r for r in CAP if abs(r["chi0_over_pi"] - 0.55) < 1e-9][0]["growth"][0], "7.7×10⁴",
+           SHG["phi_range_over_v"][0], SHG["phi_range_over_v"][1], min(SHG["wall_tension"]), max(SHG["wall_tension"]))))
 add(("h1", "6. Discussion"))
 add(("p", "What is demonstrated, numerically and with the checks above, is that the closed cold cycle of Section 2 admits a consistent two-ended embedding with a non-traversable throat, with a moving shell that has positive tension and satisfies the null energy condition, and that the cyclic region and the parent universe are causally disconnected. "
           "What is not demonstrated is more than what is. The homogeneous cycle is linearly unstable to inhomogeneous perturbations in this model, by factors of %s to %s per cycle; the shell's matter content requires an unmodelled energy exchange comparable to its own energy; the throat is tiny and its curvature enormous; and the bridge is primordial, not formed. "
@@ -226,7 +238,7 @@ add(("table", "Table 5. Status of the claims.",
       ["shell with $\\sigma>0$, null energy condition, periodic, 60-cycle survival at $\\le1\\%$", "demonstrated for the conservative shell"],
       ["non-traversability, causal disconnection from the parent universe", "demonstrated (exact)"],
       ["independence of the white-hole region", "future development of $\\Sigma_0$ excludes it; the throat is pre-existing"],
-      ["stability to inhomogeneous perturbations", "fails (linear, $n\\ge3$)"],
+      ["stability to inhomogeneous perturbations", "fails (linear, $n\\ge3$); not removed by weaker coupling, other hilltops, pressure or the boundary conditions of the finite cap"],
       ["shell matter from an action", "equation of state motivated; energy exchange unexplained"],
       ["dynamical formation of the bridge; traversability; matter transfer", "not demonstrated (last two excluded here)"]],
      [4.4, 2.6]))

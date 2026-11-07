@@ -385,6 +385,32 @@ def phase2f_stabilization_attempts_fail():
     assert A["shell_split"]["dust_fraction"] > 0.9 and abs(A["shell_split"]["net_dust"]) < 1e-10
 
 
+@check
+def phase2g_cap_spectrum_and_boundary_conditions():
+    """Phase 2G-A: no-flux boundary conditions on the finite cap (Q' = 0 at the shell, comoving shell): for the AdS exterior that matches the model, NEC comoving shells exist only for chi0 <~ 0.6 pi;
+    the cap spectrum nu_j(chi0) is quantised by tan(nu chi0) = nu tan(chi0); the growth G(nu) is > 1 for every nu > 1 (-> 1 only at nu = 1) and increases for nu > 2, so no boundary condition can stabilise the cap;
+    the lowest cap mode keeps G >= 1.9 and the worst case is unchanged."""
+    import numpy as np
+    N = json.load(open(os.path.join(CODE, "phase2g_comoving_nec.json")))
+    assert N["n_nec_full"] > 1000
+    S = json.load(open(os.path.join(CODE, "phase2g_shell_data.json")))
+    assert max(r["chi0_over_pi"] for r in S["shells"]) <= 0.6 + 1e-9 and all(r["w_range"][1] > r["w_range"][0] + 0.3 for r in S["shells"])
+    assert S["phi_range_over_v"][0] > 0.2 and S["phi_range_over_v"][1] < 0.7 and min(S["wall_tension"]) < 0.4 and min(r["sigma_range"][0] for r in S["shells"]) > 2.0
+    C = json.load(open(os.path.join(CODE, "phase2g_cap_spectrum.json")))
+    for rec in C:
+        chi0 = rec["chi0_over_pi"] * np.pi
+        for nu in rec["nu"]:
+            assert abs(np.tan(nu * chi0) - nu * np.tan(chi0)) < 1e-6 * max(1.0, abs(nu * np.tan(chi0))) or abs(np.cos(nu * chi0)) < 1e-3
+        g = [x for x in rec["growth"] if x is not None]
+        assert min(g) > 1.85 and max(g) > 7e4
+    low = {round(r["chi0_over_pi"], 2): r["growth"][0] for r in C}
+    assert abs(low[0.55] - 10.43) < 0.05 and abs(low[0.6] - 7.78) < 0.05
+    L = json.load(open(os.path.join(CODE, "phase2g_nu_low.json"))); H = json.load(open(os.path.join(CODE, "phase2g_nu_curve.json")))
+    assert all(r["max_abs"] > 1.0 for r in L) and L[0]["max_abs"] < 1.1
+    hv = [r["growth"] for r in H if "growth" in r and r["nu"] >= 2.01]
+    assert all(b > a for a, b in zip(hv, hv[1:])) and hv[0] > 1.9 and hv[-1] > 80
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()
