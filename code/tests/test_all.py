@@ -319,6 +319,49 @@ def phase2d_independent_cycle_and_bridge_geometry():
     assert K["friedmann"] < 1e-12 and K["gamma_in"] < 1e-12 and K["israel_p"] < 1e-12 and K["mass"] < 1e-10 and K["flux"] < 1e-5
 
 
+@check
+def phase2e_global_junction_and_inhomogeneous_instability():
+    """Phase 2E: (a) global junction consistency from raw Christoffel-symbol extrinsic curvatures (residuals ~1e-15, all orientation flags true, sigma and p recovered, p = w sigma);
+    (b) the shell exchanges energy with the bulk comparable to its own energy per cycle; (c) linear inhomogeneous perturbations (n >= 3) of the cycle grow by >= 14 per cycle (up to ~1.5e5), the derivation
+    passes constraint-propagation / trace-equation checks, the growth matches the fifth-force estimate at large n and disappears at large n when the coupling is removed from the perturbations;
+    (d) the homogeneous window survives at the 2/5 and 3/8 resonances but its basin shrinks near the end of the window."""
+    J = json.load(open(os.path.join(CODE, "phase2e_junction_global.json")))
+    assert max(J["residuals"].values()) < 1e-12 and all(J["flags"].values())
+    assert 0.5 < J["exchange_over_shell_energy"] < 2.0 and J["exchange_over_cap_energy"] < 0.05
+    F = json.load(open(os.path.join(CODE, "phase2e_perturb_floquet.json")))
+    assert all(v["constraint_propagation"] < 1e-6 and v["trace_equation"] < 1e-4 for v in F["checks"].values())
+    assert all(r["max_abs"] > 14.0 and abs(r["det"] - 1.0) < 1e-4 for r in F["modes"]) and F["modes"][-1]["max_abs"] > 1e5
+    Mx = json.load(open(os.path.join(CODE, "phase2e_perturb_mechanism.json")))
+    c60 = [r for r in Mx["compare"] if r["n"] == 60][0]["ln_multiplier"]
+    assert 0.9 < c60 / Mx["estimate_log_growth"] < 1.0
+    assert [max(r["multipliers_abs"]) for r in Mx["control"] if r["n"] == 60][0] < 2.0
+    W = json.load(open(os.path.join(CODE, "phase2e_window.json")))
+    by = {r["name"]: r for r in W["points"]}
+    for name in ("2/5", "3/8", "centre", "near_flip"):
+        assert all(min(s["bounces"]) == 150 for s in by[name]["survival"])
+    assert min(by["near_end"]["survival"][-1]["bounces"]) == 0
+
+
+@check
+def phase2e_manuscript_builds_from_results():
+    """The Phase 2E manuscript is built from the JSON results: title as agreed, abstract <= 250 words, all references cited, and the key numbers in the text match the result files."""
+    import phase2e_paper_content as PC
+    assert PC.TITLE == "A Nontraversable Einstein–Rosen Bridge to a Nonsingular Cyclic Cosmological Region: Junction Dynamics, Stability, and Causal Structure"
+    abstract = [b[1] for b in PC.B if b[0] == "p0"][0]
+    assert len(abstract.split()) <= 250 and "14" in abstract
+    txt = " ".join(b[1] for b in PC.B if len(b) > 1 and isinstance(b[1], str))
+    assert "0.222948413319" in txt or "0.222948413319" in " ".join(str(c) for b in PC.B if b[0] == "table" for row in b[3] for c in row)
+    assert "%.1f" % PC.PM["estimate_log_growth"] in txt
+    import docx_engine as DE
+    cit = DE.Citations(PC.LIB)
+    for b in PC.B:
+        for x in b[1:]:
+            if isinstance(x, str):
+                cit.scan(x)
+    cit.entries()
+    assert os.path.exists(os.path.join(CODE, "..", "manuscript", "Nontraversable_ER_Bridge_Cyclic_Region.docx"))
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()
