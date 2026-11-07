@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Builds manuscript/CQG_Wormhole_Formation_Vacuum_Transitions.docx and the Supplementary Information from the JSON files of the numerical experiments, so that every number in the
+"""Builds manuscript/ASTR_Wormhole_Formation_Vacuum_Transitions.docx and the Supplementary Information from the JSON files of the numerical experiments, so that every number in the
 text is the code's.
 
     python paper_build.py
@@ -76,8 +76,8 @@ if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     cit = E.Citations(LIB)
     scan_all(cit)
-    build(os.path.join(OUT, "CQG_Wormhole_Formation_Vacuum_Transitions.docx"), B, cit, journal=True)
-    build(os.path.join(OUT, "CQG_Supplementary_Information.docx"), BS, cit)
+    build(os.path.join(OUT, "ASTR_Wormhole_Formation_Vacuum_Transitions.docx"), B, cit, journal=True)
+    build(os.path.join(OUT, "ASTR_Supplementary_Information.docx"), BS, cit)
     skip = ("Funding", "Competing", "Author contributions", "Data and", "Use of generative")
     words = sum(len(b[1].split()) for b in B if b[0] in ("p", "p0", "num", "bullet") and not b[1].startswith(skip))
     abstract = [b[1] for b in B if b[0] == "p0"][0]

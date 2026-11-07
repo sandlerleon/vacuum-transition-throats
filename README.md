@@ -1,10 +1,10 @@
 # Wormhole Formation in Matter-Coupled Vacuum Transitions: Gravitational Collapse, Horizon Constraints, and the Limits of Cosmological Rebirth
 
-Leon Sandler, Independent Researcher — leon.sandler@alumni.swinburne.edu — ORCID 0009-0007-4584-808X
+Leon Sandler, Independent Researcher — sandler.leon@gmail.com — ORCID 0009-0007-4584-808X
 
-Code, data and manuscript for the paper of the same title, prepared for **Classical and Quantum Gravity** (IOP Publishing; Paper).
-Manuscript: `manuscript/CQG_Wormhole_Formation_Vacuum_Transitions.{docx,pdf}`, supplementary information `manuscript/CQG_Supplementary_Information.{docx,pdf}`, cover letter `manuscript/CQG_Cover_Letter.docx`.
-Archived on Zenodo: paper 10.5281/zenodo.24020378, code 10.5281/zenodo.24020381 (version 1.2.0; all versions: 10.5281/zenodo.23995978 / 10.5281/zenodo.23995982). Earlier versions: 1.1.2 (10.5281/zenodo.24020303 / 10.5281/zenodo.24020304); 1.1.1 (10.5281/zenodo.24012315 / 10.5281/zenodo.24012317); 1.1.0 (10.5281/zenodo.24011178 / 10.5281/zenodo.24011179); 1.0.0, first release with the earlier title (10.5281/zenodo.23995979 / 10.5281/zenodo.23995983).
+Code, data and manuscript for the paper of the same title, prepared for **Astrophysics and Space Science** (Springer Nature; original research article).
+Manuscript: `manuscript/ASTR_Wormhole_Formation_Vacuum_Transitions.{docx,pdf}`, supplementary information `manuscript/ASTR_Supplementary_Information.{docx,pdf}`, cover letter `manuscript/ASTR_Cover_Letter.docx`.
+Archived on Zenodo: paper 10.5281/zenodo.24045223, code 10.5281/zenodo.24024915 (version 2.0.0, retargeted to Astrophysics and Space Science; all versions: 10.5281/zenodo.23995978 / 10.5281/zenodo.23995982). Earlier versions: 1.2.0 (10.5281/zenodo.24020378 / 10.5281/zenodo.24020381); 1.1.2 (10.5281/zenodo.24020303 / 10.5281/zenodo.24020304); 1.1.1 (10.5281/zenodo.24012315 / 10.5281/zenodo.24012317); 1.1.0 (10.5281/zenodo.24011178 / 10.5281/zenodo.24011179); 1.0.0, first release with the earlier title (10.5281/zenodo.23995979 / 10.5281/zenodo.23995983).
 
 ## What the paper does
 
@@ -78,6 +78,6 @@ the omission of dark matter from the numerical experiments is stated.
 
 Please cite the manuscript and the code by their Zenodo DOIs above. Licence: MIT (code), CC-BY 4.0 (manuscript).
 
-## Follow-up research notes (not part of the CQG manuscript)
+## Follow-up research notes (not part of the submitted manuscript)
 
 `docs/PRIMORDIAL_BRIDGE_PLAN.md` (work plan), `docs/PREEXISTING_BRIDGE_CYCLE_REUSE.md` (what the earlier cyclic-universe work provides), and `docs/PHASE1_CLOSED_CYCLE_RESULTS.md` (Phase 1 and 1B: closed-universe cold cycles with no assumed bounce, exact periodic orbits, Floquet instability, and self-consistent dissipation; 18 automated checks; code `code/closed_*.py`). Summary: exact classical cold cycles exist as tuned, linearly unstable periodic orbits; with dissipation into radiation the entropy parameter grows every bounce, so no periodic orbit exists, and no stable cycle was found in the sampled models. These notes are exploratory and were added after release v1.2.0.

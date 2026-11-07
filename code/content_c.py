@@ -15,7 +15,7 @@ add(("p", "The plan to carry all of a universe's matter through a throat to a ne
           "surface is not a conserved mass unless a time-flow vector and a hypersurface are specified. The unambiguous quantity in spherical symmetry is the Misner–Sharp mass of Eq. (3), which is conserved in "
           "vacuum and changes only by the flux of matter, and the exterior mass parameter $m_{\\rm ext}=2GM$ that it defines. In the small-tension limit the critical mass $m_c\\to(1+q)R_{dS}$ has a simple meaning: it is "
           "$\\Delta R_{dS}^3/3$, the vacuum-energy difference $\\Delta=(1+q)V_f$ integrated over a de Sitter volume of radius $R_{dS}$, $M_c=(4\\pi/3)\\Delta R_{dS}^3$. A false-vacuum region of radius "
-          "$R_w$ has an exterior mass of at least $\\Delta R_w^3/3$ because of its vacuum energy alone, so that $m>m_c$ is automatic for $R_w>R_{dS}$ and no matter is needed to supply it. In the configurations analysed the expanding core is vacuum "
+          "$R_w$ has an exterior mass of at least $\\Delta R_w^3/3$ because of its vacuum energy alone, so that $m>m_c$ is automatic for $R_w>R_{dS}$ and no matter is needed to supply it. In the configurations analyzed the expanding core is vacuum "
           "energy and nothing else: none of the parent's matter enters it, and none has to. Matter is transferred in no sense, and the exterior black hole is what is left of the parent's vacuum-energy deficit."))
 add(("p", "The horizon of the exterior at the critical mass has a property that deserves a precise statement. The exterior has $f(r)=1-m/r+q\\,r^2/R_{dS}^2$ (for $\\rho_{out}=-q\\rho_{in}$ the anti-de Sitter radius satisfies $L^2=R_{dS}^2/q$), and "
           "its horizons obey $r-m+q\\,r^3/R_{dS}^2=0$. At $m=(1+q)R_{dS}$ one root is exactly"))
@@ -28,7 +28,7 @@ add(("p", "Equal horizon areas correspond to equal Bekenstein–Hawking and Gibb
           "and the entropy of the matter, none of which is attempted here, and the entropy bound [@Bousso2002] is cited only as context. The coincidence suggests an entropic reading of the threshold; it does not show that "
           "thermodynamics independently requires it. The entropy of the observed dark-energy horizon is $S_{dS}$ = %s in units of $k_B$." % sci(TW["S_dS"], 1)))
 add(("h1", "7. How large must the region be, and where can it come from?"))
-add(("p", "In the benchmark model with $q=1$ the exterior mass must exceed $m_c=%s\\,R_{dS}$ (to the accuracy of the limit), that is an exterior mass parameter $M_c$ = %s $M_\\odot$ (the quasi-local mass at the wall is half of it for $q=1$, Section 4), for a region of radius $R_{dS}$ = %s Gpc. "
+add(("p", "In the benchmark model with $q=1$ the exterior mass must exceed $m_c=%s\\,R_{dS}$ (to the accuracy of the limit), that is an exterior mass parameter $M_c$ = %s $M_\\odot$ (the quasilocal mass at the wall is half of it for $q=1$, Section 4), for a region of radius $R_{dS}$ = %s Gpc. "
           "This mass is %s times the matter within one Hubble radius today (%s $M_\\odot$) and %s times the matter within a sphere of radius $R_{dS}$ (%s $M_\\odot$), so that today's matter provides only %s of it. "
           "The present-day matter content of that region is insufficient to reproduce the critical mass through matter alone; the critical gravitational mass is instead dominated by the vacuum-energy difference, which the false vacuum itself supplies, so the criterion does not require matter to be gathered. In the past the matter in such a sphere was larger, and equalled $M_c$ at $a=%s$ (Fig. 8b); "
           "but then the interior was dominated by matter and not by the false-vacuum energy, which is not the vacuum-dominated expanding core studied here, and with dust inside the threshold radius becomes the Hubble radius of the denser interior, a case that "
@@ -59,7 +59,7 @@ add(("bullet", "$R_w\\gtrsim R_{dS}$ (which implies $m>m_c$): the initial data a
                "it is not created by the collapse in any run, and it does not transfer matter."))
 add(("p", "Each statement of the paper can be falsified, and the falsification criteria are:"))
 add(("num", "A violation of the null energy condition by the matter that the model contains. This would remove Proposition 1 and reopen outcome B. For the canonical scalar and dust of the model it is excluded; for "
-            "a model with a non-canonical kinetic term or a ghost it must be checked afresh."))
+            "a model with a noncanonical kinetic term or a ghost it must be checked afresh."))
 add(("num", "A numerical solution, with a thick or thin wall, in which a trapped region and an expanding core coexist at $m_{\\rm ext}<m_c$ with regular initial data. The thin-wall result says that none exists; "
             "a counterexample would show that the junction analysis misses a configuration."))
 add(("num", "A run in which an anti-trapped region appears at a later time from initial data that have none. None of the %d runs with a normal initial core does so; a single instance would turn persistence into creation." % CRE["n_initially_normal_core"]))
@@ -70,7 +70,7 @@ add(("num", "A regular, global evolution through the horizon that shows the expa
             "cannot be undone by the dynamics in the numerical runs, but a global argument has not been given."))
 
 add(("h1", "9. Discussion"))
-add(("p", "The result is a conditional negative, and the paper has tried to state exactly what is and is not shown. Shown: the null energy condition removes traversable throats from this model; on the thin-wall branch analysed, below a finite-tension critical mass "
+add(("p", "The result is a conditional negative, and the paper has tried to state exactly what is and is not shown. Shown: the null energy condition removes traversable throats from this model; on the thin-wall branch analyzed, below a finite-tension critical mass "
           "every regular configuration collapses; at the limit of vanishing tension the critical mass is $(1+q)R_{dS}$, at which the horizon areas coincide; trapped surfaces were identified in %d of the %d numerical runs at the base resolution and in %d more after refinement, and the constraints and "
           "null expansions converge; and a persistent expanding false-vacuum core coexists with the trapped region when the core is larger than its own de Sitter radius. Not shown: that collapse creates a daughter universe. The expanding core is in the initial "
           "data of every run in which it is found, and none of the %d runs with a smaller core develops one; the simulations show persistence beside a collapse, not creation by it." % (SC["n_trapped"], SC["n_runs"], len(resolved), CRE["n_initially_normal_core"])))
@@ -87,20 +87,20 @@ add(("p", "The work also leaves things undone. The numerical solution is spheric
 
 add(("h2", "9.1 Primordial bridges and observationally hidden continuations"))
 add(("p", "The results leave a different hypothesis untouched. The expanding cores that persist in the runs are in the initial data, so the experiments say nothing about their origin. The bridge, if there is one, might be primordial, formed in an earlier epoch or part of "
-          "the global spacetime, and a late-time vacuum transition might then act on an existing bridge instead of creating one. Stated so that it can fail, the hypothesis is that a pre-existing, non-traversable bridge connects a late-time "
+          "the global spacetime, and a late-time vacuum transition might then act on an existing bridge instead of creating one. Stated so that it can fail, the hypothesis is that a preexisting, nontraversable bridge connects a late-time "
           "vacuum-transition region to an expanding region, with the connection hidden from observers in the parent universe. It does not require matter that violates the null energy condition, and it does not require a throat to form spontaneously at the end "
           "of the cosmic evolution. It is not tested here."))
-add(("p", "Three reasons why such a bridge could be unobservable should be kept apart. It may lie behind an event horizon: a non-traversable Einstein–Rosen-type bridge can be part of the global geometry without letting signals reach distant observers. It may lie beyond "
+add(("p", "Three reasons why such a bridge could be unobservable should be kept apart. It may lie behind an event horizon: a nontraversable Einstein–Rosen-type bridge can be part of the global geometry without letting signals reach distant observers. It may lie beyond "
           "our cosmological horizon, where no signal will ever reach us. Or its exterior may mimic an ordinary black hole while its interior topology stays hidden. None of these makes the bridge usable: a bridge behind a horizon is not a passage, and an object beyond our horizon is not "
           "an observable mechanism without additional causal assumptions."))
-add(("p", "A pre-existing bridge is also not sufficient by itself. A geometric connection between spatial slices is not a causal path, and matter can be transferred only if some future-directed causal curve joins the parent to the expanding region. In the numerical solutions of Section 5 "
+add(("p", "A preexisting bridge is also not sufficient by itself. A geometric connection between spatial slices is not a causal path, and matter can be transferred only if some future-directed causal curve joins the parent to the expanding region. In the numerical solutions of Section 5 "
           "none does (Section 5.4). That is a property of those solutions and does not settle the primordial case, for which the causal structure of the whole spacetime has to be computed, for example from radial null geodesics. For a traversable throat the energy-condition obstruction of "
           "Section 3 applies however the throat arose."))
 add(("p", "The natural test is a comparison of three kinds of initial data: (A) regular, localized data, as in this paper; (B) data that already contain an Einstein–Rosen-type bridge, followed by the vacuum transition, to ask whether the bridge stays regular, pinches off or "
           "develops trapped surfaces; and (C) a bridge with an explicitly defined quantum or modified-gravity correction, to ask whether anything can cross it and whether the geometry is stable. Table 5 sets out the levels of success and what this paper does and does not provide at each. "
-          "The decisive question is whether a pre-existing non-traversable bridge can support an expanding region without matter traversing it; if it can, it could support cosmological reproduction even though it cannot recycle matter. A prediction worth testing must be one that can fail, "
+          "The decisive question is whether a preexisting nontraversable bridge can support an expanding region without matter traversing it; if it can, it could support cosmological reproduction even though it cannot recycle matter. A prediction worth testing must be one that can fail, "
           "such as a stability boundary, a causal-accessibility criterion or a quantitative distinction from ordinary black-hole collapse; being undetectable is not one."))
-add(("table", "Table 5. Levels of success for a pre-existing bridge and the status of each in this paper.",
+add(("table", "Table 5. Levels of success for a preexisting bridge and the status of each in this paper.",
      ["Level", "Achievement", "Status here"],
      [["1", "A mathematically consistent hidden bridge exists", "Thin-wall solution (Section 4, with its literature); not constructed numerically"],
       ["2", "The bridge survives a density-triggered vacuum transition", "Not tested"],
@@ -112,25 +112,25 @@ add(("h2", "9.2 Externally seeded vacuum transitions and critical growth"))
 _RC = 2.0 * SIGMA / (3.0 * 2.0)
 add(("p", "A further speculative extension is whether an externally prepared, localized high-energy configuration could initiate a vacuum transition whose subsequent evolution is driven by the vacuum-energy difference rather than by continued external energy input. "
           "This is analogous, at the level of threshold dynamics, to a self-propagating phase transition, but not to a nuclear chain reaction in its microscopic mechanism. The initiating configuration could in principle arise through an engineered intervention by a sufficiently advanced technological civilization; "
-          "no such intervention is assumed or modelled here."))
-add(("p", "In the non-gravitating thin-wall approximation a bubble separating two vacuum phases has the energy"))
+          "no such intervention is assumed or modeled here."))
+add(("p", "In the nongravitating thin-wall approximation a bubble separating two vacuum phases has the energy"))
 add(("eq", "E(R)=4\\pi\\sigma R^2-\\frac{4\\pi}{3}\\Delta V\\,R^3,\\qquad R_c=\\frac{2\\sigma}{\\Delta V}", "12"))
-add(("p", "where $\\Delta V>0$ is the energy-density advantage of the interior phase. Above $R_c$ expansion is energetically favourable within the approximation. In the units of this paper $\\Delta V=(1+q)V_f=3(1+q)/R_{dS}^2$, so that $R_c/R_{dS}=2\\hat\\sigma/[3(1+q)]$, which for the model's tension and $q=1$ is %s, about %s mm: "
+add(("p", "where $\\Delta V>0$ is the energy-density advantage of the interior phase. Above $R_c$ expansion is energetically favorable within the approximation. In the units of this paper $\\Delta V=(1+q)V_f=3(1+q)/R_{dS}^2$, so that $R_c/R_{dS}=2\\hat\\sigma/[3(1+q)]$, which for the model's tension and $q=1$ is %s, about %s mm: "
           "of the order of the wall's own thickness (%s mm), so the estimate sits at the edge of the validity of the thin-wall picture. Gravity can change the conclusion substantially, and the junction conditions, the causal structure, the null energy condition and the stability of the wall decide whether such growth is physically possible. "
           "A growing vacuum bubble is not necessarily a wormhole, a nonsingular daughter universe or a mechanism for restarting the parent cosmology." % (sci(_RC, 1), n(_RC * TW["R_dS_m"] * 1e3, 2), n(TW["wall_thickness_mm"], 2))))
 add(("p", "The present results impose an important constraint on this proposal: localized collapse did not create an expanding daughter region in the numerical experiments, and the expanding cores that persisted were already present in the initial data. "
           "The gravitational threshold of Section 4 is also not lowered by the energy of a seed, because $m_c$ is fixed by the vacuum-energy difference at the scale $R_{dS}$. Consequently, an engineered seed would require a physically justified mechanism that overcomes the identified formation obstruction rather than merely increasing the initial energy."))
-add(("p", "A future investigation could compare localized perturbations, externally prepared supercritical bubbles and initial data containing a pre-existing bridge. The decisive tests would be whether regular initial data evolve into a newly formed expanding region, whether the solution remains stable, and whether a future-directed causal continuation exists. "
+add(("p", "A future investigation could compare localized perturbations, externally prepared supercritical bubbles and initial data containing a preexisting bridge. The decisive tests would be whether regular initial data evolve into a newly formed expanding region, whether the solution remains stable, and whether a future-directed causal continuation exists. "
           "Such a study would distinguish vacuum-transition propagation from genuine cosmological reproduction."))
 add(("h1", "10. Conclusions"))
-add(("p", "The question was whether a matter-dilution-triggered vacuum transition can form a wormhole, a non-singular gravitational bridge to an expanding daughter universe, or whether the energy conditions and causal "
-          "structure of the model forbid it. For this model the answer has three parts. Ordinary traversable throats are forbidden in this classical canonical-scalar and non-negative-density dust model: the null energy condition holds, and no null ray has a minimum of the areal radius. This does not exclude non-traversable bridges, quantum or semiclassical continuations, or baby-universe scenarios that rest on them. "
-          "A non-traversable bridge with an expanding region requires an exterior mass above the finite-tension critical value, which is $(1+q)R_{dS}$ in the limit of a probe wall, where the exterior and interior horizon areas coincide; "
+add(("p", "The question was whether a matter-dilution-triggered vacuum transition can form a wormhole, a nonsingular gravitational bridge to an expanding daughter universe, or whether the energy conditions and causal "
+          "structure of the model forbid it. For this model the answer has three parts. Ordinary traversable throats are forbidden in this classical canonical-scalar and nonnegative-density dust model: the null energy condition holds, and no null ray has a minimum of the areal radius. This does not exclude nontraversable bridges, quantum or semiclassical continuations, or baby-universe scenarios that rest on them. "
+          "A nontraversable bridge with an expanding region requires an exterior mass above the finite-tension critical value, which is $(1+q)R_{dS}$ in the limit of a probe wall, where the exterior and interior horizon areas coincide; "
           "and in the numerical runs the expanding region is present only where the initial data already contain a false-vacuum core larger than its own de Sitter radius, so that the runs show persistence and not creation. "
           "At the observed dark-energy scale that core has a radius of %s Gpc and an exterior mass parameter, equal to the vacuum-energy deficit, of %s $M_\\odot$, %s times the matter within a sphere of that radius today. The critical mass is dominated by the vacuum-energy difference and not by matter; in the tested model and initial-data families a localized collapse does not supply a region of that size, and no mechanism that would is known, "
           "and in the computed domain the matter of the parent does not pass into the core. The threshold itself is established for the thin-wall junction branches with regular initial data; for thick walls the experiments show its pattern but do not measure $m_c$, "
           "the physical wall is thinner than any numerically resolved wall by thirty orders of magnitude, and for other exterior cosmologies only the thin-wall statement and the incomplete experiments of Section 5.5 apply. The mechanism is therefore best described as the isolation of a horizon-sized false-vacuum patch, not as a cyclic reset, and it is not supported as an "
-          "end-of-universe process of the model. A pre-existing, non-traversable bridge is not excluded; it is the natural next step, and it would need a causal path to carry matter (Section 9.1)." % (n(R_dS, 1), sci(M1["M_c_Msun"], 1), n(M1["deficit_over_matter_in_RdS_sphere"], 1))))
+          "end-of-universe process of the model. A preexisting, nontraversable bridge is not excluded; it is the natural next step, and it would need a causal path to carry matter (Section 9.1)." % (n(R_dS, 1), sci(M1["M_c_Msun"], 1), n(M1["deficit_over_matter_in_RdS_sphere"], 1))))
 add(("h1", "Declarations"))
 add(("p0", "Funding: this work received no external funding."))
 add(("p0", "Competing interests: the author declares no competing interests."))
@@ -151,16 +151,16 @@ adds(("p", "The metric is $ds^2=-f\\,du\\,dv+r^2d\\Omega^2$ with $f=e^{\\sigma}$
 adds(("eq", "r_{uu}-\\sigma_ur_u=-\\frac{r}{2}\\phi_u^2,\\qquad r_{uv}=-\\frac{r_ur_v}{r}-\\frac{f}{4r}+\\frac{Ufr}{4}", "S1"))
 adds(("eq", "\\phi_{uv}=-\\frac{\\phi_ur_v+\\phi_vr_u}{r}-\\frac{f}{4}U'(\\phi),\\qquad \\sigma_{uv}=\\frac{f+4r_ur_v}{2r^2}-\\phi_u\\phi_v", "S2"))
 adds(("p", "The first of Eqs. (S1) is the constraint along $u$ (that along $v$ is Eq. (4) of the paper) and the others are the evolution equations. The scheme advances rows of constant $u$ on a uniform lattice $u_j=jh$, $v_i=ih$. "
-           "A cell with corners $W=(j,i-1)$, $A=(j+1,i-1)$, $B=(j,i)$ gives the new point $C=(j+1,i)$ by $X_C=X_A+X_B-X_W+h^2X_{uv}$, with $X_{uv}$ evaluated at the cell centre from the mean values and the central differences, "
-           "iterated three times (predictor–corrector). Near the centre the evolution of $\\sigma$ divides by a small radius and its rounding noise is amplified, so within $K=6$ points of the centre $\\sigma$ is integrated from the constraint "
-           "$\\sigma_v=(r_{vv}+r\\phi_v^2/2)/r_v$ (trapezoid), and beyond it from the evolution equation. Each row is solved with the centre value of $\\sigma$ as the unknown: elementary flatness requires "
-           "$\\sigma_c=\\ln(4r_v^2)$ at the centre, which defines a residual that is solved by the secant method (ten passes at most); an iteration on the plain residual has a gain of modulus greater than one and diverges. "
-           "The centre value of $\\phi$ follows from $\\phi_t=2\\phi_v$ at the centre by an implicit trapezoid with the one-sided derivative (the explicit iteration has gain $-1.5$)."))
-adds(("p", "The data on the initial cone are $r=v/2$, $\\phi(0,v)=A\\psi(v)$ and $\\sigma(0,v)=\\int_0^v r\\phi_v^2dv$, the integral of the constraint along $v$ with $f=1$ at the centre. The "
+           "A cell with corners $W=(j,i-1)$, $A=(j+1,i-1)$, $B=(j,i)$ gives the new point $C=(j+1,i)$ by $X_C=X_A+X_B-X_W+h^2X_{uv}$, with $X_{uv}$ evaluated at the cell center from the mean values and the central differences, "
+           "iterated three times (predictor–corrector). Near the center the evolution of $\\sigma$ divides by a small radius and its rounding noise is amplified, so within $K=6$ points of the center $\\sigma$ is integrated from the constraint "
+           "$\\sigma_v=(r_{vv}+r\\phi_v^2/2)/r_v$ (trapezoid), and beyond it from the evolution equation. Each row is solved with the center value of $\\sigma$ as the unknown: elementary flatness requires "
+           "$\\sigma_c=\\ln(4r_v^2)$ at the center, which defines a residual that is solved by the secant method (ten passes at most); an iteration on the plain residual has a gain of modulus greater than one and diverges. "
+           "The center value of $\\phi$ follows from $\\phi_t=2\\phi_v$ at the center by an implicit trapezoid with the one-sided derivative (the explicit iteration has gain $-1.5$)."))
+adds(("p", "The data on the initial cone are $r=v/2$, $\\phi(0,v)=A\\psi(v)$ and $\\sigma(0,v)=\\int_0^v r\\phi_v^2dv$, the integral of the constraint along $v$ with $f=1$ at the center. The "
            "potential $U=(\\kappa/4)(\\psi^2-1)^2+s\\psi+d$ is tuned by a root finder so that the false minimum has density 3 and the true minimum $-3q$."))
 adds(("h1", "S2. Numerical diagnostics"))
 adds(("p", "Misner–Sharp mass of exact solutions: Table 3 of the paper. The diagnostics of each run are the signs of $r_u$ (a forward difference in $u$) and $r_v$ (a central difference in $v$) at every "
-           "point more than four cells from the centre and eight from the outer boundary; the quadrant map of Fig. 4 is produced by the same classification. The residuals of the constraints are "
+           "point more than four cells from the center and eight from the outer boundary; the quadrant map of Fig. 4 is produced by the same classification. The residuals of the constraints are "
            "$C_{vv}=r_{vv}-\\sigma_vr_v+(r/2)\\phi_v^2$ and $C_{uu}=r_{uu}-\\sigma_ur_u+(r/2)\\phi_u^2$, with second differences and central first differences on the lattice."))
 adds(("h1", "S3. Thin-wall check"))
 adds(("p", "Table S0 lists the check of the critical mass. For each of nine combinations of $q$ and $\\hat\\sigma$ the finite-tension value $m_c=\\max_Rm_+(R)$ is computed on a grid of two million points, and the existence of "
@@ -188,7 +188,7 @@ for r in INC:
     rows.append([n(r["A"], 2), n(r["w"], 2), n(r["R_w"], 2), n(r["m_ext"], 3), n(r["r_h"], 3), r["ended_by"], n(r["u_end"], 2), n(r["max_sigma"], 2)] + [cell(r[k]) for k in sorted(ks, reverse=True)])
 adds(("table", "Table S2. Runs without a trapped surface at the base resolution ($q=1$).",
       ["$A$", "$w$", "$R_w$", "$m_{\\rm ext}$", "$r_h$", "Stop", "$u_{\\rm end}$", "$\\sigma_{\\max}$", "$h/2$", "$h/4$"], rows, [0.5, 0.5, 0.5, 0.8, 0.7, 1.3, 0.7, 0.8, 0.7, 0.7], 14))
-adds(("h1", "S6. Exteriors of other vacuum depth"))
+adds(("h1", "S6. Exteriors of other vacuum depths"))
 adds(("p", "Table S3 lists the runs of Section 5.5 ($A=0.1$): vacuum depth $q$, wall width $w$, core radius $R_w$, exterior mass in units of $m_c=(1+q)R_{dS}$, the horizon radius of the exterior (none above the Nariai mass for $q<0$), "
            "the radius of the first trapped point if one was found, the number of anti-trapped core points on the last row and the cause of the stop."))
 adds(("table", "Table S3. Collapse runs with other exterior vacua ($A=0.1$).",
@@ -213,9 +213,9 @@ adds(("table", "Table S5. Critical mass recomputed with 120-digit arithmetic aga
       ["$q$", "$\\hat\\sigma$", "$m_c$ (120 digits)", "Series, Eq. (9)", "$R$ at the maximum"],
       [[n(r["q"], 1), n(r["sigma"], 2), n(r["m_c_hp"], 9), n(r["series"], 9), n(r["R_at_max"], 6)] for r in AUD["2_critical_mass_hp"]], [0.6, 0.8, 1.7, 1.7, 1.5]))
 adds(("p", "Horizon roots at $m=m_c=(1+q)R_{dS}$ and mass definitions are in Table S6. For $q>0$ the single exterior horizon is at $R_{dS}$; for $q=0$ it is the Schwarzschild radius; for $q=-0.5$ the roots are the black-hole horizon at $0.618R_{dS}$ and the cosmological horizon at $R_{dS}$, so the equality of horizon areas is with the cosmological horizon there. "
-           "The quasi-local Misner–Sharp mass at the wall at $R=R_{dS}$ equals $R_{dS}$ on both sides for every $q$, while the exterior parameter is $(1+q)R_{dS}$. Dimensional restoration used independently chosen constants ($c$, $G$, $M_\\odot$, Planck 2018 $H_0$ and $\\Omega_\\Lambda$): $R_{dS}=%s$ Gpc, and the critical masses agree with thinwall.json to %s." %
+           "The quasilocal Misner–Sharp mass at the wall at $R=R_{dS}$ equals $R_{dS}$ on both sides for every $q$, while the exterior parameter is $(1+q)R_{dS}$. Dimensional restoration used independently chosen constants ($c$, $G$, $M_\\odot$, Planck 2018 $H_0$ and $\\Omega_\\Lambda$): $R_{dS}=%s$ Gpc, and the critical masses agree with thinwall.json to %s." %
            (n(AUD["5_dimensional_restoration"]["R_dS_Gpc"], 4), sci(max(abs(v["rel_diff"]) for v in AUD["5_comparison"].values()) + 1e-16, 0))))
-adds(("table", "Table S6. Horizons and masses at $m=m_c$ ($R_{dS}=1$, $8\\pi G=1$): exterior parameter, quasi-local mass at the wall at $R=R_{dS}$ and horizon roots; critical mass in solar masses with the quasi-local value.",
+adds(("table", "Table S6. Horizons and masses at $m=m_c$ ($R_{dS}=1$, $8\\pi G=1$): exterior parameter, quasilocal mass at the wall at $R=R_{dS}$ and horizon roots; critical mass in solar masses with the quasilocal value.",
       ["$q$", "$m$ (parameter)", "$m_{\\rm MS}$ at the wall", "Horizon roots $r/R_{dS}$", "$M_c$ ($M_\\odot$)", "$M_{\\rm MS}$ ($M_\\odot$)"],
       [[n(h_["q"], 2), n(h_["m_c"], 2), n(m_["misner_sharp_exterior_at_wall"], 2), ", ".join(n(x, 3) for x in h_["roots"]), sci(AUD["5_dimensional_restoration"]["q=%g" % h_["q"]]["M_c_Msun"], 2) if ("q=%g" % h_["q"]) in AUD["5_dimensional_restoration"] else "–",
         sci(AUD["5_dimensional_restoration"]["q=%g" % h_["q"]]["M_misner_sharp_at_wall_Msun"], 2) if ("q=%g" % h_["q"]) in AUD["5_dimensional_restoration"] else "–"] for h_, m_ in zip(AUD["3_horizons_at_mc"], AUD["4_mass_definitions"])],
