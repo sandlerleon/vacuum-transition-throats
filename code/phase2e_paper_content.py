@@ -15,6 +15,12 @@ PF = L("phase2e_perturb_floquet.json")
 PM = L("phase2e_perturb_mechanism.json")
 WN = L("phase2e_window.json")
 CV = L("phase2d_convergence.json")
+PR = L("phase2f_pressure.json")
+CU = L("phase2f_continuation_up_mu20.json") + L("phase2f_continuation_down_mu20.json")
+MUF = L("phase2f_muscan_up_rc0.2_valid.json")
+POT = L("phase2f_potential.json")
+AN = L("phase2f_analysis.json")
+FIG3 = "FigF1_phase2f.png"
 FIG1 = "FigD1_phase2d.png"
 FIG2 = "FigE1_phase2e.png"
 GITHUB = "https://github.com/sandlerleon/vacuum-transition-throats"
@@ -51,13 +57,13 @@ add(("blank",))
 add(("h1", "Abstract"))
 ABSTRACT = (
     "We construct and test a candidate spacetime in which a closed, nonsingular, cyclically evolving cosmological region is joined across a moving thin shell to a Schwarzschild exterior, "
-    "so that a spatial slice has two ends and a throat. The region is the closed Friedmann universe of a scalar field with a double-well potential coupled to dust. For a window of dust content "
-    "it has exact time-symmetric bouncing cycles with an elliptic return map, reproduced with an independent code. The shell obeys the Israel conditions with equation of state $p=w\\sigma$; for $w=-1/2$ and "
-    "a flat exterior there are periodic shells with positive tension that satisfy the null energy condition, verified from raw extrinsic curvatures to $10^{-15}$. In the exact Kruskal construction the "
-    "cyclic region and the parent universe are spacelike separated: the bridge is not traversable and no matter or signal crosses it. The data need a pre-existing throat but no white-hole region to the future "
-    "of a suitable slice. The conservative shell survives 60 cycles under 1%% perturbations. Linear spherical perturbations of the interior, however, grow by factors of %s to %s per cycle, driven by a "
-    "scalar-mediated force on the coupled dust and by the hilltop instability of the field, and the shell exchanges energy with the bulk at a rate comparable to its own energy, which needs an "
-    "unspecified interaction. The construction is an exact, homogeneous, idealized solution, not a robust cosmological model. We state which claims are demonstrated and which remain open."
+    "so that a spatial slice has two ends and a throat. The region is the closed Friedmann universe of a scalar field with a double-well potential coupled to dust; for a window of dust content "
+    "it has exact bouncing cycles with an elliptic return map, reproduced with an independent code. For $w=-1/2$ and a flat exterior the shell has periodic solutions with positive tension that satisfy "
+    "the null energy condition, verified from raw extrinsic curvatures to $10^{-15}$. The cyclic region and the parent universe are spacelike separated: the bridge is not traversable and nothing crosses it. "
+    "The data need a pre-existing throat but no white-hole region to the future of a suitable slice. The conservative shell survives 60 cycles under 1%% perturbations. However, linear spherical perturbations of the interior "
+    "grow by factors of %s to %s per cycle, through a scalar-mediated force on the coupled dust and the hilltop instability; changing the coupling, the potential scale or shape, or adding fluid pressure does not remove them "
+    "(worst case above 3×10³). The shell's energy exchange with the bulk needs an unspecified interaction. The construction is an exact, idealized, homogeneous solution, not a robust cosmological model; "
+    "we state what is demonstrated and what is open."
     % (g(mode[3]["max_abs"], 2), sci(mode[60]["max_abs"], 1).replace(" × 10$^{5}$", "×10⁵")))
 add(("p0", ABSTRACT))
 add(("p0", "Keywords: Einstein–Rosen bridge; thin-shell junction; cyclic cosmology; null energy condition; causal structure; cosmological perturbations."))
@@ -175,12 +181,34 @@ add(("p", "The growth has two sources. At large $n$ it is independent of $k$: in
 add(("eq", "g^2=\\frac{6C\\phi_0^2}{M^2a^3\\,(2M^2+\\phi_0^2)}", "5"))
 add(("p", "the attractive scalar-mediated force on the coupled dust. Integrated over the cycle $g$ gives a logarithmic growth of %.1f (a rate of %.0f–%.0f per unit time) against $\\ln\\mu=%.2f$ at $n=60$ and %.2f at $n=40$, approaching the estimate from below. With the dust–scalar coupling removed from the perturbations only, the large-$n$ multipliers fall to %.2f, "
           "which isolates this mechanism. The long-wavelength modes ($n=3$ and $10$) remain unstable in the control (%s and %s) because the field is near the top of its potential, where they are tachyonic. "
-          "The result is linear, on the whole three-sphere (the cap has a boundary at the shell whose boundary conditions were not imposed), for pressureless dust and one parameter set. A pressure or finite-range force could weaken the coupling-driven part, but nothing here shows that it does, and a scan of the coupling strength at a coarse step found an elliptic cycle only at the value used. "
+          "The result is linear, on the whole three-sphere (the cap has a boundary at the shell whose boundary conditions were not imposed), for pressureless dust and one parameter set. Section 5.3 tests whether changing the model removes this growth. "
           "The nonlinear inhomogeneous evolution was not performed. The linear growth rates make a robust survival implausible without a new stabilizing mechanism." %
           (PM["estimate_log_growth"], PM["rate_min"], PM["rate_max"], __import__("math").log(mode[60]["max_abs"]), __import__("math").log(mode[40]["max_abs"]), max(ctrl[60]["multipliers_abs"]), g(max(ctrl[3]["multipliers_abs"]), 3), g(max(ctrl[10]["multipliers_abs"]), 3))))
 add(("fig", FIG2, "Figure 2. (a) Largest Floquet multiplier per cycle for inhomogeneous perturbations as a function of the radial harmonic $n$: full system, control with the dust–scalar coupling removed from the perturbations, and the quasi-static estimate from equation (5). "
                     "(b) Trace of the return map along the main orbit branch, the elliptic band, the point where the trace equals $-2$, the end of the branch, and the points used for the resonance tests.", 6.4))
-add(("h2", "5.3 The shell matter"))
+add(("h2", "5.3 Attempts to stabilize"))
+add(("p", "We re-derived the perturbation equations for a polynomial potential $V=3+a_2\\phi^2+a_4\\phi^4+a_6\\phi^6$ and for a coupled fluid with pressure, a polytrope $P=Kn^{5/3}$ with $\\rho_f=An+Kn^{5/3}/(\\gamma-1)$, whose motion follows from total energy–momentum conservation; at $K=a_6=0$ they reproduce Table 3. "
+          "Each change was followed by continuation along the elliptic orbit at fixed return-map trace ($-1.7043$), solving for $\\phi_0$ and adjusting $C/C_c$ at every step, not by a scan of initial conditions (Table 4, Fig. 3). "
+          "Changing the dust–scalar coupling from $\\rho_{\\rm crit}/V_f=%.4f$ to %.2f changes the $n=3$ growth only between %.1f and %.1f, because the orbit retunes $C/C_c$ and the fifth-force rate at the neck stays near 16–24. Raising the hilltop curvature $\\mu$ to %.0f reduces the fifth-force part ($g\\,T$ falls from 10.7 to 0.5) but widens the tachyonic band to $n\\lesssim\\mu$, "
+          "and the worst growth over all $n$ stays above $3.6\\times10^{3}$. A sextic reshaping of the hilltop at fixed curvature and well depth changes the $n=3$ growth by about 20%%. Pressure removes only modes with $n\\gtrsim n_c=ga/c_s$: at $c_s^2=0.04$ the modes $n=240$ are stable and $n=120$ is reduced to %.0f, while $n=3$–12 are unchanged, "
+          "and the cycle ceases to exist before $c_s^2$ reaches 0.08." % (min(r["rc"] for r in CU), max(r["rc"] for r in CU), min(r["growth"]["3"] for r in CU), max(r["growth"]["3"] for r in CU), MUF[-1]["mu"], [r for r in PR if r["K"] == 0.08][0]["growth"]["120"])))
+RNG = lambda rows, k: "%.3g–%.3g" % (min(r["growth"][k] for r in rows), max(r["growth"][k] for r in rows))
+POTALL = POT["wider"] + POT["narrower"]
+add(("table", "Table 4. Inhomogeneous growth per cycle under each attempt (range of the largest Floquet multiplier along the continuation).",
+     ["change (range followed)", "$n=3$", "$n=12$", "$n=60$"],
+     [["baseline", g(mode[3]["max_abs"], 3), g(mode[12]["max_abs"], 3), g(mode[60]["max_abs"], 3)],
+      ["coupling $\\rho_{\\rm crit}/V_f$ from 0.0086 to 0.51", RNG(CU, "3"), RNG(CU, "12"), RNG(CU, "60")],
+      ["hilltop scale $\\mu$ from 20 to 307", RNG(MUF, "3"), RNG(MUF, "12"), RNG(MUF, "60")],
+      ["sextic hilltop, $v/v_0$ from 0.98 to 1.74", RNG(POTALL, "3"), RNG(POTALL, "12"), RNG(POTALL, "60")],
+      ["pressure, $K=0$ to 0.08 ($c_s^2\\le0.04$)", RNG(PR, "3"), RNG(PR, "12"), RNG(PR, "60")]],
+     [3.0, 1.3, 1.3, 1.3]))
+WK = [w for w in AN["wkb"] if w["family"] == "pressure" and w["n"] in (120, 240) and w["K"] in (0.04, 0.08)]
+add(("p", "Two criteria summarize why. In the quasi-static limit the fluid contrast obeys $\\ddot D=(g^2-c_s^2k^2/a^2)D$, so mode $n$ grows when $n<n_c=ga/c_s$; with pressure the exponent $\\int\\sqrt{g^2-c_s^2k^2/a^2}\\,dt$ equals the Floquet exponent to within %.2f for $n=120$ and 240 at $K=0.04$ and 0.08, and fails at low $n$ where the quasi-static assumption breaks. "
+          "The scalar sector alone is tachyonic, $\\ddot{\\delta\\phi}+3H\\dot{\\delta\\phi}+(k^2/a^2+V''+n/M^2)\\delta\\phi=0$ with $V''<0$ near the top, for $k<a\\mu$; its scalar-only multiplier accounts for most of the growth at large $\\mu$ (7.1 of 7.9 in the logarithm at $n=60$, $\\mu=208$). "
+          "Along the whole family $\\mu T$ stays between 12 and 16, so the hilltop exponent does not shrink when $\\mu$ grows. A stable cycle would need both the fifth-force and the hilltop band closed; pressure closes only the first and only above $n_c$, and nothing tried closes the second. "
+          "These are mechanism-level estimates validated numerically, not rigorous bounds, and the low-$n$ exponent ($\\ln G\\approx2.2$–$2.7$) is an observed invariant, not a derived one. We did not run nonlinear evolutions because no promising region was found." % max(abs(w["S5"] - w["lnG"]) for w in WK)))
+add(("fig", FIG3, "Figure 3. Attempts to stabilize. (a) Growth per cycle versus $n$ for the baseline, for larger hilltop curvature $\\mu$, and for a fluid with pressure. (b) Weakening the dust–scalar coupling at fixed return-map trace. (c) Changing the hilltop curvature: growth at $n=3$ and 12 and the worst case over all $n$.", 6.4))
+add(("h2", "5.4 The shell matter"))
 add(("p", "An isotropic gas of non-interacting, slowly moving Nambu–Goto strings confined to the two-dimensional shell has energy density $\\sigma=\\mu_s n$ ($n$ the length per area) and tension $\\mu_s$ along each string, so $S^{ij}=-\\mu_sn\\langle\\hat t^i\\hat t^j\\rangle=-(\\sigma/2)\\delta^{ij}$ and $p=-\\sigma/2$, the equation of state used for the periodic shells. "
           "Without exchange, string length would be conserved and $(\\sigma R)'=0$. Equation (4) requires otherwise: a shell that moves through the interior fluid must absorb and re-emit bulk energy. Numerically the gross energy exchanged with the bulk per cycle is %.2f, %.0f%% of the shell's mean energy (%.2f–%.2f) and %.0f%% of the energy of the cap; the net over a period is zero. "
           "A string gas of fixed tension can supply this only if strings are created and destroyed by absorbing dust and scalar quanta, and no such interaction has been specified. The equation of state is motivated, but the shell is not a complete matter model: the energy bookkeeping is satisfied only through an unmodelled interaction." %
@@ -191,7 +219,7 @@ add(("h1", "6. Discussion"))
 add(("p", "What is demonstrated, numerically and with the checks above, is that the closed cold cycle of Section 2 admits a consistent two-ended embedding with a non-traversable throat, with a moving shell that has positive tension and satisfies the null energy condition, and that the cyclic region and the parent universe are causally disconnected. "
           "What is not demonstrated is more than what is. The homogeneous cycle is linearly unstable to inhomogeneous perturbations in this model, by factors of %s to %s per cycle; the shell's matter content requires an unmodelled energy exchange comparable to its own energy; the throat is tiny and its curvature enormous; and the bridge is primordial, not formed. "
           "A traversable bridge, matter transfer between the regions and cosmological recycling are excluded in this geometry. We make no claim that a cyclic region exists or that one is hidden from us: causal inaccessibility would explain why such a region could be hidden, not that it is there." % (g(mode[3]["max_abs"], 2), sci(mode[60]["max_abs"], 1))))
-add(("table", "Table 4. Status of the claims.",
+add(("table", "Table 5. Status of the claims.",
      ["Claim", "Status"],
      [["exact cyclic region, elliptic return map, independent reproduction", "demonstrated numerically (not a proof)"],
       ["Israel junction, orientations, global gluing", "demonstrated, residuals $\\le5\\times10^{-15}$"],
@@ -202,7 +230,7 @@ add(("table", "Table 4. Status of the claims.",
       ["shell matter from an action", "equation of state motivated; energy exchange unexplained"],
       ["dynamical formation of the bridge; traversability; matter transfer", "not demonstrated (last two excluded here)"]],
      [4.4, 2.6]))
-add(("p", "Three routes follow. The coupling-driven instability depends on the dust–scalar coupling that the model needs for its transition, so a different mechanism for the field's return to the false vacuum may be required; the scan of the parameter space here is far from complete, and narrow windows with weaker coupling cannot be excluded. "
+add(("p", "Three routes follow. The instability has two sources, the fifth force on the coupled fluid and the hilltop of the potential, so a different mechanism for the field's return to the false vacuum may be required; continuation in the coupling, the potential scale, the hilltop shape and a fluid with pressure (Section 5.3) did not remove the growth, though other orbits, windows and matter models were not explored. "
           "The boundary conditions of the inhomogeneous modes at the shell, and the nonlinear evolution of spherical inhomogeneities, need a double-null code with a fluid and a moving boundary. And the shell needs a matter model from an action with an explicit interaction with the bulk. "
           "Until these are done the construction should be read as an exact idealized solution of Einstein gravity, not as a cosmological model."))
 add(("p0", "Funding: this work received no external funding."))

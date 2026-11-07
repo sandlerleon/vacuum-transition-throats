@@ -362,6 +362,29 @@ def phase2e_manuscript_builds_from_results():
     assert os.path.exists(os.path.join(CODE, "..", "manuscript", "Nontraversable_ER_Bridge_Cyclic_Region.docx"))
 
 
+@check
+def phase2f_stabilization_attempts_fail():
+    """Phase 2F: the generalised derivation reproduces Phase 2E at K = 0; continuation in the coupling, the potential scale, the sextic hilltop shape and a coupled fluid with pressure never gives bounded inhomogeneous
+    perturbations: n = 3 growth stays >= 8.6 per cycle, the worst case over n stays >= 3e3, pressure only removes modes above n_c ~ g a / c_s (WKB criterion validated), the shell exchange is ~92% dust."""
+    P = json.load(open(os.path.join(CODE, "phase2f_pressure.json")))
+    assert abs(P[0]["growth"]["3"] - 14.3398) < 1e-3 and abs(P[0]["growth"]["60"] / 154820.5 - 1) < 1e-4
+    for r in P:
+        assert abs(r["growth"]["3"] / 14.34 - 1) < 0.01 and abs(r["growth"]["6"] / 169.0 - 1) < 0.01 and abs(r["growth"]["12"] / 2050.0 - 1) < 0.05
+    assert abs(P[-1]["growth"]["240"] - 1.0) < 1e-3 and P[-1]["growth"]["120"] > 300
+    CU = json.load(open(os.path.join(CODE, "phase2f_continuation_up_mu20.json"))) + json.load(open(os.path.join(CODE, "phase2f_continuation_down_mu20.json")))
+    assert len(CU) > 40 and all(abs(r["trace"] + 1.7043) < 1e-3 and 14.0 <= r["growth"]["3"] <= 17.0 and r["growth"]["60"] > 8e4 for r in CU)
+    MU = json.load(open(os.path.join(CODE, "phase2f_muscan_up_rc0.2_valid.json")))
+    assert min(r["growth"]["3"] for r in MU) > 8.6 and min(r["growth"]["12"] for r in MU) > 170
+    WC = json.load(open(os.path.join(CODE, "phase2f_worstcase.json")))
+    assert min(r["worst_G"] for r in WC) > 3e3 and min(r["min_G"] for r in WC) > 8.6
+    PO = json.load(open(os.path.join(CODE, "phase2f_potential.json")))
+    assert all(12.0 < r["growth"]["3"] < 17.5 and r["growth"]["12"] > 1e3 and r["growth"]["60"] > 3e4 for r in PO["wider"] + PO["narrower"])
+    A = json.load(open(os.path.join(CODE, "phase2f_analysis.json")))
+    hi = [w for w in A["wkb"] if w["family"] == "pressure" and w["n"] in (120, 240) and w["K"] in (0.04, 0.08)]
+    assert hi and all(abs(w["S5"] - w["lnG"]) < 0.6 for w in hi)
+    assert A["shell_split"]["dust_fraction"] > 0.9 and abs(A["shell_split"]["net_dust"]) < 1e-10
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()
