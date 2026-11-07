@@ -624,6 +624,28 @@ def phase3e0_string_inspired_homogeneous_baseline():
     assert D["-1"]["gs_max_over_bounces"] > 1.0 and D["-1"]["ghost_runs"] > 0
 
 
+@check
+def phase3e1_field_dependent_gb_nested_throats_and_speeds():
+    """Phase 3E.1: for arbitrary xi(phi,chi), V and two canonical scalars, flat collapse has addot/a = -(kappa/2)(phi'^2+chi'^2) <= 0 at H=0 (no bounce); closed bounce needs 8 lam xi'' phi'^2 comparable to kappa a^2 phi'^2 and the
+    opposite coupling sign, and then (scan) eps_T >= 4, F_T < 0 (c_T^2 < 0) in every bounce; G^r_r - G^t_t = -2 f R''/R; nested throats need two kinetic-sign changes and worsen the test-field instability; Horndeski-mapped
+    G_T, F_T verified, G_T independently derived from Bianchi I."""
+    E = json.load(open(os.path.join(CODE, "phase3e1_corrections.json")))
+    assert E["A_flat_residual"] == "0" and E["A_addot_over_a_H0_flat"].replace(" ", "") == "kappa*(-Cd**2-Pd**2+2*V(Phi,Chi))/4"
+    sm = E["A_scan_summary"]
+    assert sm["k=0 lam+"]["bounce"] == 0 and sm["k=0 lam-"]["bounce"] == 0 and sm["k=1 lam+"]["bounce"] == 0
+    s1 = sm["k=1 lam-"]
+    assert s1["bounce"] > 50 and s1["bounce_epsT_min"] > 1.0 and s1["bounce_with_epsT_below_0p3"] == 0 and s1["bounce_with_ghost_or_gradient_instability"] == s1["bounce"]
+    assert E["B_Grr_minus_Gtt"].replace(" ", "") == "-2*f(r)*Derivative(R(r),(r,2))/R(r)" and E["B_ricci_f1_check"] == "0"
+    nz = E["B_nested_profile"]["nested (two throats + belly)"]
+    assert len(nz["local_minima_of_R"]) == 2 and len(nz["local_maxima_of_R"]) == 1 and len(nz["inflection_points"]) == 2
+    assert nz["nec_violating_budget_x_kappa"] > 2 * E["B_nested_profile"]["single throat"]["nec_violating_budget_x_kappa"]
+    ti = E["B_test_field_instability"]
+    assert ti["nested a=1, beta=1.5, w=0.8"]["xi_critical"] < ti["single throat a=1"]["xi_critical"] and ti["nested a=1, beta=3, w=0.6"]["xi_critical"] < ti["nested a=1, beta=1.5, w=0.8"]["xi_critical"]
+    g12 = lambda name: [r["gamma"] for r in ti[name]["rows"] if r["xi"] == 12.0][0]
+    assert g12("nested a=1, beta=1.5, w=0.8") > g12("single throat a=1")
+    assert E["C_GT_residual"] == "0" and E["C_FT_residual"] == "0" and E["C_GT_bianchi_residual"] == "0"
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()
