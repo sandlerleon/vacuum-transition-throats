@@ -685,6 +685,22 @@ def phase3g0_ringdown_and_repeated_bounces():
     assert all(r["end"] == "singular" for r in G["C_lifetime_stats"] if r["max_bounces"] > 0)
 
 
+@check
+def phase3h0_viscous_relaxation_of_anisotropy_threshold():
+    """Phase 3H.0: inviscid critical spin strength equals the analytic anisotropy threshold Sigma_0 = 0.0025 (3C.2); causal shear viscosity (c^2 <= 1, Knudsen <= 1, |S| < 0.5 rho_dust) lowers it monotonically with K,
+    to ~0.1% of the inviscid value at K = 1, c^2 = 1 (s0 = 0.05) and to 5% for s0 = 0.2; constraint residuals < 1e-4 in the admissible rows."""
+    H = json.load(open(os.path.join(CODE, "phase3h0_viscous_spin_bounce.json")))["rows"]
+    pick = lambda s0, K, c2: [r for r in H if abs(r["s0"] - s0) < 1e-12 and abs(r["K"] - K) < 1e-12 and abs(r["c2"] - c2) < 1e-12][0]
+    assert abs(pick(0.05, 0.0, 0.0)["B_c"] - 0.0025) < 1e-4 and abs(pick(0.2, 0.0, 0.0)["B_c"] - 0.04) < 1e-3
+    r1, r3, r10 = pick(0.05, 0.1, 1.0), pick(0.05, 0.3, 1.0), pick(0.05, 1.0, 1.0)
+    assert 0.3 < r1["ratio"] < 0.45 and r3["ratio"] < 0.1 and r10["ratio"] < 0.01 and r1["ratio"] > r3["ratio"] > r10["ratio"]
+    assert pick(0.05, 1.0, 0.25)["ratio"] < pick(0.05, 1.0, 0.25)["ratio"] + 1 and pick(0.05, 1.0, 0.25)["ratio"] > r10["ratio"]
+    assert pick(0.2, 1.0, 1.0)["ratio"] < 0.06
+    for r in H:
+        if r["K"] and r["K"] <= 1.0 and r["c2"] <= 1.0:
+            assert r["S_over_rhod_max"] < 0.5 and r["residual"] < 1e-4 and r["knudsen_max_at_1p5Bc"] <= r["K"] + 1e-9
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()
