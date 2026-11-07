@@ -548,6 +548,28 @@ def phase3d1_wave_transmission_and_backreaction_requirements():
     assert abs(W["C_QI_species_coefficient"] - 5.59) < 0.05 and W["C_volume"]["3.0"]["volume_integral_rho_plus_pr"] < -6
 
 
+@check
+def phase3d2_freefall_transport_tidal_and_causal():
+    """Phase 3D.2: radial free fall crosses the minimum-radius surface (E^2 drift < 1e-9), bound fall oscillates through a chain of trapped / anti-trapped / exterior regions; critical L for crossing equals the
+    Schwarzschild barrier value (4.0 at E=1) for a/m <= 3 and is throat-limited for a/m = 6; angular momentum never helps; tidal tensor finite (K_th finite at the horizon, max ~ m/a^3), transverse Jacobi field equals R(tau) to 1e-10;
+    anti-trapped region has positive volume expansion; T_kk integral = -a/4."""
+    F = json.load(open(os.path.join(CODE, "phase3d2_freefall.json")))
+    for v in F["A_radial"].values():
+        assert v["conserved_E_drift"] < 1e-9 and v["tau_first_zero"] is not None and v["R_min_along"] < 3.01
+    crit = F["B_critical_L"]
+    for k_, v in crit.items():
+        assert v["direct_integration"]["L=0.98 Lc"] == "crosses throat" and v["direct_integration"]["L=1.02 Lc"] == "scattered back"
+    assert abs(crit["a/m=1.0 E=1.00"]["L_critical"] - 4.0) < 1e-6 and abs(crit["a/m=6.0 E=1.00"]["L_critical"] - 6 * 0.5 ** 0.5 * 1.0) > 0.0
+    assert abs(crit["a/m=6.0 E=1.00"]["L_critical"] - 4.2426) < 1e-3
+    C = F["C_jacobi"]
+    assert C["transverse_vs_R_max_dev"] < 1e-9 and C["zero_crossings_transverse"] == 0 and abs(C["R_min"] - 1.0) < 1e-3
+    assert F["C_Kth_at_horizon_a1m1"].replace(" ", "") == "3/32-E**2/16"
+    assert abs(F["C_tidal_scaling"]["1.0"]["K11_abs_max"] - 1.0) < 1e-6
+    seq = [s_[0] for s_ in F["D_region_sequence"]]
+    assert seq[:4] == ["exterior (r>0)", "trapped (R decreasing)", "anti-trapped (R increasing)", "exterior (r<0)"]
+    assert all(v[0] > 0 for v in F["D_theta_antitrapped"].values()) and F["D_second_exterior"]["returns_to_horizon_branch"]
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()

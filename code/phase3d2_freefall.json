@@ -1,0 +1,480 @@
+{
+ "C_K11": "-m*(2*m*r**2*(a**2 + r**2)**(9/2) + 2*r**2*(a**2 + r**2)**(9/2)*(2*m - sqrt(a**2 + r**2)) - r**2*(a**2 + r**2)**5 - (a**2 + r**2)**(11/2)*(2*m - sqrt(a**2 + r**2)))/((a**2 + r**2)**7*(2*m - sqrt(a**2 + r**2)))",
+ "C_Kth": "(-E**2*m*r**2*(a**2 + r**2)**(3/2) + (a**2 + r**2)*(2*m + (E**2 - 1)*sqrt(a**2 + r**2))*(m*r**2 + r**2*(2*m - sqrt(a**2 + r**2)) - (a**2 + r**2)*(2*m - sqrt(a**2 + r**2))))/((a**2 + r**2)**(7/2)*(2*m - sqrt(a**2 + r**2)))",
+ "C_Kth_at_horizon_a1m1": "3/32 - E**2/16",
+ "A_radial": {
+  "black bounce a/m=1, rest at R0=20m": {
+   "E2": 0.9,
+   "conserved_E_drift": 3.886702071298487e-11,
+   "r_zero_crossings": [
+    99.95159835867587,
+    299.8547950738712,
+    499.75799178529144,
+    699.6611884941533,
+    899.5643852016398,
+    1099.4675819069707
+   ],
+   "turning_points_tau_r": [
+    [
+     199.89,
+     -19.97498413787394
+    ],
+    [
+     399.79499999999996,
+     19.974984192979854
+    ],
+    [
+     599.6999999999999,
+     -19.97498424004811
+    ],
+    [
+     799.605,
+     19.97498427907646
+    ],
+    [
+     999.51,
+     -19.9749843099329
+    ],
+    [
+     1199.415,
+     19.97498433256387
+    ]
+   ],
+   "R_min_along": 1.0000000016149417,
+   "tau_first_zero": 99.95159835867587,
+   "tau_cross_horizon_plus": 98.46798311139348,
+   "tau_cross_horizon_minus": [
+    101.43521360595764,
+    298.37117982658935,
+    501.2416070325742
+   ]
+  },
+  "wormhole a/m=3, rest at R0=20m": {
+   "E2": 0.9,
+   "conserved_E_drift": 1.571520691356909e-12,
+   "r_zero_crossings": [
+    102.37655142741143,
+    307.12965428199345,
+    511.8827571364362,
+    716.6358599907041,
+    921.3889628448676,
+    1126.1420656988748
+   ],
+   "turning_points_tau_r": [
+    [
+     204.75,
+     -19.77371992137045
+    ],
+    [
+     409.5,
+     19.77371988566548
+    ],
+    [
+     614.25,
+     -19.77371982616133
+    ],
+    [
+     819.0,
+     19.773719742864934
+    ],
+    [
+     1023.765,
+     -19.773719932903045
+    ],
+    [
+     1228.5149999999999,
+     19.773719917056127
+    ]
+   ],
+   "R_min_along": 3.0000000000070197,
+   "tau_first_zero": 102.37655142741143
+  }
+ },
+ "B_critical_L": {
+  "a/m=0.5 E=1.00": {
+   "L_critical": 4.000000001953122,
+   "direct_integration": {
+    "L=0.98 Lc": "crosses throat",
+    "L=1.02 Lc": "scattered back"
+   }
+  },
+  "a/m=0.5 E=1.20": {
+   "L_critical": 5.372799069202157,
+   "direct_integration": {
+    "L=0.98 Lc": "crosses throat",
+    "L=1.02 Lc": "scattered back"
+   }
+  },
+  "a/m=1.0 E=1.00": {
+   "L_critical": 3.9999999999998654,
+   "direct_integration": {
+    "L=0.98 Lc": "crosses throat",
+    "L=1.02 Lc": "scattered back"
+   }
+  },
+  "a/m=1.0 E=1.20": {
+   "L_critical": 5.372799072462748,
+   "direct_integration": {
+    "L=0.98 Lc": "crosses throat",
+    "L=1.02 Lc": "scattered back"
+   }
+  },
+  "a/m=1.9 E=1.00": {
+   "L_critical": 4.000000001377909,
+   "direct_integration": {
+    "L=0.98 Lc": "crosses throat",
+    "L=1.02 Lc": "scattered back"
+   }
+  },
+  "a/m=1.9 E=1.20": {
+   "L_critical": 5.372799065445706,
+   "direct_integration": {
+    "L=0.98 Lc": "crosses throat",
+    "L=1.02 Lc": "scattered back"
+   }
+  },
+  "a/m=3.0 E=1.00": {
+   "L_critical": 4.000000001952858,
+   "direct_integration": {
+    "L=0.98 Lc": "crosses throat",
+    "L=1.02 Lc": "scattered back"
+   }
+  },
+  "a/m=3.0 E=1.20": {
+   "L_critical": 5.372799062842876,
+   "direct_integration": {
+    "L=0.98 Lc": "crosses throat",
+    "L=1.02 Lc": "scattered back"
+   }
+  },
+  "a/m=6.0 E=1.00": {
+   "L_critical": 4.242640687120031,
+   "direct_integration": {
+    "L=0.98 Lc": "crosses throat",
+    "L=1.02 Lc": "scattered back"
+   }
+  },
+  "a/m=6.0 E=1.20": {
+   "L_critical": 6.462197768561404,
+   "direct_integration": {
+    "L=0.98 Lc": "crosses throat",
+    "L=1.02 Lc": "scattered back"
+   }
+  }
+ },
+ "B_circular": {
+  "a/m=0.5": {
+   "exterior_circular": [
+    {
+     "L": 4.0,
+     "R": 3.9999875,
+     "stable": false
+    },
+    {
+     "L": 4.0,
+     "R": 11.99987375,
+     "stable": true
+    },
+    {
+     "L": 5.0,
+     "R": 3.48602,
+     "stable": false
+    },
+    {
+     "L": 5.0,
+     "R": 21.5138375,
+     "stable": true
+    },
+    {
+     "L": 6.0,
+     "R": 3.30297125,
+     "stable": false
+    },
+    {
+     "L": 6.0,
+     "R": 32.696903750000004,
+     "stable": true
+    },
+    {
+     "L": 8.0,
+     "R": 3.15549875,
+     "stable": false
+    },
+    {
+     "L": 8.0,
+     "R": 60.84427625,
+     "stable": true
+    }
+   ],
+   "throat": {}
+  },
+  "a/m=1.0": {
+   "exterior_circular": [
+    {
+     "L": 4.0,
+     "R": 3.9998275,
+     "stable": false
+    },
+    {
+     "L": 4.0,
+     "R": 11.99996,
+     "stable": true
+    },
+    {
+     "L": 5.0,
+     "R": 3.4859325,
+     "stable": false
+    },
+    {
+     "L": 5.0,
+     "R": 21.5137325,
+     "stable": true
+    },
+    {
+     "L": 6.0,
+     "R": 3.3030475,
+     "stable": false
+    },
+    {
+     "L": 6.0,
+     "R": 32.696775,
+     "stable": true
+    },
+    {
+     "L": 8.0,
+     "R": 3.155515,
+     "stable": false
+    },
+    {
+     "L": 8.0,
+     "R": 60.844277500000004,
+     "stable": true
+    }
+   ],
+   "throat": {}
+  },
+  "a/m=1.9": {
+   "exterior_circular": [
+    {
+     "L": 4.0,
+     "R": 3.9999137499999997,
+     "stable": false
+    },
+    {
+     "L": 4.0,
+     "R": 11.999892,
+     "stable": true
+    },
+    {
+     "L": 5.0,
+     "R": 3.48601575,
+     "stable": false
+    },
+    {
+     "L": 5.0,
+     "R": 21.513838749999994,
+     "stable": true
+    },
+    {
+     "L": 6.0,
+     "R": 3.30287125,
+     "stable": false
+    },
+    {
+     "L": 6.0,
+     "R": 32.6967825,
+     "stable": true
+    },
+    {
+     "L": 8.0,
+     "R": 3.1554575,
+     "stable": false
+    },
+    {
+     "L": 8.0,
+     "R": 60.84421774999999,
+     "stable": true
+    }
+   ],
+   "throat": {}
+  },
+  "a/m=3.0": {
+   "exterior_circular": [
+    {
+     "L": 4.0,
+     "R": 3.999845,
+     "stable": false
+    },
+    {
+     "L": 4.0,
+     "R": 11.9999525,
+     "stable": true
+    },
+    {
+     "L": 5.0,
+     "R": 3.4860625,
+     "stable": false
+    },
+    {
+     "L": 5.0,
+     "R": 21.5136875,
+     "stable": true
+    },
+    {
+     "L": 6.0,
+     "R": 3.302995,
+     "stable": false
+    },
+    {
+     "L": 6.0,
+     "R": 32.6967825,
+     "stable": true
+    },
+    {
+     "L": 8.0,
+     "R": 3.15554,
+     "stable": false
+    },
+    {
+     "L": 8.0,
+     "R": 60.844325,
+     "stable": true
+    }
+   ],
+   "throat": {
+    "L=0": "stable (potential minimum)",
+    "L=2": "stable (potential minimum)",
+    "L=6": "stable (potential minimum)",
+    "L=12": "stable (potential minimum)",
+    "L_threshold": null
+   }
+  },
+  "a/m=6.0": {
+   "exterior_circular": [
+    {
+     "L": 4.0,
+     "R": 11.99992,
+     "stable": true
+    },
+    {
+     "L": 5.0,
+     "R": 21.51373,
+     "stable": true
+    },
+    {
+     "L": 6.0,
+     "R": 32.696794999999995,
+     "stable": true
+    },
+    {
+     "L": 8.0,
+     "R": 60.84436,
+     "stable": true
+    }
+   ],
+   "throat": {
+    "L=0": "stable (potential minimum)",
+    "L=2": "stable (potential minimum)",
+    "L=6": "unstable (barrier at throat)",
+    "L=12": "unstable (barrier at throat)",
+    "L_threshold": 3.4641016151377544
+   }
+  }
+ },
+ "B_L_never_helps": "dU/d(L^2) = f / R^2 > 0 outside the horizon, so the allowed-crossing set is {L <= L_c(E)}; inside the horizon f < 0 there is no turning point",
+ "C_jacobi": {
+  "zero_crossings_radial": 1,
+  "zero_crossings_transverse": 0,
+  "transverse_vs_R_max_dev": 1.1589840198666934e-11,
+  "K11_range": [
+   -0.20238574865821568,
+   0.9999996409563446
+  ],
+  "Kth_range": [
+   -1.899999537232615,
+   0.04002535051702906
+  ],
+  "radial_max_growth": 30.775164151092245,
+  "radial_xi_min": 4.906947568758112e-06,
+  "R_min": 1.0000000398937452
+ },
+ "C_tidal_scaling": {
+  "0.25": {
+   "Kth_abs_max": 126.4,
+   "K11_abs_max": 64.0,
+   "kretschmann_throat": null
+  },
+  "0.5": {
+   "Kth_abs_max": 15.6,
+   "K11_abs_max": 8.0,
+   "kretschmann_throat": null
+  },
+  "1.0": {
+   "Kth_abs_max": 1.9,
+   "K11_abs_max": 1.0,
+   "kretschmann_throat": null
+  },
+  "1.5": {
+   "Kth_abs_max": 0.5481481481481482,
+   "K11_abs_max": 0.2962962962962963,
+   "kretschmann_throat": null
+  },
+  "1.9": {
+   "Kth_abs_max": 0.2638868639743403,
+   "K11_abs_max": 0.1457938474996355,
+   "kretschmann_throat": null
+  }
+ },
+ "D_region_sequence": [
+  [
+   "exterior (r>0)",
+   0.0
+  ],
+  [
+   "trapped (R decreasing)",
+   98.468
+  ],
+  [
+   "anti-trapped (R increasing)",
+   99.952
+  ],
+  [
+   "exterior (r<0)",
+   101.436
+  ],
+  [
+   "trapped (R decreasing)",
+   298.372
+  ],
+  [
+   "anti-trapped (R increasing)",
+   299.855
+  ],
+  [
+   "exterior (r>0)",
+   301.339
+  ]
+ ],
+ "D_theta_antitrapped": {
+  "E2_f20": [
+   0.003482281620947419,
+   1.4947646719029488
+  ],
+  "E0": [
+   0.0029999960000046243,
+   10.428141347257043
+  ],
+  "E1": [
+   0.0035355294865203266,
+   1.524398168665778
+  ]
+ },
+ "D_second_exterior": {
+  "r_min_reached": -19.97498435524499,
+  "R_at_turn": 19.999999999807056,
+  "returns_to_horizon_branch": true
+ },
+ "D_one_way": "inside |r| < r_h the coordinate r is timelike and dr/dtau has a fixed sign for future-directed curves (U < 0 there), so no future-directed curve returns to the first exterior",
+ "E_Tkk_integral": "-0.0795774715459477*pi*a",
+ "E_penrose": "The maximal extension contains closed trapped surfaces (r > 0 inside the horizon) and is geodesically complete. The Penrose theorem (NEC + closed trapped surface + non-compact Cauchy surface => null geodesic incompleteness) then requires NEC violation, consistent with T_kk < 0. Formation from NEC-satisfying (classical ordinary) collapsing matter is excluded by the same theorem; any formation channel must violate the NEC (quantum/torsion/unknown)."
+}
