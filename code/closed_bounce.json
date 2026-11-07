@@ -1,0 +1,67 @@
+{
+ "C_crit_over_RdS": 0.3849001794597505,
+ "bounce_table": [
+  {
+   "C_over_Ccrit": 0.0,
+   "a_bounce_over_RdS": 1.0,
+   "rho_neck_over_Vf": 1.0
+  },
+  {
+   "C_over_Ccrit": 0.1,
+   "a_bounce_over_RdS": 0.980168986866305,
+   "rho_neck_over_Vf": 1.0408738213513709
+  },
+  {
+   "C_over_Ccrit": 0.3,
+   "a_bounce_over_RdS": 0.9363094178033694,
+   "rho_neck_over_Vf": 1.1406731437441926
+  },
+  {
+   "C_over_Ccrit": 0.5,
+   "a_bounce_over_RdS": 0.8845519308919179,
+   "rho_neck_over_Vf": 1.2780661432813856
+  },
+  {
+   "C_over_Ccrit": 0.8,
+   "a_bounce_over_RdS": 0.7769783309368914,
+   "rho_neck_over_Vf": 1.6564647028013313
+  },
+  {
+   "C_over_Ccrit": 0.95,
+   "a_bounce_over_RdS": 0.6797746019730792,
+   "rho_neck_over_Vf": 2.164064154696179
+  },
+  {
+   "C_over_Ccrit": 0.99,
+   "a_bounce_over_RdS": 0.6238701392270487,
+   "rho_neck_over_Vf": 2.5692809787757094
+  }
+ ],
+ "observed": [
+  {
+   "omega_k": 0.001,
+   "C_over_Ccrit": 21207.543565321273
+  },
+  {
+   "omega_k": 0.004,
+   "C_over_Ccrit": 2650.942945665159
+  },
+  {
+   "omega_k": 0.01,
+   "C_over_Ccrit": 670.6414124366313
+  },
+  {
+   "omega_k": 0.1,
+   "C_over_Ccrit": 21.207543565321274
+  },
+  {
+   "omega_k": 0.5,
+   "C_over_Ccrit": 1.8968603619138646
+  },
+  {
+   "omega_k": 0.8,
+   "C_over_Ccrit": 0.9372498667092377
+  }
+ ],
+ "omega_k_for_critical": 0.7661731209093102
+}

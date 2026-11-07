@@ -1,0 +1,116 @@
+{
+ "period": 0.6922381794669575,
+ "largest_multiplier": 12.667543370581487,
+ "rows": [
+  {
+   "gamma": 0.0,
+   "bounces": 11,
+   "S": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "radiation_peak_first_period_over_Vf": 0.0,
+   "stretch": 67.20492557600977
+  },
+  {
+   "gamma": 0.001,
+   "bounces": 3,
+   "S": [
+    0.0002539336312237255,
+    0.0005073748481023507,
+    0.0007682699197423601
+   ],
+   "radiation_peak_first_period_over_Vf": 0.00010864827195401479,
+   "stretch": 67.2134162876041
+  },
+  {
+   "gamma": 0.01,
+   "bounces": 3,
+   "S": [
+    0.0025318479023559407,
+    0.005032766013409795,
+    0.007500149829644223
+   ],
+   "radiation_peak_first_period_over_Vf": 0.001083873738523464,
+   "stretch": 67.32556873589363
+  },
+  {
+   "gamma": 0.1,
+   "bounces": 1,
+   "S": [
+    0.024684372669225636
+   ],
+   "radiation_peak_first_period_over_Vf": 0.010554790939650704,
+   "stretch": 71.70740472944429
+  },
+  {
+   "gamma": 0.2,
+   "bounces": 1,
+   "S": [
+    0.04868568163012655
+   ],
+   "radiation_peak_first_period_over_Vf": 0.020637232651244536,
+   "stretch": 93.69726000517063
+  },
+  {
+   "gamma": 0.3,
+   "bounces": 0,
+   "S": [],
+   "radiation_peak_first_period_over_Vf": 0.030388984077798067,
+   "stretch": null
+  },
+  {
+   "gamma": 0.5,
+   "bounces": 0,
+   "S": [],
+   "radiation_peak_first_period_over_Vf": 0.04920882984006791,
+   "stretch": null
+  },
+  {
+   "gamma": 0.7,
+   "bounces": 0,
+   "S": [],
+   "radiation_peak_first_period_over_Vf": 0.06637719800456446,
+   "stretch": null
+  },
+  {
+   "gamma": 1.0,
+   "bounces": 0,
+   "S": [],
+   "radiation_peak_first_period_over_Vf": 0.09118355077287355,
+   "stretch": null
+  },
+  {
+   "gamma": 2.0,
+   "bounces": 0,
+   "S": [],
+   "radiation_peak_first_period_over_Vf": 0.1555107621007642,
+   "stretch": null
+  },
+  {
+   "gamma": 3.7,
+   "bounces": 0,
+   "S": [],
+   "radiation_peak_first_period_over_Vf": 0.20914252482219756,
+   "stretch": null
+  },
+  {
+   "gamma": 5.0,
+   "bounces": 0,
+   "S": [],
+   "radiation_peak_first_period_over_Vf": 0.23060137944100664,
+   "stretch": null
+  },
+  {
+   "gamma": 8.0,
+   "bounces": 0,
+   "S": [],
+   "radiation_peak_first_period_over_Vf": 0.2508876559885698,
+   "stretch": null
+  }
+ ]
+}

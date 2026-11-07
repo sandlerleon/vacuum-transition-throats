@@ -1,0 +1,2679 @@
+{
+ "periodicity": [
+  {
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "period": 1.723599353931388,
+   "start": [
+    0.936618492245243,
+    0.0,
+    0.011131276083916597,
+    0.0,
+    0.0
+   ],
+   "after_one_period": [
+    0.9366184922452475,
+    -6.418476861114186e-17,
+    0.01113127608858599,
+    2.6581863446506482e-11,
+    0.0
+   ],
+   "delta": [
+    4.551914400963142e-15,
+    -6.418476861114186e-17,
+    4.669393344203243e-12,
+    2.6581863446506482e-11,
+    0.0
+   ],
+   "delta_over_v": [
+    9.531359251371572e-12,
+    5.426000154690061e-11
+   ],
+   "constraint_start": 2.233768725545815e-13,
+   "constraint_end": 6.66577903984944e-13
+  },
+  {
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "period": 1.8182206090806323,
+   "start": [
+    0.936323243625324,
+    0.0,
+    0.0015939975067101602,
+    0.0,
+    0.0
+   ],
+   "after_one_period": [
+    0.9363232436254572,
+    -6.591949208711867e-17,
+    0.0015939975411359217,
+    2.808774347004897e-10,
+    0.0
+   ],
+   "delta": [
+    1.3311574065255627e-13,
+    -6.591949208711867e-17,
+    3.442576150362864e-11,
+    2.808774347004897e-10,
+    0.0
+   ],
+   "delta_over_v": [
+    7.027129140886529e-11,
+    5.733386627317512e-10
+   ],
+   "constraint_start": 7.149836278586008e-14,
+   "constraint_end": 8.79296635503124e-13
+  },
+  {
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.6,
+   "period": 1.8737181224700568,
+   "start": [
+    0.8549509261445343,
+    0.0,
+    0.03440290109293795,
+    0.0,
+    0.0
+   ],
+   "after_one_period": [
+    0.8549509261444819,
+    -4.0766001685454967e-17,
+    0.03440290109415814,
+    3.979941376464069e-12,
+    0.0
+   ],
+   "delta": [
+    -5.240252676230739e-14,
+    -4.0766001685454967e-17,
+    1.2201906152142783e-12,
+    3.979941376464069e-12,
+    0.0
+   ],
+   "delta_over_v": [
+    2.490703663506392e-12,
+    8.12402131543925e-12
+   ],
+   "constraint_start": 3.6493030819428895e-13,
+   "constraint_end": 5.081490783709341e-13
+  },
+  {
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "period": 0.6922381794669575,
+   "start": [
+    0.9393765718300146,
+    0.0,
+    0.017383041827362576,
+    0.0,
+    0.0
+   ],
+   "after_one_period": [
+    0.9393765718300211,
+    -1.214306433183765e-17,
+    0.01738304182747935,
+    1.4466622344500024e-12,
+    0.0
+   ],
+   "delta": [
+    6.5503158452884236e-15,
+    -1.214306433183765e-17,
+    1.1677464550885475e-13,
+    1.4466622344500024e-12,
+    0.0
+   ],
+   "delta_over_v": [
+    4.767304939851357e-13,
+    5.905973840928457e-12
+   ],
+   "constraint_start": 1.1102230246251565e-16,
+   "constraint_end": 6.039613253960852e-14
+  },
+  {
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "period": 0.8391197797467406,
+   "start": [
+    0.9363476072995025,
+    0.0,
+    0.0013245556888135336,
+    0.0,
+    0.0
+   ],
+   "after_one_period": [
+    0.936347607299524,
+    -4.336808689942018e-19,
+    0.0013245556952458653,
+    1.0390774980890971e-10,
+    0.0
+   ],
+   "delta": [
+    2.1538326677728037e-14,
+    -4.336808689942018e-19,
+    6.432331663835944e-12,
+    1.0390774980890971e-10,
+    0.0
+   ],
+   "delta_over_v": [
+    2.6259884054576e-11,
+    4.242016122543418e-10
+   ],
+   "constraint_start": 7.338574192772285e-14,
+   "constraint_end": 6.816769371198461e-13
+  },
+  {
+   "kind": "wide",
+   "mu": 10.0,
+   "rc": 0.05,
+   "C_over_Ccrit": 0.9,
+   "period": 7.3888153146683555,
+   "start": [
+    0.6797689015736944,
+    0.0,
+    0.013213585225773566,
+    0.0,
+    0.0
+   ],
+   "after_one_period": [
+    0.679768827357406,
+    -1.0820337681405334e-16,
+    0.013213594950801523,
+    -1.6153760253406757e-05,
+    0.0
+   ],
+   "delta": [
+    -7.421628844817008e-08,
+    -1.0820337681405334e-16,
+    9.725027956541954e-09,
+    -1.6153760253406757e-05,
+    0.0
+   ],
+   "delta_over_v": [
+    1.985113018985764e-08,
+    -3.297372504008204e-05
+   ],
+   "constraint_start": -3.9968028886505635e-15,
+   "constraint_end": 3.196864994947646e-11
+  }
+ ],
+ "dissipation": [
+  {
+   "bounces": 4,
+   "turnarounds": 5,
+   "end": "singular",
+   "a_neck": [
+    0.9366184922452475,
+    0.9366184921261399,
+    0.9366185468495115,
+    0.9365933079117654
+   ],
+   "radiation_over_Vf": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "S": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "max_constraint": 2.255973186038318e-12,
+   "a_min": 0.9365933079117654,
+   "first_return": [
+    0.01113127608858599,
+    2.6581863446506482e-11
+   ],
+   "stretch": 1336.0557581025885,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "none",
+   "gamma": 0.0
+  },
+  {
+   "bounces": 2,
+   "turnarounds": 3,
+   "end": "singular",
+   "a_neck": [
+    0.936618325094851,
+    0.936496598281752
+   ],
+   "radiation_over_Vf": [
+    8.483014895063041e-07,
+    1.6972267951572192e-06
+   ],
+   "S": [
+    1.958493283831576e-06,
+    3.9163901633397215e-06
+   ],
+   "max_constraint": 1.47137857453572e-12,
+   "a_min": 0.936496598281752,
+   "first_return": [
+    0.011135974749097046,
+    2.6909574297078083e-05
+   ],
+   "stretch": 1336.0628890814946,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 1e-06
+  },
+  {
+   "bounces": 2,
+   "turnarounds": 3,
+   "end": "singular",
+   "a_neck": [
+    0.9366168202582523,
+    0.9353126701828847
+   ],
+   "radiation_over_Vf": [
+    8.483023483833074e-06,
+    1.703932438288493e-05
+   ],
+   "S": [
+    1.9584826801484798e-05,
+    3.9120184619303845e-05
+   ],
+   "max_constraint": 1.2329026688462363e-12,
+   "a_min": 0.9353126701828847,
+   "first_return": [
+    0.011178264247908822,
+    0.00026910280159285786
+   ],
+   "stretch": 1336.1344155215343,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 1e-05
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.936601724033691
+   ],
+   "radiation_over_Vf": [
+    8.483113134923562e-05
+   ],
+   "S": [
+    0.0001958377113776137
+   ],
+   "max_constraint": 1.0086376178719547e-12,
+   "a_min": 0.936601724033691,
+   "first_return": [
+    0.01160131471628716,
+    0.0026917641685310694
+   ],
+   "stretch": 1336.8313046742805,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 0.0001
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.9364459338372754
+   ],
+   "radiation_over_Vf": [
+    0.0008484388979733359
+   ],
+   "S": [
+    0.0019573687880659486
+   ],
+   "max_constraint": 1.0330625244137082e-12,
+   "a_min": 0.9364459338372754,
+   "first_return": [
+    0.015848996795115065,
+    0.02699794194725262
+   ],
+   "stretch": 1344.8558951114944,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 0.001
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.9343365580065252
+   ],
+   "radiation_over_Vf": [
+    0.008540997598261168
+   ],
+   "S": [
+    0.0195273460301676
+   ],
+   "max_constraint": 9.842127113302013e-13,
+   "a_min": 0.9343365580065252,
+   "first_return": [
+    0.062140654704585165,
+    0.28643109441494813
+   ],
+   "stretch": 1567.450214820579,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 0.01
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 2.1094237467877974e-13,
+   "a_min": 0.936618492245243,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 0.1
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 1.2918555114538322e-12,
+   "a_min": 0.936618492245243,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 1.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 3.9401815143946806e-13,
+   "a_min": 0.936618492245243,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 5.0
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.9344807373716008
+   ],
+   "radiation_over_Vf": [
+    0.007653554559196926
+   ],
+   "S": [
+    0.017509181782079497
+   ],
+   "max_constraint": 5.949685188966214e-13,
+   "a_min": 0.9344807373716008,
+   "first_return": [
+    0.051189012384932654,
+    0.2261397999267741
+   ],
+   "stretch": 1494.8741129934472,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "gated",
+   "gamma": 0.01
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 4.0967229608668276e-14,
+   "a_min": 0.936618492245243,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "gated",
+   "gamma": 0.1
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 3.0186964039558006e-13,
+   "a_min": 0.936618492245243,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "gated",
+   "gamma": 1.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 2.8899105330992825e-13,
+   "a_min": 0.936618492245243,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "gated",
+   "gamma": 5.0
+  },
+  {
+   "bounces": 2,
+   "turnarounds": 3,
+   "end": "singular",
+   "a_neck": [
+    0.9366177181687518,
+    0.9360502105138808
+   ],
+   "radiation_over_Vf": [
+    3.864688764440245e-06,
+    2.6646567211595142e-05
+   ],
+   "S": [
+    8.922473276571098e-06,
+    6.137042121954196e-05
+   ],
+   "max_constraint": 1.819322470453244e-12,
+   "a_min": 0.9360502105138808,
+   "first_return": [
+    0.01115245807422796,
+    0.00012141965448470146
+   ],
+   "stretch": 1336.0773525426323,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "thermal",
+   "gamma": 0.1
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.9348216694080734
+   ],
+   "radiation_over_Vf": [
+    0.007203539710636489
+   ],
+   "S": [
+    0.016503736951924156
+   ],
+   "max_constraint": 3.0142555118573e-13,
+   "a_min": 0.9348216694080734,
+   "first_return": [
+    0.05381851608967374,
+    0.24029206254436355
+   ],
+   "stretch": 1488.051869339872,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "thermal",
+   "gamma": 1.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 2.8421709430404007e-13,
+   "a_min": 0.936618451214547,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "thermal",
+   "gamma": 10.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 2.1926904736346842e-13,
+   "a_min": 0.936618451214547,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "thermal",
+   "gamma": 100.0
+  },
+  {
+   "bounces": 3,
+   "turnarounds": 4,
+   "end": "singular",
+   "a_neck": [
+    0.9363232436254572,
+    0.936323234108829,
+    0.9364636963071291
+   ],
+   "radiation_over_Vf": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "S": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "max_constraint": 3.1438185388310558e-12,
+   "a_min": 0.936323234108829,
+   "first_return": [
+    0.0015939975411359217,
+    2.808774347004897e-10
+   ],
+   "stretch": 65485.240429178724,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "none",
+   "gamma": 0.0
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.9363230301536409
+   ],
+   "radiation_over_Vf": [
+    1.7313378715501984e-06
+   ],
+   "S": [
+    3.992141313635164e-06
+   ],
+   "max_constraint": 2.1400659022674517e-12,
+   "a_min": 0.9363230301536409,
+   "first_return": [
+    0.0016319650124155488,
+    0.00030989841544907273
+   ],
+   "stretch": 65485.4404241679,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 1e-06
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.9363210898038785
+   ],
+   "radiation_over_Vf": [
+    1.7313411739570053e-05
+   ],
+   "S": [
+    3.992115836620857e-05
+   ],
+   "max_constraint": 1.5156764732182637e-12,
+   "a_min": 0.9363210898038785,
+   "first_return": [
+    0.001973698644503078,
+    0.0030992134568612836
+   ],
+   "stretch": 65488.4128027153,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 1e-05
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.936299791547983
+   ],
+   "radiation_over_Vf": [
+    0.0001731406242038866
+   ],
+   "S": [
+    0.00039919026384029017
+   ],
+   "max_constraint": 1.2821965711395933e-12,
+   "a_min": 0.936299791547983,
+   "first_return": [
+    0.005394726326265273,
+    0.03102333059294194
+   ],
+   "stretch": 65567.84275030131,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 0.0001
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.9358871164793843
+   ],
+   "radiation_over_Vf": [
+    0.0017355039979556964
+   ],
+   "S": [
+    0.003994300624943115
+   ],
+   "max_constraint": 1.3873346915715956e-12,
+   "a_min": 0.9358871164793843,
+   "first_return": [
+    0.0411893227378361,
+    0.3223852177155835
+   ],
+   "stretch": 72439.87214920184,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 0.001
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 9.418021917895203e-13,
+   "a_min": 0.936323243625324,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 0.01
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 1.0061951272177794e-12,
+   "a_min": 0.936323243625324,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 0.1
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 1.7341683644644945e-12,
+   "a_min": 0.936323243625324,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 1.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 3.902433931557425e-13,
+   "a_min": 0.936323243625324,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 5.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 5.364597654988756e-13,
+   "a_min": 0.936323243625324,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "gated",
+   "gamma": 0.01
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 8.310019339319297e-13,
+   "a_min": 0.936323243625324,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "gated",
+   "gamma": 0.1
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 5.995204332975845e-15,
+   "a_min": 0.936323243625324,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "gated",
+   "gamma": 1.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 3.9901415505028126e-13,
+   "a_min": 0.936323243625324,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "gated",
+   "gamma": 5.0
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.9363207058639575
+   ],
+   "radiation_over_Vf": [
+    1.894299306675784e-05
+   ],
+   "S": [
+    4.367856533172279e-05
+   ],
+   "max_constraint": 1.514011138681326e-12,
+   "a_min": 0.9363207058639575,
+   "first_return": [
+    0.0019990508730472595,
+    0.0033062932161844593
+   ],
+   "stretch": 65487.3727847418,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "thermal",
+   "gamma": 0.1
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 1.0524914273446484e-13,
+   "a_min": 0.9363232026739274,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "thermal",
+   "gamma": 1.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 4.551914400963142e-15,
+   "a_min": 0.9363232026739274,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "thermal",
+   "gamma": 10.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 7.4495964952348e-14,
+   "a_min": 0.9363232026739274,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "thermal",
+   "gamma": 100.0
+  },
+  {
+   "bounces": 6,
+   "turnarounds": 7,
+   "end": "singular",
+   "a_neck": [
+    0.8549509261444819,
+    0.8549509261407849,
+    0.8549509264008813,
+    0.8549509076014858,
+    0.8549522655920706,
+    0.8548523450284752
+   ],
+   "radiation_over_Vf": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "S": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "max_constraint": 1.3170575741128232e-12,
+   "a_min": 0.8548523450284752,
+   "first_return": [
+    0.03440290109415814,
+    3.979941376464069e-12
+   ],
+   "stretch": 131.96633143008725,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.6,
+   "mode": "none",
+   "gamma": 0.0
+  },
+  {
+   "bounces": 3,
+   "turnarounds": 4,
+   "end": "singular",
+   "a_neck": [
+    0.8549507154597,
+    0.8549460715097406,
+    0.8552422729139352
+   ],
+   "radiation_over_Vf": [
+    5.114580350419564e-07,
+    1.0229048459426304e-06,
+    1.5345756664980538e-06
+   ],
+   "S": [
+    8.197767195839354e-07,
+    1.6394998264114549e-06,
+    2.4630101312882643e-06
+   ],
+   "max_constraint": 1.0281775431053575e-12,
+   "a_min": 0.8549460715097406,
+   "first_return": [
+    0.03440441832246305,
+    4.855770022106631e-06
+   ],
+   "stretch": 131.96603423791782,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.6,
+   "mode": "constant",
+   "gamma": 1e-06
+  },
+  {
+   "bounces": 5,
+   "turnarounds": 6,
+   "end": "singular",
+   "a_neck": [
+    0.8549488191616,
+    0.8549020727146456,
+    0.8547117243543436,
+    0.7884893906613919,
+    0.8618014163963629
+   ],
+   "radiation_over_Vf": [
+    5.11460399844269e-06,
+    1.02281078910461e-05,
+    1.5652180928128255e-05,
+    2.3419889782154746e-05,
+    1.796196879017995e-05
+   ],
+   "S": [
+    8.1977323680828e-06,
+    1.6390116305747785e-05,
+    2.5059636064363748e-05,
+    2.7157483116727136e-05,
+    2.9723777813821672e-05
+   ],
+   "max_constraint": 1.1214362771738706e-12,
+   "a_min": 0.7884893906613919,
+   "first_return": [
+    0.03441807355377704,
+    4.855590711920141e-05
+   ],
+   "stretch": 131.9659273113436,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.6,
+   "mode": "constant",
+   "gamma": 1e-05
+  },
+  {
+   "bounces": 2,
+   "turnarounds": 3,
+   "end": "singular",
+   "a_neck": [
+    0.8549298428034706,
+    0.8544331633865794
+   ],
+   "radiation_over_Vf": [
+    5.1148409584234874e-05,
+    0.00010220817082431072
+   ],
+   "S": [
+    8.197384335963793e-05,
+    0.0001634252870207889
+   ],
+   "max_constraint": 1.4162004902118497e-12,
+   "a_min": 0.8544331633865794,
+   "first_return": [
+    0.03455464334899883,
+    0.0004853829888155567
+   ],
+   "stretch": 131.96812335211467,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.6,
+   "mode": "constant",
+   "gamma": 0.0001
+  },
+  {
+   "bounces": 4,
+   "turnarounds": 5,
+   "end": "singular",
+   "a_neck": [
+    0.8547387332541675,
+    0.8476733204411134,
+    0.8429604830318526,
+    0.7733027652713925
+   ],
+   "radiation_over_Vf": [
+    0.0005117258755618695,
+    0.0010307855434377054,
+    0.0011220014045558479,
+    0.002086176460377232
+   ],
+   "S": [
+    0.0008193928535415134,
+    0.00159662759677752,
+    0.001699587463205764,
+    0.002238053933611805
+   ],
+   "max_constraint": 6.399325513939402e-13,
+   "a_min": 0.7733027652713925,
+   "first_return": [
+    0.03592211924651498,
+    0.0048359925018777745
+   ],
+   "stretch": 131.96733841226623,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.6,
+   "mode": "constant",
+   "gamma": 0.001
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.8526838976667875
+   ],
+   "radiation_over_Vf": [
+    0.005146504675785974
+   ],
+   "S": [
+    0.008161798587237932
+   ],
+   "max_constraint": 5.467848396278896e-13,
+   "a_min": 0.8526838976667875,
+   "first_return": [
+    0.04980409901177144,
+    0.04630309945465379
+   ],
+   "stretch": 130.72969481954226,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.6,
+   "mode": "constant",
+   "gamma": 0.01
+  },
+  {
+   "bounces": 2,
+   "turnarounds": 3,
+   "end": "singular",
+   "a_neck": [
+    0.7935409722916643,
+    0.7558706306218349
+   ],
+   "radiation_over_Vf": [
+    0.06888710498697713,
+    0.14192543919266662
+   ],
+   "S": [
+    0.08194766992363725,
+    0.13898610559868224
+   ],
+   "max_constraint": 7.728262474415715e-13,
+   "a_min": 0.7558706306218349,
+   "first_return": [
+    0.006032791034356652,
+    -0.5842901958570593
+   ],
+   "stretch": 297.2146724009462,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.6,
+   "mode": "constant",
+   "gamma": 0.1
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 4.569677969357144e-13,
+   "a_min": 0.8549509261445343,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.6,
+   "mode": "constant",
+   "gamma": 1.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 4.142242104876459e-13,
+   "a_min": 0.8549509261445343,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.6,
+   "mode": "constant",
+   "gamma": 5.0
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.8528794107852964
+   ],
+   "radiation_over_Vf": [
+    0.004626700984873006
+   ],
+   "S": [
+    0.007344178244275166
+   ],
+   "max_constraint": 5.061506769266089e-13,
+   "a_min": 0.8528794107852964,
+   "first_return": [
+    0.046579376704269274,
+    0.036335406735091176
+   ],
+   "stretch": 131.0923231300783,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.6,
+   "mode": "gated",
+   "gamma": 0.01
+  },
+  {
+   "bounces": 2,
+   "turnarounds": 3,
+   "end": "singular",
+   "a_neck": [
+    0.8135563755524025,
+    0.8074010118208934
+   ],
+   "radiation_over_Vf": [
+    0.053728362054262825,
+    0.07103166011466616
+   ],
+   "S": [
+    0.07061150484073538,
+    0.09055874117506475
+   ],
+   "max_constraint": 3.3425484602389588e-12,
+   "a_min": 0.8074010118208934,
+   "first_return": [
+    0.09040723080217707,
+    -0.3107805346397263
+   ],
+   "stretch": 426.6907982375143,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.6,
+   "mode": "gated",
+   "gamma": 0.1
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 3.964606420936434e-13,
+   "a_min": 0.8549509261445343,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.6,
+   "mode": "gated",
+   "gamma": 1.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 4.1300296516055823e-13,
+   "a_min": 0.8549509261445343,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.6,
+   "mode": "gated",
+   "gamma": 5.0
+  },
+  {
+   "bounces": 3,
+   "turnarounds": 4,
+   "end": "singular",
+   "a_neck": [
+    0.854950353507965,
+    0.8549300733841833,
+    0.855824750363608
+   ],
+   "radiation_over_Vf": [
+    1.5408073584577008e-06,
+    7.294279553010697e-06,
+    2.2412158905289753e-05
+   ],
+   "S": [
+    2.4696373431920296e-06,
+    1.1690310205841496e-05,
+    3.606984832168974e-05
+   ],
+   "max_constraint": 9.015010959956271e-13,
+   "a_min": 0.8549300733841833,
+   "first_return": [
+    0.034408870988428694,
+    1.9561185582661622e-05
+   ],
+   "stretch": 131.9659455197385,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.6,
+   "mode": "thermal",
+   "gamma": 0.1
+  },
+  {
+   "bounces": 3,
+   "turnarounds": 4,
+   "end": "singular",
+   "a_neck": [
+    0.8544733237971173,
+    0.8249057306583167,
+    0.8197567830453968
+   ],
+   "radiation_over_Vf": [
+    0.0011905631124517022,
+    0.01706861950423607,
+    0.06384635920364246
+   ],
+   "S": [
+    0.001904003369335942,
+    0.02371029375256194,
+    0.08649628745188728
+   ],
+   "max_constraint": 7.988054662178001e-13,
+   "a_min": 0.8197567830453968,
+   "first_return": [
+    0.038455211584725146,
+    0.013028003788930435
+   ],
+   "stretch": 131.83208599228647,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.6,
+   "mode": "thermal",
+   "gamma": 1.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 3.623767952376511e-13,
+   "a_min": 0.8549508625581543,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.6,
+   "mode": "thermal",
+   "gamma": 10.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 3.6637359812630166e-13,
+   "a_min": 0.8549508625581543,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 10.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.6,
+   "mode": "thermal",
+   "gamma": 100.0
+  },
+  {
+   "bounces": 11,
+   "turnarounds": 12,
+   "end": "singular",
+   "a_neck": [
+    0.9393765718300211,
+    0.9393765718293642,
+    0.9393765718370345,
+    0.9393765717393168,
+    0.9393765729766925,
+    0.939376557301529,
+    0.9393767558671867,
+    0.9393742405980732,
+    0.9394061141710084,
+    0.9390041536718357,
+    0.9444133803588176
+   ],
+   "radiation_over_Vf": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "S": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "max_constraint": 1.0774714453987144e-12,
+   "a_min": 0.9390041536718357,
+   "first_return": [
+    0.01738304182747935,
+    1.4466622344500024e-12
+   ],
+   "stretch": 67.20492557600977,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "none",
+   "gamma": 0.0
+  },
+  {
+   "bounces": 6,
+   "turnarounds": 7,
+   "end": "singular",
+   "a_neck": [
+    0.9393765702767318,
+    0.9393758071307116,
+    0.9393847524947967,
+    0.9392708537252746,
+    0.9407366837541934,
+    0.924970447882798
+   ],
+   "radiation_over_Vf": [
+    1.0873872190073564e-07,
+    2.174779302680367e-07,
+    3.262058782964946e-07,
+    4.35132859671079e-07,
+    5.408138933866697e-07,
+    6.974361978417622e-07
+   ],
+   "S": [
+    2.5401793103894113e-07,
+    5.080353475754766e-07,
+    7.620563116014146e-07,
+    1.0160299729851624e-06,
+    1.2706952687539904e-06,
+    1.5315711220902445e-06
+   ],
+   "max_constraint": 6.797895579779833e-13,
+   "a_min": 0.924970447882798,
+   "first_return": [
+    0.017383194699861708,
+    1.7876081743403716e-06
+   ],
+   "stretch": 67.20408595431734,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 1e-06
+  },
+  {
+   "bounces": 5,
+   "turnarounds": 6,
+   "end": "singular",
+   "a_neck": [
+    0.9393765562965252,
+    0.9393689254218462,
+    0.9394584514964226,
+    0.9383313060859876,
+    0.9556377827216633
+   ],
+   "radiation_over_Vf": [
+    1.0873840282131144e-06,
+    2.1748167067273177e-06,
+    3.2611238328083397e-06,
+    4.36736331081983e-06,
+    5.1461724601458426e-06
+   ],
+   "S": [
+    2.540171705352846e-06,
+    5.080291980617273e-06,
+    7.6207700267110565e-06,
+    1.0156998792657028e-05,
+    1.2875936876752318e-05
+   ],
+   "max_constraint": 8.139044993527023e-13,
+   "a_min": 0.9383313060859876,
+   "first_return": [
+    0.01738457055625458,
+    1.7876117345765052e-05
+   ],
+   "stretch": 67.20417317732617,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 1e-05
+  },
+  {
+   "bounces": 4,
+   "turnarounds": 5,
+   "end": "singular",
+   "a_neck": [
+    0.9393764164359685,
+    0.9393001656089601,
+    0.9402027929900759,
+    0.9299067230347301
+   ],
+   "radiation_over_Vf": [
+    1.0873521249956955e-05,
+    2.1751911208478547e-05,
+    3.251822311608558e-05,
+    4.5334209580134744e-05
+   ],
+   "S": [
+    2.54009566544152e-05,
+    5.0796790391256174e-05,
+    7.623145502183007e-05,
+    0.00010169622992475623
+   ],
+   "max_constraint": 4.689582056016661e-13,
+   "a_min": 0.9299067230347301,
+   "first_return": [
+    0.01739832958951625,
+    0.00017876591674913928
+   ],
+   "stretch": 67.20499357360505,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 0.0001
+  },
+  {
+   "bounces": 3,
+   "turnarounds": 4,
+   "end": "singular",
+   "a_neck": [
+    0.9393750119770616,
+    0.9386182190557356,
+    0.948516503412684
+   ],
+   "radiation_over_Vf": [
+    0.00010870335655397041,
+    0.00021789725553751063,
+    0.00031638290408083524
+   ],
+   "S": [
+    0.0002539336312237255,
+    0.0005073748481023507,
+    0.0007682699197423601
+   ],
+   "max_constraint": 3.0742075551870585e-13,
+   "a_min": 0.9386182190557356,
+   "first_return": [
+    0.017535967107674855,
+    0.0017881369632488514
+   ],
+   "stretch": 67.2134162876041,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 0.001
+  },
+  {
+   "bounces": 3,
+   "turnarounds": 4,
+   "end": "singular",
+   "a_neck": [
+    0.9393603770862069,
+    0.9322961604450931,
+    0.9361538893877331
+   ],
+   "radiation_over_Vf": [
+    0.001083895487473931,
+    0.0022205977841802463,
+    0.003255065264766658
+   ],
+   "S": [
+    0.0025318479023559407,
+    0.005032766013409795,
+    0.007500149829644223
+   ],
+   "max_constraint": 5.28577182024037e-13,
+   "a_min": 0.9322961604450931,
+   "first_return": [
+    0.018917318403295705,
+    0.017931420884415947
+   ],
+   "stretch": 67.32556873589363,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 0.01
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.9391485024057016
+   ],
+   "radiation_over_Vf": [
+    0.01057703054577454
+   ],
+   "S": [
+    0.024684372669225636
+   ],
+   "max_constraint": 1.688649220454863e-13,
+   "a_min": 0.9391485024057016,
+   "first_return": [
+    0.033544106158490176,
+    0.18709456172925032
+   ],
+   "stretch": 71.70740472944429,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 0.1
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 8.93729534823251e-14,
+   "a_min": 0.9393765718300146,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 1.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 4.529709940470639e-14,
+   "a_min": 0.9393765718300146,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 5.0
+  },
+  {
+   "bounces": 3,
+   "turnarounds": 4,
+   "end": "singular",
+   "a_neck": [
+    0.9393437238963238,
+    0.9332214142616154,
+    0.9503766832733734
+   ],
+   "radiation_over_Vf": [
+    0.0009665016388655766,
+    0.0019594798558953083,
+    0.002761119078130547
+   ],
+   "S": [
+    0.0022574700730298037,
+    0.004458623914940207,
+    0.0067575533376402815
+   ],
+   "max_constraint": 2.7977620220553945e-13,
+   "a_min": 0.9332214142616154,
+   "first_return": [
+    0.018697936499216264,
+    0.015333935091020847
+   ],
+   "stretch": 67.34846527511374,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "gated",
+   "gamma": 0.01
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.9389989282617365
+   ],
+   "radiation_over_Vf": [
+    0.009450570844553443
+   ],
+   "S": [
+    0.022041425733318402
+   ],
+   "max_constraint": 1.5942802633617248e-13,
+   "a_min": 0.9389989282617365,
+   "first_return": [
+    0.031096447195510645,
+    0.15915302750221078
+   ],
+   "stretch": 71.09516704199088,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "gated",
+   "gamma": 0.1
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 4.707345624410664e-14,
+   "a_min": 0.9393765718300146,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "gated",
+   "gamma": 1.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 7.016609515630989e-14,
+   "a_min": 0.9393765718300146,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "gated",
+   "gamma": 5.0
+  },
+  {
+   "bounces": 5,
+   "turnarounds": 6,
+   "end": "singular",
+   "a_neck": [
+    0.9393765442858872,
+    0.9393750702892616,
+    0.9393910385495176,
+    0.9391842899794177,
+    0.9418746396282098
+   ],
+   "radiation_over_Vf": [
+    2.615349709910162e-07,
+    6.502434548851265e-07,
+    1.3646405463481476e-06,
+    2.552346930637854e-06,
+    4.3333062309032315e-06
+   ],
+   "S": [
+    6.109559107529126e-07,
+    1.5189845825577792e-06,
+    3.188050389168301e-06,
+    5.957502569114555e-06,
+    1.0230881395653e-05
+   ],
+   "max_constraint": 9.383605004131823e-13,
+   "a_min": 0.9391842899794177,
+   "first_return": [
+    0.017383343326050894,
+    3.4071333350690902e-06
+   ],
+   "stretch": 67.20396865864619,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "thermal",
+   "gamma": 0.1
+  },
+  {
+   "bounces": 4,
+   "turnarounds": 5,
+   "end": "singular",
+   "a_neck": [
+    0.9393754684054418,
+    0.939158197859282,
+    0.9399217783306968,
+    0.9255670633124433
+   ],
+   "radiation_over_Vf": [
+    3.105828064279922e-05,
+    0.0003078205662566497,
+    0.0012996387513101275,
+    0.004087790119547313
+   ],
+   "S": [
+    7.255302468503483e-05,
+    0.0007184125370790152,
+    0.0030430616916889744,
+    0.008999977236867414
+   ],
+   "max_constraint": 5.492273302820649e-13,
+   "a_min": 0.9255670633124433,
+   "first_return": [
+    0.017424882984401292,
+    0.000497981471494241
+   ],
+   "stretch": 67.20391765538129,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "thermal",
+   "gamma": 1.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 5.773159728050814e-15,
+   "a_min": 0.9393765300924276,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "thermal",
+   "gamma": 10.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 1.9984014443252818e-15,
+   "a_min": 0.9393765300924276,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.2,
+   "C_over_Ccrit": 0.3,
+   "mode": "thermal",
+   "gamma": 100.0
+  },
+  {
+   "bounces": 4,
+   "turnarounds": 5,
+   "end": "singular",
+   "a_neck": [
+    0.936347607299524,
+    0.9363476068607134,
+    0.9363481248460341,
+    0.9357231147680275
+   ],
+   "radiation_over_Vf": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "S": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "max_constraint": 2.861377801366416e-12,
+   "a_min": 0.9357231147680275,
+   "first_return": [
+    0.0013245556952458653,
+    1.0390774980890971e-10
+   ],
+   "stretch": 9547.047694206156,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "none",
+   "gamma": 0.0
+  },
+  {
+   "bounces": 2,
+   "turnarounds": 3,
+   "end": "singular",
+   "a_neck": [
+    0.9363475979736434,
+    0.9361415476185467
+   ],
+   "radiation_over_Vf": [
+    3.615774461405008e-07,
+    7.237748175698089e-07
+   ],
+   "S": [
+    8.338174708332859e-07,
+    1.6675958473696719e-06
+   ],
+   "max_constraint": 1.6107115641261771e-12,
+   "a_min": 0.9361415476185467,
+   "first_return": [
+    0.0013275518915922037,
+    4.844951105574438e-05
+   ],
+   "stretch": 9547.043586584503,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 1e-06
+  },
+  {
+   "bounces": 2,
+   "turnarounds": 3,
+   "end": "singular",
+   "a_neck": [
+    0.9363475139206084,
+    0.9341199772563115
+   ],
+   "radiation_over_Vf": [
+    3.6157627782267914e-06,
+    7.344035697791555e-06
+   ],
+   "S": [
+    8.338144772322738e-06,
+    1.6775160120511618e-05
+   ],
+   "max_constraint": 1.3241630014704242e-12,
+   "a_min": 0.9341199772563115,
+   "first_return": [
+    0.001354518032037026,
+    0.00048450105671518585
+   ],
+   "stretch": 9546.815742548097,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 1e-05
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.936346661495548
+   ],
+   "radiation_over_Vf": [
+    3.6156483035357404e-05
+   ],
+   "S": [
+    8.337850425216753e-05
+   ],
+   "max_constraint": 1.2835288387691435e-12,
+   "a_min": 0.936346661495548,
+   "first_return": [
+    0.0016242184471838557,
+    0.004845728289794268
+   ],
+   "stretch": 9545.291084267288,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 0.0001
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.9363369433548563
+   ],
+   "radiation_over_Vf": [
+    0.00036147402670507676
+   ],
+   "S": [
+    0.0008335410396825535
+   ],
+   "max_constraint": 1.0514922266224858e-12,
+   "a_min": 0.9363369433548563,
+   "first_return": [
+    0.00432720841747636,
+    0.048560238496466755
+   ],
+   "stretch": 9547.583359140279,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 0.001
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.9361038902167113
+   ],
+   "radiation_over_Vf": [
+    0.0036353783636330753
+   ],
+   "S": [
+    0.008374657856309588
+   ],
+   "max_constraint": 5.790923296444817e-13,
+   "a_min": 0.9361038902167113,
+   "first_return": [
+    0.03481439851865831,
+    0.5384638148054439
+   ],
+   "stretch": 12499.02573471607,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 0.01
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 9.82436354490801e-13,
+   "a_min": 0.9363476072995025,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 0.1
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 5.121458812595847e-13,
+   "a_min": 0.9363476072995025,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 1.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 3.362865541589599e-13,
+   "a_min": 0.9363476072995025,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "constant",
+   "gamma": 5.0
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.9361102119358182
+   ],
+   "radiation_over_Vf": [
+    0.003188757921087126
+   ],
+   "S": [
+    0.007345996835695378
+   ],
+   "max_constraint": 4.704014955336788e-13,
+   "a_min": 0.9361102119358182,
+   "first_return": [
+    0.029103424809708112,
+    0.44769009881978156
+   ],
+   "stretch": 11422.750713811729,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "gated",
+   "gamma": 0.01
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 4.3243186809149847e-13,
+   "a_min": 0.9363476072995025,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "gated",
+   "gamma": 0.1
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 1.3117285035946225e-12,
+   "a_min": 0.9363476072995025,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "gated",
+   "gamma": 1.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 1.283417816466681e-13,
+   "a_min": 0.9363476072995025,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "gated",
+   "gamma": 5.0
+  },
+  {
+   "bounces": 2,
+   "turnarounds": 3,
+   "end": "singular",
+   "a_neck": [
+    0.9363475071064169,
+    0.9355878713335702
+   ],
+   "radiation_over_Vf": [
+    1.4399069915738259e-06,
+    7.583468563086922e-06
+   ],
+   "S": [
+    3.3205034017234586e-06,
+    1.7431207709172534e-05
+   ],
+   "max_constraint": 1.4420686866856158e-12,
+   "a_min": 0.9355878713335702,
+   "first_return": [
+    0.001335394323497771,
+    0.0001752988005870943
+   ],
+   "stretch": 9546.932961390781,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "thermal",
+   "gamma": 0.1
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.936282051191503
+   ],
+   "radiation_over_Vf": [
+    0.0014284343362421991
+   ],
+   "S": [
+    0.003293125845585474
+   ],
+   "max_constraint": 2.4513724383723456e-13,
+   "a_min": 0.936282051191503,
+   "first_return": [
+    0.013207702032665197,
+    0.19206703356558782
+   ],
+   "stretch": 9775.318929906764,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "thermal",
+   "gamma": 1.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 6.583622536027178e-14,
+   "a_min": 0.9363475663476796,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "thermal",
+   "gamma": 10.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 6.916689443414725e-14,
+   "a_min": 0.9363475663476796,
+   "first_return": null,
+   "stretch": null,
+   "kind": "breather",
+   "mu": 20.0,
+   "rc": 0.4,
+   "C_over_Ccrit": 0.3,
+   "mode": "thermal",
+   "gamma": 100.0
+  },
+  {
+   "bounces": 1,
+   "turnarounds": 2,
+   "end": "singular",
+   "a_neck": [
+    0.679768827357406
+   ],
+   "radiation_over_Vf": [
+    0.0
+   ],
+   "S": [
+    0.0
+   ],
+   "max_constraint": 3.9586667277546894e-11,
+   "a_min": 0.679768827357406,
+   "first_return": [
+    0.013213594950801523,
+    -1.6153760253406757e-05
+   ],
+   "stretch": 2555998870.1827817,
+   "kind": "wide",
+   "mu": 10.0,
+   "rc": 0.05,
+   "C_over_Ccrit": 0.9,
+   "mode": "none",
+   "gamma": 0.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 5.486722187697524e-12,
+   "a_min": 0.6797689015736944,
+   "first_return": null,
+   "stretch": null,
+   "kind": "wide",
+   "mu": 10.0,
+   "rc": 0.05,
+   "C_over_Ccrit": 0.9,
+   "mode": "constant",
+   "gamma": 1e-06
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 6.186273715513835e-12,
+   "a_min": 0.6797689015736944,
+   "first_return": null,
+   "stretch": null,
+   "kind": "wide",
+   "mu": 10.0,
+   "rc": 0.05,
+   "C_over_Ccrit": 0.9,
+   "mode": "constant",
+   "gamma": 1e-05
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 5.254463530945941e-12,
+   "a_min": 0.6797689015736944,
+   "first_return": null,
+   "stretch": null,
+   "kind": "wide",
+   "mu": 10.0,
+   "rc": 0.05,
+   "C_over_Ccrit": 0.9,
+   "mode": "constant",
+   "gamma": 0.0001
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 5.3153037526953995e-12,
+   "a_min": 0.6797689015736944,
+   "first_return": null,
+   "stretch": null,
+   "kind": "wide",
+   "mu": 10.0,
+   "rc": 0.05,
+   "C_over_Ccrit": 0.9,
+   "mode": "constant",
+   "gamma": 0.001
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 8.503420190208999e-12,
+   "a_min": 0.6797689015736944,
+   "first_return": null,
+   "stretch": null,
+   "kind": "wide",
+   "mu": 10.0,
+   "rc": 0.05,
+   "C_over_Ccrit": 0.9,
+   "mode": "constant",
+   "gamma": 0.01
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 8.597123013487362e-12,
+   "a_min": 0.6797689015736944,
+   "first_return": null,
+   "stretch": null,
+   "kind": "wide",
+   "mu": 10.0,
+   "rc": 0.05,
+   "C_over_Ccrit": 0.9,
+   "mode": "constant",
+   "gamma": 0.1
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 4.284128607423554e-12,
+   "a_min": 0.6797689015736944,
+   "first_return": null,
+   "stretch": null,
+   "kind": "wide",
+   "mu": 10.0,
+   "rc": 0.05,
+   "C_over_Ccrit": 0.9,
+   "mode": "constant",
+   "gamma": 1.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 2.123745623805462e-12,
+   "a_min": 0.6797689015736944,
+   "first_return": null,
+   "stretch": null,
+   "kind": "wide",
+   "mu": 10.0,
+   "rc": 0.05,
+   "C_over_Ccrit": 0.9,
+   "mode": "constant",
+   "gamma": 5.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 1.2342016297850478e-11,
+   "a_min": 0.6797689015736944,
+   "first_return": null,
+   "stretch": null,
+   "kind": "wide",
+   "mu": 10.0,
+   "rc": 0.05,
+   "C_over_Ccrit": 0.9,
+   "mode": "gated",
+   "gamma": 0.01
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 8.505973703165637e-12,
+   "a_min": 0.6797689015736944,
+   "first_return": null,
+   "stretch": null,
+   "kind": "wide",
+   "mu": 10.0,
+   "rc": 0.05,
+   "C_over_Ccrit": 0.9,
+   "mode": "gated",
+   "gamma": 0.1
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 5.4365401069844665e-12,
+   "a_min": 0.6797689015736944,
+   "first_return": null,
+   "stretch": null,
+   "kind": "wide",
+   "mu": 10.0,
+   "rc": 0.05,
+   "C_over_Ccrit": 0.9,
+   "mode": "gated",
+   "gamma": 1.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 1.862787701867319e-11,
+   "a_min": 0.6797689015736944,
+   "first_return": null,
+   "stretch": null,
+   "kind": "wide",
+   "mu": 10.0,
+   "rc": 0.05,
+   "C_over_Ccrit": 0.9,
+   "mode": "gated",
+   "gamma": 5.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 5.0780490923330035e-12,
+   "a_min": 0.6797686610263243,
+   "first_return": null,
+   "stretch": null,
+   "kind": "wide",
+   "mu": 10.0,
+   "rc": 0.05,
+   "C_over_Ccrit": 0.9,
+   "mode": "thermal",
+   "gamma": 0.1
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 2.0243806631015104e-12,
+   "a_min": 0.6797686610263243,
+   "first_return": null,
+   "stretch": null,
+   "kind": "wide",
+   "mu": 10.0,
+   "rc": 0.05,
+   "C_over_Ccrit": 0.9,
+   "mode": "thermal",
+   "gamma": 1.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "singular",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 6.59250432022418e-13,
+   "a_min": 0.6797686610263243,
+   "first_return": null,
+   "stretch": null,
+   "kind": "wide",
+   "mu": 10.0,
+   "rc": 0.05,
+   "C_over_Ccrit": 0.9,
+   "mode": "thermal",
+   "gamma": 10.0
+  },
+  {
+   "bounces": 0,
+   "turnarounds": 1,
+   "end": "t_max",
+   "a_neck": [],
+   "radiation_over_Vf": [],
+   "S": [],
+   "max_constraint": 4.604316927725449e-12,
+   "a_min": 0.6797686610263243,
+   "first_return": null,
+   "stretch": null,
+   "kind": "wide",
+   "mu": 10.0,
+   "rc": 0.05,
+   "C_over_Ccrit": 0.9,
+   "mode": "thermal",
+   "gamma": 100.0
+  }
+ ]
+}

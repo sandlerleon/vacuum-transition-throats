@@ -77,3 +77,7 @@ the omission of dark matter from the numerical experiments is stated.
 ## Citation
 
 Please cite the manuscript and the code by their Zenodo DOIs above. Licence: MIT (code), CC-BY 4.0 (manuscript).
+
+## Follow-up research notes (not part of the CQG manuscript)
+
+`docs/PRIMORDIAL_BRIDGE_PLAN.md` (work plan), `docs/PREEXISTING_BRIDGE_CYCLE_REUSE.md` (what the earlier cyclic-universe work provides), and `docs/PHASE1_CLOSED_CYCLE_RESULTS.md` (Phase 1 and 1B: closed-universe cold cycles with no assumed bounce, exact periodic orbits, Floquet instability, and self-consistent dissipation; 18 automated checks; code `code/closed_*.py`). Summary: exact classical cold cycles exist as tuned, linearly unstable periodic orbits; with dissipation into radiation the entropy parameter grows every bounce, so no periodic orbit exists, and no stable cycle was found in the sampled models. These notes are exploratory and were added after release v1.2.0.

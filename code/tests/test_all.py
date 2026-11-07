@@ -164,6 +164,52 @@ def refinement_of_unresolved_runs():
     assert sum(1 for r in inc if any(v["first_trapped"] is not None for k, v in r.items() if k.startswith("refined"))) == 6
 
 
+
+@check
+def closed_generic_trajectories_collapse():
+    """Phase 1: every one of 216 trajectories started at the classical neck (exact constraint, no assumed bounce, with and without dissipation) turns around once and then collapses."""
+    R = json.load(open(os.path.join(CODE, "closed_cycle.json")))
+    assert len(R) == 216
+    assert all(sum(1 for t in o["turns"] if t["kind"] == "bounce") == 0 for o in R)
+    assert all(len(o["turns"]) == 1 for o in R)
+
+
+@check
+def closed_exact_symmetric_cycles_exist():
+    """Phase 1: exact time-symmetric cycles exist (the start state is recovered after a full cycle) and are hyperbolic: some Floquet multiplier has modulus above 1."""
+    B = json.load(open(os.path.join(CODE, "closed_stability_breather.json")))
+    assert len(B) == 5
+    for b in B:
+        assert max(abs(abs(complex(*z)) - 1.0) for z in b["multipliers"]) > 1.0
+        assert abs(b["fixed_point_error"][0]) < 1e-9 and abs(b["fixed_point_error"][1]) < 1e-9
+    W = json.load(open(os.path.join(CODE, "closed_stability.json")))
+    best = [w for w in W if w["mu"] == 10.0 and w["rc"] == 0.05 and abs(w["C_over_Ccrit"] - 0.9) < 1e-9][0]
+    assert best["excursion"] > 8.0 and abs(best["fixed_point_error"][0]) < 1e-6 and best["bounces_survived_by_relative_seed_error"]["1e-06"] == 0
+
+
+@check
+def phase1b_periodicity_and_dissipation():
+    """Phase 1B: the exact orbits return their full state (a, a_dot, phi, phi_dot) after one period; with dissipation the entropy parameter S = rho_r a^4 grows at every bounce
+    (no periodic orbit), the perturbation stretching is not reduced, and no run survives more than 40 bounces."""
+    D = json.load(open(os.path.join(CODE, "closed_dissipation.json")))
+    for p in D["periodicity"]:
+        if p["kind"] == "breather":
+            assert abs(p["delta"][0]) < 1e-9 and abs(p["delta"][1]) < 1e-9 and abs(p["delta_over_v"][0]) < 1e-8 and abs(p["delta_over_v"][1]) < 1e-8
+            assert abs(p["constraint_start"]) < 1e-11 and abs(p["constraint_end"]) < 1e-11
+    base = {}
+    for r in D["dissipation"]:
+        key = (r["kind"], r["mu"], r["rc"], r["C_over_Ccrit"])
+        if r["mode"] == "none":
+            base[key] = r
+        if r["mode"] != "none" and len(r["S"]) >= 2:
+            assert all(b >= a for a, b in zip(r["S"], r["S"][1:])), r["mode"]
+    for r in D["dissipation"]:
+        key = (r["kind"], r["mu"], r["rc"], r["C_over_Ccrit"])
+        if r["mode"] != "none" and r["stretch"] is not None and base[key]["stretch"]:
+            assert r["stretch"] > 0.95 * base[key]["stretch"]
+    L = json.load(open(os.path.join(CODE, "closed_dissipation_lifetime.json")))
+    assert max(x["max_bounces"] for x in L) <= 40
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()
