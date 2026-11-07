@@ -570,6 +570,21 @@ def phase3d2_freefall_transport_tidal_and_causal():
     assert all(v[0] > 0 for v in F["D_theta_antitrapped"].values()) and F["D_second_exterior"]["returns_to_horizon_branch"]
 
 
+@check
+def phase3d3_source_census_and_goldilocks_closure():
+    """Phase 3D.3: the NEC-violating sector of the benchmark is a phantom scalar with phi' = sqrt(2/kappa) a/R^2 (G^r_r - G^t_t = -2 f a^2/R^4); free-quantum-field Goldilocks map is empty for every a (supply N >= 5.59 a^2 vs
+    species-cutoff validity N <= a^2; margin 5.59); ECD spinodal k_F >= 1.0 M_P; no census source passes all hard constraints H1-H7."""
+    G = json.load(open(os.path.join(CODE, "phase3d3_goldilocks.json")))
+    assert G["A_Grr_minus_Gtt_residual"] == "0" and abs(float(G["A_phi_profile_residual"].split("*")[0])) < 1e-12
+    mp = G["B_goldilocks_map"]
+    assert all(v["admissible_grid_points"] == 0 for v in mp.values())
+    assert abs(mp["QI a/m=6 | cutoff M_P"]["closure_margin_k_over_Mp2"] - 5.59) < 0.05
+    assert G["B_slack_fraction_nonempty"]["qi_a_over_m_6"] < 0.05 and G["B_slack_fraction_nonempty"]["qi_a_over_m_inf"] < 0.01
+    assert all(v["over_cutoff_MP"] > 0.99 for v in G["B_ecd_vs_cutoff"].values())
+    assert G["C_sources_passing_all_hard_constraints"] == []
+    assert G["C_census"]["S2 phantom scalar + magnetic NED (Bronnikov-Walia source of the benchmark)"]["H3"] == "FAIL"
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()

@@ -1,0 +1,143 @@
+{
+ "A_Grr_minus_Gtt_residual": "0",
+ "A_phi_prime": [
+  "-4472135.95499958*a*sqrt((a**2 + 4.0*m**2 - 4.0*m*(a**2 + r**2)**0.5 + r**2)/(251327412287183.0*a**2 + 1.00530964914873e+15*m**2 - 1.00530964914873e+15*m*(a**2 + r**2)**0.5 + 251327412287183.0*r**2))/(a**2 + r**2)",
+  "4472135.95499958*a*sqrt((a**2 + 4.0*m**2 - 4.0*m*(a**2 + r**2)**0.5 + r**2)/(251327412287183.0*a**2 + 1.00530964914873e+15*m**2 - 1.00530964914873e+15*m*(a**2 + r**2)**0.5 + 251327412287183.0*r**2))/(a**2 + r**2)"
+ ],
+ "A_phi_profile_residual": "-2.22044604925031e-16*a**2/(a**2 + r**2)**2",
+ "A_ghost_statement": "Any source of the benchmark must contain a radial-NEC-violating sector; a canonical scalar (eps=+1) cannot give T^r_r - T^t_t < 0, NED with only a radial magnetic field has T^t_t = T^r_r. The simplest realization is a PHANTOM scalar (eps=-1) with phi = sqrt(2/kappa) arctan(r/a) (Bronnikov-Walia 2022, verified here by the profile above): its Hamiltonian is not bounded below.",
+ "B_goldilocks_map": {
+  "QI a/m=6 | cutoff M_P": {
+   "admissible_grid_points": 0,
+   "grid_points": 361301,
+   "closure_margin_k_over_Mp2": 5.585053606381856
+  },
+  "QI a/m=6 | cutoff M_P_reduced": {
+   "admissible_grid_points": 0,
+   "grid_points": 361301,
+   "closure_margin_k_over_Mp2": 140.36770703771535
+  },
+  "QI a/m->inf | cutoff M_P": {
+   "admissible_grid_points": 0,
+   "grid_points": 361301,
+   "closure_margin_k_over_Mp2": 8.377580409572783
+  },
+  "QI a/m->inf | cutoff M_P_reduced": {
+   "admissible_grid_points": 0,
+   "grid_points": 361301,
+   "closure_margin_k_over_Mp2": 210.55156055657298
+  },
+  "typical state | cutoff M_P": {
+   "admissible_grid_points": 0,
+   "grid_points": 361301,
+   "closure_margin_k_over_Mp2": 1005.3096491487341
+  },
+  "typical state | cutoff M_P_reduced": {
+   "admissible_grid_points": 0,
+   "grid_points": 361301,
+   "closure_margin_k_over_Mp2": 25266.187266788766
+  }
+ },
+ "B_constants": {
+  "k_qi_static": 5.585053606381856,
+  "k_qi_infinity": 8.377580409572783,
+  "k_typical": 1005.3096491487341
+ },
+ "B_slack_fraction_nonempty": {
+  "qi_a_over_m_6": 0.0234825,
+  "qi_a_over_m_inf": 0.0005525
+ },
+ "B_ecd_vs_cutoff": {
+  "unpolarized massless (g=2)": {
+   "kF_bounce": 3.069980123839465,
+   "kF_spinodal": 1.447202509116535,
+   "over_cutoff_MP": 1.447202509116535,
+   "over_cutoff_MPred": 7.25519745693687
+  },
+  "single-helicity Weyl (g=1)": {
+   "kF_bounce": 2.1708037636748028,
+   "kF_spinodal": 1.0233267079464885,
+   "over_cutoff_MP": 1.0233267079464885,
+   "over_cutoff_MPred": 5.130199320647456
+  }
+ },
+ "C_hard_constraints": {
+  "H1": "satisfies the field equations (by construction or by evolution)",
+  "H2": "the NEC-violating sector, if needed, has a derivable action",
+  "H3": "no ghost: Hamiltonian bounded below",
+  "H4": "perturbatively stable (no exponentially growing mode, no loss of hyperbolicity)",
+  "H5": "inside the effective-field-theory validity regime",
+  "H6": "arises dynamically from collapse of ordinary low-density matter",
+  "H7": "future-directed continuation into an expanding region (not merely geodesic crossing)"
+ },
+ "C_census": {
+  "S1 ordinary matter / canonical scalar (GR)": {
+   "H1": "pass",
+   "H2": "pass",
+   "H3": "pass",
+   "H4": "pass",
+   "H5": "pass",
+   "H6": "pass",
+   "H7": "FAIL",
+   "why": "NEC holds => Penrose theorem: trapped surface => singularity (3A: 65/72 trapped, 0/42 expanding regions, LTB 96 shells all trapped); no regular transition",
+   "evidence": "computed 3A + theorem"
+  },
+  "S2 phantom scalar + magnetic NED (Bronnikov-Walia source of the benchmark)": {
+   "H1": "pass",
+   "H2": "pass",
+   "H3": "FAIL",
+   "H4": "FAIL",
+   "H5": "open",
+   "H6": "FAIL",
+   "H7": "pass",
+   "why": "the profile phi = sqrt(2/kappa) arctan(r/a) with eps = -1 is FORCED (Part A); ghost; static Ellis-Bronnikov-type wormholes carry an unstable radial mode; not produced from ordinary matter",
+   "evidence": "Part A computed; instability from literature (search-verified secondary sources), not recomputed"
+  },
+  "S3 NED regular black hole (de Sitter or Minkowski core)": {
+   "H1": "pass",
+   "H2": "pass",
+   "H3": "pass",
+   "H4": "open",
+   "H5": "pass",
+   "H6": "open",
+   "H7": "FAIL",
+   "why": "satisfies NEC-compatible regular cores but no bounce into an expanding second region; inner-horizon (mass-inflation) instability generically reported; 'recycling' channel absent",
+   "evidence": "literature (Carballo-Rubio et al.), not recomputed"
+  },
+  "S4 Einstein-Cartan-Dirac, barotropic mean field": {
+   "H1": "pass",
+   "H2": "pass",
+   "H3": "pass",
+   "H4": "FAIL",
+   "H5": "FAIL",
+   "H6": "open",
+   "H7": "open",
+   "why": "3D.0: bounce at k_F = 2-3 M_P (above cutoff) and negative compressibility from 0.105 n_b (theorem); spinodal itself at k_F = 1.45 M_P",
+   "evidence": "computed 3D.0"
+  },
+  "S5 free-field quantum vacuum (semiclassical)": {
+   "H1": "open",
+   "H2": "pass",
+   "H3": "pass",
+   "H4": "open",
+   "H5": "FAIL",
+   "H6": "open",
+   "H7": "open",
+   "why": "supply N >= 5.6 a^2 versus validity N <= a^2: empty for every a (Part B), margin 5.6; no specified quantum state solved",
+   "evidence": "Part B computed (order of magnitude, heuristic constants)"
+  },
+  "S6 modified gravity (limiting-curvature / mimetic / Horndeski)": {
+   "H1": "open",
+   "H2": "pass",
+   "H3": "open",
+   "H4": "open",
+   "H5": "open",
+   "H6": "open",
+   "H7": "open",
+   "why": "derivable actions exist; for homogeneous dust the limiting-curvature bounce reproduces the 3B effective fluid (rho = n - B n^2) already shown to have the c_s^2 / mu = 0 pathology; stability and inhomogeneous collapse not evaluated here",
+   "evidence": "3B/3C (homogeneous), otherwise not evaluated"
+  }
+ },
+ "C_sources_passing_all_hard_constraints": [],
+ "D_decision": "NO-GO. No source in the census satisfies H1-H7; the only quantitatively closed competition (free quantum vacuum, Part B) has an empty window for every throat size, with a scale-free closure margin of 5.6 or more; the only derivable source of the benchmark is a ghost. A parameter scan would only map the benchmark metric, so none was run."
+}
