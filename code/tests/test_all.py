@@ -232,6 +232,34 @@ def phase2_junction_conservation_and_counts():
     J = json.load(open(os.path.join(CODE, "bridge_junction.json")))
     assert len(J) == 72 and sum(1 for r in J if r["frac_nec"] > 0) == 15
 
+
+@check
+def phase2_leak_identity_and_negative_result():
+    """Phase 2 Stage A: K_eff drifts exactly by -int a^2 Q/3 dt; no leak run with K_eff >= 0.9 beats its zero-leak same-dissipation baseline; no run stabilises (finite-time exponent > 0 everywhere)."""
+    import bridge_leak as BL
+    B = json.load(open(os.path.join(CODE, "closed_stability_breather.json")))
+    o = [b for b in B if b["mu"] == 20.0 and b["rc"] == 0.2][0]
+    m = BL.LeakModel(q=o["q"], rc=o["rc"], mu=o["mu"], C=o["C_over_Ccrit"] * BL.CC.C_CRIT, gamma=0.1, eps=10.0, law="diffuse")
+    seed = 10 ** o["log10_seed_over_v"] * m.v
+    sol, Bn, Tn, end = BL.run_leak(m, BL.start(m, seed), 1.2)
+    t = np.linspace(0.0, sol.t[-1], 6001)
+    Y = sol.sol(t)
+    Q = np.array([m.Qleak(Y[0, i], Y[3, i], Y[4, i]) for i in range(len(t))])
+    dK = m.keff(Y[:, -1]) - m.keff(Y[:, 0])
+    pred = -np.trapezoid(Y[0] ** 2 * Q / 3.0, t)
+    assert abs(dK - pred) < 2e-4 * max(1.0, abs(pred)), (dK, pred)
+    R = json.load(open(os.path.join(CODE, "bridge_leak.json")))
+    assert len(R) == 122
+    for r in R:
+        base = [x for x in R if x["orbit"] == r["orbit"] and x["gamma"] == r["gamma"] and x["law"] == "none"][0]
+        free = [x for x in R if x["orbit"] == r["orbit"] and x["gamma"] == 0.0][0]
+        if r["law"] != "none" and r["keff_min"] >= 0.9:
+            assert r["bounces"] <= base["bounces"], r
+        assert r["bounces"] <= free["bounces"] + 0 or r["keff_min"] < 0.0 or r["gamma"] >= 1.0, r
+        if r.get("lyapunov") is not None:
+            assert r["lyapunov"] > 0.0, r
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()
