@@ -1,0 +1,34 @@
+{
+ "eta_fixed_by_paper": [
+  "1"
+ ],
+ "cross_stress": {
+  "spatial": "[[omega*s, 0, 0], [0, omega*s, 0], [0, 0, 0]]",
+  "T_uu": "2*omega*s",
+  "trace": "0"
+ },
+ "shear_source_xx": "omega*(kappa*s + 2*omega)/6",
+ "raychaudhuri_perfect_square": "(kappa*s - 2*omega)**2/2",
+ "conservation_required": "-alpha_dot - 3*beta_dot",
+ "conservation_actual": "-alpha_dot - 4*beta_dot",
+ "conservation_mismatch": "beta_dot",
+ "omega_tilde_dot_from_eq64": "5*Ss*Theta*kappa/6 - 2*Theta*Wt/3 - 2*Wt*sigma_p",
+ "what_if": [
+  {
+   "f_cancelled": 0.0,
+   "B_critical": 0.030534991580218752
+  },
+  {
+   "f_cancelled": 0.5,
+   "B_critical": 0.012421366919684299
+  },
+  {
+   "f_cancelled": 0.9,
+   "B_critical": 0.0014315352693212782
+  },
+  {
+   "f_cancelled": 0.99,
+   "B_critical": 5.6993622192122376e-05
+  }
+ ]
+}

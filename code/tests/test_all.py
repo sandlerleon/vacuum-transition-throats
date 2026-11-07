@@ -477,6 +477,21 @@ def phase3c2_rotation_spin_magnetic_feasibility():
     assert len(F) >= 12 and max(x["rho_B_over_pspin"] for x in F) < 0.2 and not any(x["perp_fast_real"] for x in F)
 
 
+@check
+def phase3c4_polarized_spin_cross_terms():
+    """Phase 3C.4: polarized-spin cross terms derived from the paper's effective stress (Eq. 77): sign convention fixed by the paper's Raychaudhuri cross term; energy 2 s omega, equatorial pressure s omega, trace 0;
+    shear source proportional to omega (omega + kappa s / 2); the reduced homogeneous axisymmetric system is NOT closed (stress-energy conservation mismatch of exactly beta_dot with separately conserved s ~ n and omega ~ a_perp^-2);
+    what-if bound: cancelling a fraction f of the rotation-induced stress lowers B_c monotonically."""
+    P = json.load(open(os.path.join(CODE, "phase3c4_polarized.json")))
+    assert P["eta_fixed_by_paper"] == ["1"]
+    assert "2*omega*s" in P["cross_stress"]["T_uu"].replace(" ", "") and P["cross_stress"]["trace"] == "0"
+    assert P["shear_source_xx"].replace(" ", "") == "omega*(kappa*s+2*omega)/6"
+    assert P["raychaudhuri_perfect_square"].replace(" ", "") in ("(kappa*s-2*omega)**2/2", "(2*omega-kappa*s)**2/2")
+    assert P["conservation_required"].replace(" ", "") == "-alpha_dot-3*beta_dot" and P["conservation_mismatch"] == "beta_dot"
+    bc = [r["B_critical"] for r in P["what_if"]]
+    assert bc == sorted(bc, reverse=True) and bc[0] > 0.03 and bc[-1] < 1e-4
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()
