@@ -527,6 +527,27 @@ def phase3d0_einstein_cartan_dirac_feasibility():
     assert r["bounces"] > 100 and r["mu_cross"] == r["bounces"] and r["neg_compress"] == r["bounces"]
 
 
+@check
+def phase3d1_wave_transmission_and_backreaction_requirements():
+    """Phase 3D.1: Simpson-Visser black-bounce benchmark. Radial NEC T_kk = -2 a^2/(kappa R^4) < 0 at every r; geometry regular; E=1 radial geodesics cross the throat for a/m = 3, 2 and 1 (two-way, extremal, one-way through a
+    horizon); scalar waves: flux conserved to <1e-5 (massless), box-size converged to 1e-6, wormhole throat is a high-pass filter (T_0 << Schwarzschild greybody at low omega) and ~1 at high omega; massive field reflected near threshold
+    for mu a = 0.3; quantum-inequality estimate needs N ~ 5.6 (a/l_P)^2 species."""
+    W = json.load(open(os.path.join(CODE, "phase3d1_wave.json")))
+    assert all(v["Tkk_radial_max"] < 0 for v in W["A_energy_conditions"].values())
+    assert abs(W["A_energy_conditions"]["3.0"]["Tkk_at_throat"] + 2 / (8 * 3.141592653589793 * 9)) < 1e-12
+    assert max(W["A_kretschmann_r0"].values()) < 2e3 and all(v["radial_geodesic_crosses"] for v in W["A_causal"].values())
+    rows = [r for r in W["B_scattering"] if r["case"] != "Ellis m=0 a=3"]
+    assert max(abs(r["flux_residual"]) for r in W["B_scattering"]) < 1e-5
+    pick = lambda case, om: [r["T"] for r in W["B_scattering"] if r["case"] == case and r["ell"] == 0 and abs(r["omega"] - om) < 1e-12][0]
+    assert pick("wormhole a/m=3", 0.05) < 0.01 < 0.05 < pick("Schwarzschild a=0", 0.05) and pick("wormhole a/m=3", 0.8) > 0.999
+    assert 0.8 < pick("black bounce a/m=1", 0.1) / pick("Schwarzschild a=0", 0.1) < 1.3
+    conv = [c["T"] for c in W["B_convergence"]["box"]]
+    assert max(conv) - min(conv) < 1e-5
+    ms = [r for r in W["B_massive"] if abs(r["mu_a"] - 0.3) < 1e-9]
+    assert ms[0]["T"] < 0.05 and ms[-1]["T"] > 0.99
+    assert abs(W["C_QI_species_coefficient"] - 5.59) < 0.05 and W["C_volume"]["3.0"]["volume_integral_rho_plus_pr"] < -6
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()
