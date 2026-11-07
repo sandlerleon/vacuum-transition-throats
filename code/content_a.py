@@ -29,8 +29,8 @@ ABSTRACT = (
     "continuations are not excluded. For a thin spherical wall and regular initial data the Israel junction conditions give a finite-tension critical exterior mass parameter, equal to %s up to corrections of order $\hat\sigma^2$, "
     "below which the configurations on the branch analysed collapse; an independent derivation confirms it. A spherical Einstein–scalar code checked against exact solutions found trapped surfaces in %d of %d runs and in %d more after refinement. "
     "An expanding (anti-trapped) false-vacuum core appears only when the initial data already contain a core larger than its own de Sitter radius; none develops in the %d runs that start smaller: persistence, not creation. "
-    "At the observed dark-energy scale the core radius is %s Gpc and the exterior mass parameter %s solar masses (for $q=1$ half of it is quasi-local at the wall), dominated by the vacuum-energy difference. In the evolved domain no causal curve carries exterior matter into the core; "
-    "the global structure is not computed. The evidence is complete only for anti-de Sitter exteriors and for walls much thicker than the physical wall."
+    "At the observed dark-energy scale the core radius is %s Gpc and the exterior mass parameter %s solar masses (for $q=1$ half of it is quasi-local at the wall), dominated by the vacuum-energy difference. In the computed double-null domain no causal curve carries exterior matter into the core; "
+    "the global structure is not computed. The evidence is complete only for anti-de Sitter exteriors and walls much thicker than the physical one."
     % ("$(1+q)R_{dS}$", SC["n_trapped"], SC["n_runs"], resolved, CRE["n_initially_normal_core"], n(R_dS, 1), "%s × 10$^{%d}$" % (n(M1["M_c_Msun"] / 10 ** 23, 1), 23)))
 add(("p0", ABSTRACT))
 add(("h1", "Keywords"))
@@ -175,7 +175,7 @@ add(("p", "Which mass is meant needs a statement. The $m$ of Eqs. (6)–(9) is t
           "Schwarzschild–de Sitter parameter, which is not an asymptotic mass because there is no asymptotically flat region. The quasi-local Misner–Sharp mass at the wall is $m_{\\rm MS}(R)=m+\\rho_{out}R^3/3$, so the two differ by the exterior vacuum energy. "
           "At $R=R_{dS}$ and vanishing tension the interior and exterior quasi-local masses coincide and equal $R_{dS}$ in these units for every $q$, whereas the parameter is $(1+q)R_{dS}$ (Supplementary Table S6). "
           "For $q=1$ the critical mass quoted in this paper, %s $M_\\odot$, is therefore the exterior parameter, twice the quasi-local mass at the wall (%s $M_\\odot$); statements about the mass of the region mean the parameter unless ‘quasi-local’ is written. "
-          "An independent derivation (Supplement S8) reproduces Eqs. (7)–(9) from the extrinsic curvatures, the critical mass with 120-digit arithmetic (for the model's tension $m_c-2=%s$), the horizon roots at $m_c$ and the conversion to solar masses to $10^{-16}$." %
+          "An independent derivation (Supplement S8) reproduces Eqs. (7)–(9) from the extrinsic curvatures, the critical mass with 120-digit arithmetic (for the model's tension $m_c-2=$ %s), the horizon roots at $m_c$ and the conversion to solar masses to $10^{-16}$." %
           (sci(AUD["5_dimensional_restoration"]["q=1"]["M_c_Msun"], 2), sci(AUD["5_dimensional_restoration"]["q=1"]["M_misner_sharp_at_wall_Msun"], 2), sci(float(AUD["2_physical"]["m_c_minus_limit"]), 2))))
 add(("p", "Two statements follow. First, $m>m_c(\\hat\\sigma)$ is necessary for any regular configuration to reach $\\Gamma_{in}<0$. Second, because $m_c$ is fixed by the vacuum energy through $R_{dS}$, "
           "the necessary mass is a property of the observed dark-energy scale, not of the particle physics. Whether the condition is also sufficient, and what thick walls do, is a question for the numerical evolution of the "

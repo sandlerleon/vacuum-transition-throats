@@ -53,7 +53,7 @@ para("The manuscript makes five contributions. (i) A short proof that the whole 
      "where the numerical evidence is less complete than for anti-de Sitter."
      % (SC["n_trapped"], SC["n_runs"], resolved, CRE["n_initially_normal_core"], n(TW["R_dS_Gpc"], 1), "%s × 10^23" % n(M1["M_c_Msun"] / 1e23, 1),
         pc(M1["matter_fraction"], 0)))
-para("The main finding is a conditional negative, stated as such. Localized collapse does not produce a daughter region, matter is not transferred to it, and the expanding region that does exist in the model is a "
+para("The main finding is a conditional negative, stated as such. In the tested model and initial-data families localized collapse does not produce a daughter region, and in the computed domain matter is not transferred to it, and the expanding region that does exist in the model is a "
      "pre-existing, horizon-sized false-vacuum core that the collapse of its surroundings isolates; the mechanism is therefore not supported as a cosmological reset, and even a created daughter would be "
      "cosmological reproduction, not a cycle. The manuscript is explicit about what the numerical work is and is not: the walls it can resolve are far thicker and heavier than the physical wall "
      "(by thirty and sixty orders of magnitude), so the experiments test the structure of the thin-wall solution and not the physical values; the evolution is spherical and classical; the dark matter that "
@@ -61,7 +61,7 @@ para("The main finding is a conditional negative, stated as such. Localized coll
      "It lists six criteria by which each of its statements can be falsified.")
 para("The geometry of false-vacuum bubbles, baby universes and the obstacle to creating them from regular data is classical, and the manuscript credits it (Blau, Guendelman and Guth; Farhi and Guth; "
      "Farhi, Guth and Guven; Fischler, Morgan and Polchinski). The contribution is the application to a model with a fixed vacuum scale, the exact critical mass (re-derived independently, with the exterior mass parameter distinguished from the quasi-local mass), "
-     "the numerical test with a regular centre, a quantitative extrapolation to the physical wall, and a causal diagnostic that separates the evolved domain from conjecture.")
+     "the numerical test with a regular centre, an analysis of the dependence on wall thickness (limited to the simulated widths and conditional on a linear fit), and a causal diagnostic that separates the evolved domain from conjecture.")
 para("The code and results are openly available at %s and archived at https://doi.org/%s (code, all versions); the manuscript and its Supplementary Information are archived at https://doi.org/%s "
      "(all versions). Every number in the text is read from the result files that the scripts write, twenty-one automated checks run on the stored results, and one command per script regenerates each figure and table."
      % (GITHUB, DOIS["code_concept"], DOIS["paper_concept"]))

@@ -15,3 +15,9 @@ Response to the readiness review ("potentially publishable negative-result contr
 Other changes: corresponding email set to sandler.leon@gmail.com (manuscript and cover letter); abstract rewritten to 248 words; cover letter updated (checks count, qualified statements, new audits); figures renumbered (new Fig. 5 causal, old Fig. 5 -> 6, new Fig. 7 wall, old Fig. 6 -> 8).
 
 Next steps (need Leon's decision): tag + Zenodo new version; add a coupled dust test to a controlled subset; global (excised) evolution through the horizon.
+
+## Final wording pass (second review: "ready after a final wording and consistency pass")
+1. Causal-accessibility claim: now stated for the computed double-null domain and these initial-data families; the lattice test is described as a check of the chart-geometry statement on the evolved cells, not a global causal proof; the continuation beyond the last row is stated to be unknown (abstract, Sec. 5.4, Fig. 5 caption, conclusions, cover letter).
+2. Thin-wall extrapolation: the +0.15% [-0.51%, +0.86%] result is described as consistency with the thin-wall prediction at the ~1% resolution of the grid; the interval is stated to be conditional on a linear model in w fitted over 0.05-0.2 and on a bootstrap over runs, not a systematic-error bound; convergence to the physical wall (some 28 orders of magnitude below the smallest width) is not claimed (Sec. 5.6, Fig. 7 caption, cover letter).
+3. Localized collapse: Sec. 10 now reads "in the tested model and initial-data families a localized collapse does not supply a region of that size, and no mechanism that would is known"; Sec. 7 "in the runs studied"; "classical dynamics" in the causality argument; cover letter qualified likewise.
+Also fixed a raw-markup glitch in Sec. 4 ("m_c - 2"), checked the three PDFs page by page (41 pp main text, 6 pp supplement, 2 pp letter; no raw markup, no blank pages), 21 checks pass.
