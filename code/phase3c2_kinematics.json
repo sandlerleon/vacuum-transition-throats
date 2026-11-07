@@ -1,0 +1,54 @@
+{
+ "effective_fluid_identity": "0",
+ "perfect_square_difference": "0",
+ "cancellation_at": "omega_tilde = kappa s / 2",
+ "random_orientation": "2 omega~^2 + kappa^2 <s^2>/2 (both >= 0)",
+ "omega_dot_over_omega": "-2*H_perp",
+ "scaling_exponents_V^-p": {
+  "dust rho": "1",
+  "curvature R3/2": "2/3",
+  "vorticity omega^2 (omega ~ a^-2)": "4/3",
+  "magnetic rho_B (flux, B ~ a^-2)": "4/3",
+  "orbital kinetic rho_r ~ n v^2, v ~ 1/a": "5/3",
+  "shear sigma^2 ~ V^-2": "2",
+  "spin -B n^2": "2"
+ },
+ "dominance": "As V -> 0 only the V^-2 terms (spin, negative; shear, positive) matter: bounce iff the net V^-2 coefficient is negative: B N0^2 > Sigma_asymptotic (dust: V^-1, vorticity/magnetic/orbital: V^-5/3..-4/3 are subdominant)",
+ "fit_rotation": {
+  "exponent": 1.3414602592890101,
+  "coeff": 0.2683330893204405,
+  "points": [
+   [
+    0.01,
+    0.0005500249159026639
+   ],
+   [
+    0.05,
+    0.004954518873287455
+   ],
+   [
+    0.2,
+    0.030534991580218752
+   ]
+  ]
+ },
+ "fit_magnetic": {
+  "exponent": 1.5435506946446498,
+  "coeff": 0.6664021105374767,
+  "points": [
+   [
+    0.01,
+    0.0005275963420501037
+   ],
+   [
+    0.05,
+    0.007022700340641275
+   ],
+   [
+    0.2,
+    0.05348110842828932
+   ]
+  ]
+ },
+ "perp_fast_speed2_at_nstar": "(-2*B_*n_**2 + b2)/b2"
+}

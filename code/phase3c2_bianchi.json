@@ -1,0 +1,170 @@
+{
+ "checks": {
+  "constraint_max": 3.3852619819261286e-09,
+  "conservation_rel": 4.172974697468303e-06,
+  "GR_limit_outcome": "singular",
+  "sigma2_V2_spread": 7.992102292489401e-11,
+  "analytic_Vb": 0.017543859649123177,
+  "numeric_Vb": 0.017543859649122806,
+  "Sigma_initial": 0.002456140350876823
+ },
+ "critical": [
+  {
+   "case": "A  nonrotating EC (isotropic start)",
+   "v0sq": 0.0,
+   "rhoB0": 0.0,
+   "shear0": 0.0,
+   "B_critical": 1e-08,
+   "supercritical": {
+    "B": 0.001,
+    "V_bounce": 0.0010000000000004782,
+    "max_shear_sq": 1.939753246915643e-09,
+    "constraint": 4.78166839457117e-10
+   }
+  },
+  {
+   "case": "A' nonrotating EC, initial shear 0.05",
+   "v0sq": 0.0,
+   "rhoB0": 0.0,
+   "shear0": 0.05,
+   "B_critical": 0.0025000009975005132,
+   "supercritical": {
+    "B": 0.025000009975005132,
+    "V_bounce": 0.022556400977449705,
+    "max_shear_sq": 4.802773470177094,
+    "constraint": 2.475353255704249e-12
+   }
+  },
+  {
+   "case": "C  rotating EC v0^2 = 0.01",
+   "v0sq": 0.01,
+   "rhoB0": 0.0,
+   "shear0": 0.0,
+   "B_critical": 0.0005500249159026639,
+   "supercritical": {
+    "B": 0.0055002491590266395,
+    "V_bounce": 0.004589752196213995,
+    "max_shear_sq": 15.145969319761452,
+    "constraint": 1.679723027336877e-11
+   }
+  },
+  {
+   "case": "C  rotating EC v0^2 = 0.05",
+   "v0sq": 0.05,
+   "rhoB0": 0.0,
+   "shear0": 0.0,
+   "B_critical": 0.004954518873287455,
+   "supercritical": {
+    "B": 0.04954518873287455,
+    "V_bounce": 0.0405597991521939,
+    "max_shear_sq": 1.4363405320922453,
+    "constraint": 1.1457501614131615e-12
+   }
+  },
+  {
+   "case": "C  rotating EC v0^2 = 0.2",
+   "v0sq": 0.2,
+   "rhoB0": 0.0,
+   "shear0": 0.0,
+   "B_critical": 0.030534991580218752,
+   "supercritical": {
+    "B": 0.3053499158021875,
+    "V_bounce": 0.24228324220041095,
+    "max_shear_sq": 0.15686305718268323,
+    "constraint": 5.63660229602192e-13
+   }
+  },
+  {
+   "case": "D  magnetized nonrotating, rho_B0 = 0.01",
+   "v0sq": 0.0,
+   "rhoB0": 0.01,
+   "shear0": 0.0,
+   "B_critical": 0.0005275963420501037,
+   "supercritical": {
+    "B": 0.005275963420501037,
+    "V_bounce": 0.004643986136642201,
+    "max_shear_sq": 25.109661699108408,
+    "constraint": 6.792788553866558e-12
+   }
+  },
+  {
+   "case": "D  magnetized nonrotating, rho_B0 = 0.05",
+   "v0sq": 0.0,
+   "rhoB0": 0.05,
+   "shear0": 0.0,
+   "B_critical": 0.007022700340641275,
+   "supercritical": {
+    "B": 0.07022700340641275,
+    "V_bounce": 0.059770040084736464,
+    "max_shear_sq": 2.0193527960523907,
+    "constraint": 4.3156589413229085e-12
+   }
+  },
+  {
+   "case": "D  magnetized nonrotating, rho_B0 = 0.2",
+   "v0sq": 0.0,
+   "rhoB0": 0.2,
+   "shear0": 0.0,
+   "B_critical": 0.05348110842828932,
+   "supercritical": {
+    "B": 0.5348110842828933,
+    "V_bounce": 0.41830148854592514,
+    "max_shear_sq": 0.23518562122361092,
+    "constraint": 7.12430114901963e-13
+   }
+  },
+  {
+   "case": "E  rotating + magnetized, 0.05 / 0.05",
+   "v0sq": 0.05,
+   "rhoB0": 0.05,
+   "shear0": 0.0,
+   "B_critical": 0.015586658401866666,
+   "supercritical": {
+    "B": 0.15586658401866665,
+    "V_bounce": 0.12799416970699157,
+    "max_shear_sq": 0.7016301700990903,
+    "constraint": 8.812950369474493e-13
+   }
+  },
+  {
+   "case": "E  rotating + magnetized, 0.2 / 0.2",
+   "v0sq": 0.2,
+   "rhoB0": 0.2,
+   "shear0": 0.0,
+   "B_critical": 0.10232999492726683,
+   "supercritical": {
+    "B": 1.0232999492726682,
+    "V_bounce": 0.7640556303960575,
+    "max_shear_sq": 0.04123864706709984,
+    "constraint": 1.9018120411828932e-13
+   }
+  }
+ ],
+ "model_B_no_torsion": [
+  {
+   "v0sq": 0.0,
+   "rhoB0": 0.0,
+   "outcome": "singular"
+  },
+  {
+   "v0sq": 0.05,
+   "rhoB0": 0.0,
+   "outcome": "singular"
+  },
+  {
+   "v0sq": 0.2,
+   "rhoB0": 0.0,
+   "outcome": "singular"
+  },
+  {
+   "v0sq": 0.0,
+   "rhoB0": 0.2,
+   "outcome": "singular"
+  },
+  {
+   "v0sq": 0.2,
+   "rhoB0": 0.2,
+   "outcome": "singular"
+  }
+ ]
+}

@@ -448,6 +448,35 @@ def phase3_baseline_and_effective_fluid_feasibility():
         assert extra[0] < extra[1] < extra[2] and extra[2] > 2.0
 
 
+@check
+def phase3c2_rotation_spin_magnetic_feasibility():
+    """Phase 3C.2/3C.3: verified kinematic identities (effective-fluid link, spin-vorticity perfect square, circulation law); exact Bianchi-I axisymmetric model (constraint, conservation, GR limit, analytic bounce volume);
+    rotation proxy and magnetic field RAISE the critical spin strength (no help), rotating/magnetized GR without torsion always singular; local MHD dispersion relation of the effective fluid (factorisation, instability for
+    every oblique angle, perpendicular stability only above a field threshold); the field at the bounce is far below the regularisation threshold."""
+    import numpy as np
+    K = json.load(open(os.path.join(CODE, "phase3c2_kinematics.json")))
+    assert K["effective_fluid_identity"] == "0" and K["perfect_square_difference"] == "0" and K["omega_dot_over_omega"] == "-2*H_perp"
+    assert 1.2 < K["fit_rotation"]["exponent"] < 1.5 and 1.4 < K["fit_magnetic"]["exponent"] < 1.7
+    Bj = json.load(open(os.path.join(CODE, "phase3c2_bianchi.json")))
+    c = Bj["checks"]
+    assert c["constraint_max"] < 1e-8 and c["conservation_rel"] < 1e-5 and c["GR_limit_outcome"] == "singular" and c["sigma2_V2_spread"] < 1e-9 and abs(c["numeric_Vb"] / c["analytic_Vb"] - 1) < 1e-6
+    r = {x["case"].strip(): x["B_critical"] for x in Bj["critical"]}
+    iso = r["A  nonrotating EC (isotropic start)"]
+    rot = [r["C  rotating EC v0^2 = 0.01"], r["C  rotating EC v0^2 = 0.05"], r["C  rotating EC v0^2 = 0.2"]]
+    mag = [r["D  magnetized nonrotating, rho_B0 = 0.01"], r["D  magnetized nonrotating, rho_B0 = 0.05"], r["D  magnetized nonrotating, rho_B0 = 0.2"]]
+    assert iso < 1e-6 and all(b > 1e3 * iso for b in rot + mag) and rot == sorted(rot) and mag == sorted(mag)
+    assert r["E  rotating + magnetized, 0.2 / 0.2"] > max(rot[2], mag[2]) and all(x["outcome"] == "singular" for x in Bj["model_B_no_torsion"])
+    M = json.load(open(os.path.join(CODE, "phase3c3_mhd.json")))
+    assert M["factorization_check"] == "0" and M["fraction_unstable"] > 0.8
+    for cs2, vA2 in M["perp_stable"]:
+        assert vA2 > -cs2 / (1 - cs2)
+    for sc in M["scan"]:
+        if sc["cs2"] < 0 and sc["vA2"] > 0 and abs(sc["psi"] - np.pi / 2) > 1e-6:
+            assert min(sc["omega2_over_k2"]) < 0
+    F = json.load(open(os.path.join(CODE, "phase3c3_bounce_fields.json")))
+    assert len(F) >= 12 and max(x["rho_B_over_pspin"] for x in F) < 0.2 and not any(x["perp_fast_real"] for x in F)
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()

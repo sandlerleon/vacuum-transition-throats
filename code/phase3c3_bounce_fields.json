@@ -1,0 +1,152 @@
+[
+ {
+  "case": "D  magnetized nonrotating, rho_B0 = 0.01",
+  "B_over_Bc": 1.5,
+  "V_bounce": 0.0002593397455667212,
+  "rho_B_over_pspin": 0.00018002116552215663,
+  "w_over_n": -5.103148681246399,
+  "n_over_nstar": 6.103148681246399,
+  "vA2": -0.00021534401703569026,
+  "perp_fast_real": false
+ },
+ {
+  "case": "D  magnetized nonrotating, rho_B0 = 0.01",
+  "B_over_Bc": 3.0,
+  "V_bounce": 0.001035062235630811,
+  "rho_B_over_pspin": 0.004435172262098076,
+  "w_over_n": -2.058345617615335,
+  "n_over_nstar": 3.058345617615335,
+  "vA2": -0.0066336138078205145,
+  "perp_fast_real": false
+ },
+ {
+  "case": "D  magnetized nonrotating, rho_B0 = 0.01",
+  "B_over_Bc": 10.0,
+  "V_bounce": 0.004643986136642201,
+  "rho_B_over_pspin": 0.017143233362954882,
+  "w_over_n": -1.2721701853812086,
+  "n_over_nstar": 2.2721701853812086,
+  "vA2": -0.031585939168809835,
+  "perp_fast_real": false
+ },
+ {
+  "case": "D  magnetized nonrotating, rho_B0 = 0.05",
+  "B_over_Bc": 1.5,
+  "V_bounce": 0.003365485008609648,
+  "rho_B_over_pspin": 0.00048408704245369775,
+  "w_over_n": -5.260048987895358,
+  "n_over_nstar": 6.260048987895358,
+  "vA2": -0.0005764500456781369,
+  "perp_fast_real": false
+ },
+ {
+  "case": "D  magnetized nonrotating, rho_B0 = 0.05",
+  "B_over_Bc": 3.0,
+  "V_bounce": 0.013380891713345909,
+  "rho_B_over_pspin": 0.01214991367264038,
+  "w_over_n": -2.148983113122544,
+  "n_over_nstar": 3.148983113122544,
+  "vA2": -0.018126428066654692,
+  "perp_fast_real": false
+ },
+ {
+  "case": "D  magnetized nonrotating, rho_B0 = 0.05",
+  "B_over_Bc": 10.0,
+  "V_bounce": 0.059770040084736464,
+  "rho_B_over_pspin": 0.046177549031008326,
+  "w_over_n": -1.349906518612046,
+  "n_over_nstar": 2.349906518612046,
+  "vA2": -0.08741218249163107,
+  "perp_fast_real": false
+ },
+ {
+  "case": "D  magnetized nonrotating, rho_B0 = 0.2",
+  "B_over_Bc": 1.5,
+  "V_bounce": 0.02414853158790833,
+  "rho_B_over_pspin": 0.0014470724176824015,
+  "w_over_n": -5.644019935572615,
+  "n_over_nstar": 6.644019935572615,
+  "vA2": -0.001706369535001365,
+  "perp_fast_real": false
+ },
+ {
+  "case": "D  magnetized nonrotating, rho_B0 = 0.2",
+  "B_over_Bc": 3.0,
+  "V_bounce": 0.0948091072020022,
+  "rho_B_over_pspin": 0.03828840896553978,
+  "w_over_n": -2.384555134413916,
+  "n_over_nstar": 3.384555134413916,
+  "vA2": -0.05746837722266654,
+  "perp_fast_real": false
+ },
+ {
+  "case": "D  magnetized nonrotating, rho_B0 = 0.2",
+  "B_over_Bc": 10.0,
+  "V_bounce": 0.41830148854592514,
+  "rho_B_over_pspin": 0.14090531566587347,
+  "w_over_n": -1.5570603926941393,
+  "n_over_nstar": 2.5570603926941393,
+  "vA2": -0.30106646926112013,
+  "perp_fast_real": false
+ },
+ {
+  "case": "E  rotating + magnetized, 0.05 / 0.05",
+  "B_over_Bc": 1.5,
+  "V_bounce": 0.007036249858726456,
+  "rho_B_over_pspin": 0.0005315238583669604,
+  "w_over_n": -5.645581971141577,
+  "n_over_nstar": 6.645581971141577,
+  "vA2": -0.0006260642084211409,
+  "perp_fast_real": false
+ },
+ {
+  "case": "E  rotating + magnetized, 0.05 / 0.05",
+  "B_over_Bc": 3.0,
+  "V_bounce": 0.028085352946420773,
+  "rho_B_over_pspin": 0.013096615846431101,
+  "w_over_n": -2.329847788974227,
+  "n_over_nstar": 3.329847788974227,
+  "vA2": -0.019074889112144538,
+  "perp_fast_real": false
+ },
+ {
+  "case": "E  rotating + magnetized, 0.05 / 0.05",
+  "B_over_Bc": 10.0,
+  "V_bounce": 0.12799416970699157,
+  "rho_B_over_pspin": 0.04500179322211595,
+  "w_over_n": -1.435526311479367,
+  "n_over_nstar": 2.435526311479367,
+  "vA2": -0.08266168545403121,
+  "perp_fast_real": false
+ },
+ {
+  "case": "E  rotating + magnetized, 0.2 / 0.2",
+  "B_over_Bc": 1.5,
+  "V_bounce": 0.042549110008031056,
+  "rho_B_over_pspin": 0.0017846428683720595,
+  "w_over_n": -6.214956663579022,
+  "n_over_nstar": 7.214956663579022,
+  "vA2": -0.0020760970236969236,
+  "perp_fast_real": false
+ },
+ {
+  "case": "E  rotating + magnetized, 0.2 / 0.2",
+  "B_over_Bc": 3.0,
+  "V_bounce": 0.1678092868519034,
+  "rho_B_over_pspin": 0.045582655098369514,
+  "w_over_n": -2.6587961315004947,
+  "n_over_nstar": 3.6587961315004947,
+  "vA2": -0.06692472100400136,
+  "perp_fast_real": false
+ },
+ {
+  "case": "E  rotating + magnetized, 0.2 / 0.2",
+  "B_over_Bc": 10.0,
+  "V_bounce": 0.7640556303960575,
+  "rho_B_over_pspin": 0.14549869682426544,
+  "w_over_n": -1.6786006373442424,
+  "n_over_nstar": 2.6786006373442426,
+  "vA2": -0.30238393853200246,
+  "perp_fast_real": false
+ }
+]
