@@ -260,6 +260,31 @@ def phase2_leak_identity_and_negative_result():
             assert r["lyapunov"] > 0.0, r
 
 
+@check
+def phase2c_moving_shell_and_elliptic_cycle():
+    """Phase 2C: (a) the moving-shell junction obeys the flux conservation law (sigma R^2)' + p (R^2)' = -R^2 (rho + P) cosh(beta) sinh(beta) to 1e-5 and the interior is untouched by the shell;
+    (b) the single-field model has an ELLIPTIC exact cold cycle at C/Cc = 0.35 (trace in (-2, 2), det 1) -- no reservoir or bridge involved; (c) the stored reservoir orbit has all |mu| = 1 and a tiny constraint residual."""
+    import bridge_moving_shell as MS
+    import closed_stability as CS
+    import closed_cycle as CC2
+    B = json.load(open(os.path.join(CODE, "closed_stability_breather.json")))
+    o = [b for b in B if b["mu"] == 20.0 and b["rc"] == 0.2][0]
+    per = MS.periodic_shell(o, 0.7, 0.2, 1.0, -1.0)
+    assert len(per) == 1 and abs(per[0]["chi0_over_pi"] - 0.6738) < 2e-4
+    assert per[0]["diag"]["flux_identity_resid"] < 1e-5 and abs(per[0]["det"] - 1.0) < 1e-6 and all(abs(z - 1.0) < 1e-6 for z in per[0]["multipliers_abs"])
+    E = json.load(open(os.path.join(CODE, "single_elliptic.json")))
+    assert not any(r["elliptic"] for r in E if r["C_over_Ccrit"] <= 0.345 and r["det"] > 0.9999 and r["det"] < 1.0001)
+    assert sum(1 for r in E if r["elliptic"] and 0.35 <= r["C_over_Ccrit"] <= 0.36) >= 3
+    r35 = [r for r in E if r["elliptic"] and abs(r["C_over_Ccrit"] - 0.35) < 1e-9][0]
+    m = CC2.Model(q=1.0, rc=0.2, mu=20.0, C=0.35 * CC2.C_CRIT)
+    s = 10 ** r35["log10_seed_over_v"] * m.v
+    J = CS.jacobian(m, s, 0.0)
+    assert abs(np.trace(J) + 1.7043) < 1e-3 and abs(np.linalg.det(J) - 1.0) < 1e-6 and abs(np.trace(J)) < 2.0
+    P = json.load(open(os.path.join(CODE, "bridge_phase2c.json")))
+    assert P["orbit"]["max_abs"] - 1.0 < 1e-6 and P["orbit"]["constraint_max"] < 1e-10
+    assert all(v["bounces"] >= 300 for v in P["controls"]["coupling_off"].values())
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()
