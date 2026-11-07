@@ -1,5 +1,8 @@
 # Phase 1: closed matter-coupled region, no assumed bounce — results
 
+> **Erratum (2026-11-06).** Statements below that every exact cold cycle is hyperbolic / unstable hold only for the parameter values this document sampled (C/Cc = 0.3, 0.6, 0.9 in the orbit searches; μ = 10–30; ρ_crit/V_f = 0.05–0.4; q = 1). Later work found **linearly stable (elliptic) exact cold cycles** in a narrow window of the dust parameter: for μ = 20, ρ_crit = 0.2 V_f, q = 1 the orbit branch that is hyperbolic at C/Cc = 0.30 (φ₀/v = 0.071, multipliers 12.7 and 0.079) has a return-map trace that crosses −2 at C/Cc = 0.345844 and is elliptic for C/Cc ∈ (0.3458, ≈ 0.360), e.g. φ₀/v = 0.222948, T = 0.596356, trace −1.7043, multipliers on the unit circle, surviving 200 bounces under 3% perturbations of the return map (independent reproduction in `docs/PHASE2D_REPORT.md`, branch `phase2-bridge`). The multiplier = −1 point is **not** shown to be a period-doubling bifurcation (no local 2-cycle was found). The Phase 1B result (no exact recurrence once irreversible dissipation is present) is unchanged. The cycles that are elliptic in the homogeneous model are, however, strongly unstable to inhomogeneous perturbations (`docs/PHASE2E_REPORT.md`, `docs/PHASE2F_REPORT.md`). Read every 'all hyperbolic' / 'unstable' below as 'for the sampled parameter values'.
+
+
 Status: computed (code in `code/closed_cycle.py`, `closed_orbits.py`, `closed_orbit_scan.py`, `closed_stability.py`, `make_closed_figure.py`; data in the matching JSON files; two new automated checks, 17 in total). **Not committed, not released.** Nothing here enters the CQG manuscript.
 
 ## What was computed
@@ -27,7 +30,7 @@ The equations are time-reversal invariant. A trajectory that starts at the neck 
 
 The wide cycles are the physical ones: the region expands from a = 0.68 R_dS (the neck) to 5.7 R_dS, a held epoch of about two e-folds, a release and restoration around the turnaround (φ makes a brief excursion to about 1.3 v and returns), contraction, and a nonsingular cold bounce at a density of 1–2.2 V_f. The breathers are small-amplitude oscillations of the scalar between the two vacua with a nearly constant scale factor (a_max/a_neck 1.03–1.3), not an epoch of expansion.
 
-## Result 3: every exact cycle found is unstable
+## Result 3: every exact cycle found at the sampled parameter values is unstable (see the erratum above)
 
 Floquet multipliers of the Poincaré map on the neck (area-preserving, det = 1 where well resolved): the five breathers are hyperbolic, with leading multipliers 12.7, 72, 460, 1.2×10³ and 1.6×10⁴ per cycle; none is elliptic. The wide cycles are far more unstable: a relative seed error of 10⁻⁶ (or 10⁻⁹) destroys the second bounce, so the multiplier per cycle is at least of order 10⁶ to 10⁹. In double precision the wide cycles close one full cycle and part of a second (Fig. C1); the longest-surviving breather completes 11 bounces.
 
@@ -38,7 +41,7 @@ Floquet multipliers of the Poincaré map on the neck (area-preserving, det = 1 w
 | Nonsingular bounce (a_min > 0, finite invariants, regular field) | **Met** (exact cycles; neck at 0.68–0.94 R_dS, density 1–2.2 V_f) |
 | Repeated turnaround under the actual scalar dynamics | **Met** for the tuned orbits (turnaround recurs) |
 | Vacuum restoration without external resets | **Met** for the tuned orbits (φ returns to the seed) |
-| Long-term stability | **Not met**: all orbits hyperbolic; wide cycles with multipliers ≳ 10⁶; no attractor, unlike the hot cycle of Paper 1 |
+| Long-term stability | **Not met at the sampled parameters** (all orbits hyperbolic there; elliptic cycles exist in a narrow window, see the erratum); wide cycles with multipliers ≳ 10⁶; no attractor, unlike the hot cycle of Paper 1 |
 
 So the answer to the Phase 1 question is: **a classical cold cycle exists without a wormhole, but only as an isolated, tuned, unstable periodic orbit; trajectories near it leave it within one to a few cycles, and generic trajectories collapse after the first turnaround.** That strengthens Paper 1 in one respect (the bounce can be derived, not assumed) and weakens it in another (the cold cycle is not an attractor; Paper 1's stability came from dissipation into radiation, which the neck cannot tolerate).
 
@@ -97,7 +100,7 @@ For the undamped orbit with leading multiplier λ, damping can only stabilize it
 
 ## Verdict on Phase 1B
 
-* A stable, constraint-satisfying, repeated cold cycle was **not found**. Exact periodic orbits exist at Γ = 0 and are hyperbolic; with consistent dissipation there is no periodic orbit, entropy grows each cycle, and the best case is a modest, family-dependent lengthening of the transient (tens of bounces), never a limit cycle.
+* A stable, constraint-satisfying, repeated cold cycle was **not found at the sampled parameters** (a narrow elliptic window exists, see the erratum). Exact periodic orbits exist at Γ = 0 and are hyperbolic; with consistent dissipation there is no periodic orbit, entropy grows each cycle, and the best case is a modest, family-dependent lengthening of the transient (tens of bounces), never a limit cycle.
 * The stability obstruction is quantitative: ΓT ≳ ln λ versus radiation below about V_f at the neck.
 * Limits: two families (q = 1), homogeneous, three dissipation laws, a coarse seed grid, one-parameter tuned orbits; the thermal and gated laws are illustrative, not derived from a microscopic model; a different energy-transfer channel (for example to a stable dark component that does not gravitate like radiation) is not excluded.
 
@@ -112,7 +115,7 @@ The scalar–matter system does not sustain a stable cold cycle on its own, so t
 **Proven (analytic).** With the equations of Phase 1B, the comoving radiation parameter obeys d(ρ_r a⁴)/dt = Γ a⁴ φ̇² ≥ 0 (from ρ̇_r + 4Hρ_r = Γφ̇²; it follows for any sign of H). If Γφ̇² is not identically zero over a cycle, ρ_r a⁴ increases and the system cannot return to its initial state: **no exact periodic orbit of the full scalar–radiation system exists for Γ ≥ 0, Γ ≢ 0 under these assumptions.** (This is an obstruction to exact recurrence in this dissipative model; it does not exclude other energy-transfer channels or other models.)
 
 **Numerical, within the sampled models (not exhaustive).**
-1. The undamped orbits are exact periodic orbits to round-off (full state) and are linearly unstable (multipliers 12.7 to 1.6×10⁴ for the small-excursion family; ≳ 10⁶ for the wide cycles).
+1. The undamped orbits are exact periodic orbits to round-off (full state) and, at the sampled parameters, are linearly unstable (multipliers 12.7 to 1.6×10⁴ for the small-excursion family; ≳ 10⁶ for the wide cycles); an elliptic window exists elsewhere (erratum).
 2. Moderate dissipation can lengthen the transient (up to 35 bounces, one family) but produced no stable recurrence; every run ended in collapse within about 25 time units.
 3. Stabilization by damping needs ΓT ≳ ln λ, which conflicts with a radiation content that the neck can tolerate (radiation ≈ 0.2 V_f within one period at the required Γ).
 
