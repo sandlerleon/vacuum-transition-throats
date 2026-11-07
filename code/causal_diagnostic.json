@@ -1,0 +1,73 @@
+{
+ "run_normal_core": {
+  "label": "R_w = 0.8 R_dS",
+  "V_w": 1.6,
+  "rows_evolved": 25,
+  "u_last": 0.48,
+  "fractions": {
+   "normal": 0.8935498839907192,
+   "trapped": 0.10468677494199535,
+   "anti_trapped": 0.0,
+   "r_u>0>r_v": 0.0017633410672853829
+  },
+  "wall_drift_max": 0.09499999999999997,
+  "anti_trapped_cells": 0,
+  "anti_trapped_in_core": 0,
+  "anti_trapped_in_wall": 0,
+  "anti_trapped_beyond_wall": 0,
+  "rows_with_anti_trapped_beyond_wall": null,
+  "u_last_row_with_anti_trapped_beyond_wall": null,
+  "core_anti_trapped_with_exterior_in_causal_past": 0,
+  "exterior_anti_trapped_with_exterior_in_causal_past": 0,
+  "exterior_cells_with_core_anti_trapped_in_causal_future": 0,
+  "fraction_of_core_cells_whose_future_reaches_exterior": 1.0,
+  "anti_trapped_v_range": null
+ },
+ "run_expanding_core": {
+  "label": "R_w = 2.0 R_dS",
+  "V_w": 4.0,
+  "rows_evolved": 16,
+  "u_last": 0.3,
+  "fractions": {
+   "normal": 0.45091911764705883,
+   "trapped": 0.14154411764705882,
+   "anti_trapped": 0.3650735294117647,
+   "r_u>0>r_v": 0.04246323529411765
+  },
+  "wall_drift_max": 0.11500000000000021,
+  "anti_trapped_cells": 3972,
+  "anti_trapped_in_core": 2981,
+  "anti_trapped_in_wall": 234,
+  "anti_trapped_beyond_wall": 479,
+  "rows_with_anti_trapped_beyond_wall": [
+   1,
+   8
+  ],
+  "u_last_row_with_anti_trapped_beyond_wall": 0.16,
+  "core_anti_trapped_with_exterior_in_causal_past": 0,
+  "exterior_anti_trapped_with_exterior_in_causal_past": 479,
+  "exterior_cells_with_core_anti_trapped_in_causal_future": 0,
+  "fraction_of_core_cells_whose_future_reaches_exterior": 1.0,
+  "anti_trapped_v_range": [
+   2.0100000000000002,
+   4.78
+  ]
+ },
+ "established_locally": [
+  "sign quadrants of (r_u, r_v) on the evolved double-null domain",
+  "persistence of the anti-trapped region in the runs with R_w > R_dS",
+  "wall at v ~ V_w, so core and exterior are fixed regions of the chart",
+  "at the earliest rows the anti-trapped quadrant also extends beyond the wall (initial data), and ends at u ~ 0.15",
+  "no outgoing ray with a minimum of the areal radius"
+ ],
+ "established_by_chart_geometry": [
+  "no exterior cell lies in the causal past of a core cell, in particular of a core anti-trapped cell (du dv >= 0; confirmed on the lattice)",
+  "core signals can reach the exterior"
+ ],
+ "conjectural_not_computed": [
+  "global topology beyond the last evolved row",
+  "whether the anti-trapped core is a separate asymptotic region (a bridge) or closes on itself",
+  "any spacelike slice through a throat",
+  "a daughter universe"
+ ]
+}

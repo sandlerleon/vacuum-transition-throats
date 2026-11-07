@@ -210,6 +210,52 @@ def phase1b_periodicity_and_dissipation():
     L = json.load(open(os.path.join(CODE, "closed_dissipation_lifetime.json")))
     assert max(x["max_bounces"] for x in L) <= 40
 
+@check
+def revision2_independent_audit_of_critical_mass():
+    """Revision 2: the Israel branches re-derived symbolically equal the closed form (deviation 0); the 120-digit critical mass equals the finite-tension value of thinwall.json and the series to O(sigma^4);
+    at the physical tension m_c - 2 = -1.2232e-60; horizon roots at m_c are R_dS for q >= 0 (0.618 and 1 for q = -0.5); the Misner-Sharp mass at the wall equals R_dS for every q; M_c(q=1) = 1.116e23 Msun with the
+    quasi-local mass exactly half; dimensional restoration agrees with thinwall.json to 1e-15."""
+    A = json.load(open(os.path.join(CODE, "independent_audit.json")))
+    TWJ = json.load(open(os.path.join(CODE, "thinwall.json")))
+    assert A["1_max_deviation_symbolic_vs_closed_form"] < 1e-12
+    ft = {(r["q"], r["sigma"]): r for r in TWJ["critical_mass_check"]}
+    for r in A["2_critical_mass_hp"]:
+        assert abs(r["m_c_hp"] - ft[(r["q"], r["sigma"])]["m_c"]) < 1e-5 if (r["q"], r["sigma"]) in ft else True
+        assert abs(r["dev_from_series"]) < 0.5 * r["sigma"] ** 4 * 10 + 1e-12
+    assert abs(float(A["2_physical"]["m_c_minus_limit"]) + 1.22321e-60) < 1e-64
+    h = {x["q"]: x["roots"] for x in A["3_horizons_at_mc"]}
+    assert all(abs(h[q_][0] - 1.0) < 1e-9 and len(h[q_]) == 1 for q_ in (0.0, 0.5, 1.0, 2.0)) and abs(h[-0.5][0] - 0.618033989) < 1e-8 and abs(h[-0.5][1] - 1.0) < 1e-9
+    assert all(abs(x["misner_sharp_exterior_at_wall"] - 1.0) < 1e-12 and abs(x["misner_sharp_interior_at_wall"] - 1.0) < 1e-12 for x in A["4_mass_definitions"])
+    d = A["5_dimensional_restoration"]
+    assert abs(d["q=1"]["M_c_Msun"] / 1.116e23 - 1) < 2e-3 and abs(d["q=1"]["M_misner_sharp_at_wall_Msun"] / d["q=1"]["M_c_Msun"] - 0.5) < 1e-12
+    assert all(abs(v["rel_diff"]) < 1e-14 for v in A["5_comparison"].values())
+
+
+@check
+def revision2_wall_thickness_extrapolation():
+    """Revision 2: thin-wall mass shift is <7% at the simulated tensions and 6e-61 at the physical one; classification of expanding cores unchanged by the finite-tension mass; no trend of the horizon-radius deviation with A;
+    a width trend is visible and its linear extrapolation to w -> 0 is consistent with zero within the resolution floor (~1%)."""
+    W = json.load(open(os.path.join(CODE, "wall_extrapolation.json")))
+    for v in W["by_amplitude"].values():
+        assert abs(v["m_c_shift"]) < 0.07 and v["min_m_over_mc_expanding_core_finite_tension"] > 1.5 and v["min_m_over_mc_expanding_core_thin_limit"] > 1.5 and v["median_abs_dev"] < v["resolution_floor_median"]
+    assert W["deviation_slope_vs_A"]["consistent_with_zero"]
+    sw = W["deviation_slope_vs_w"]
+    assert sw["visible"] and sw["intercept_consistent_with_zero"] and abs(sw["intercept_at_w0_median"]) < sw["resolution_floor_median"]
+    assert W["extrapolation_factors"]["thickness_ratio_sim_to_phys"] > 1e27
+
+
+@check
+def revision2_causal_diagnostic():
+    """Revision 2: on the evolved double-null lattice no exterior cell lies in the causal past of any core anti-trapped cell; core cells can signal the exterior; the anti-trapped quadrant also extends beyond the wall in the earliest rows
+    (u <= 0.16) of the expanding-core run; the wall stays within 0.12 of V_w; the normal-core run has no anti-trapped cell."""
+    C = json.load(open(os.path.join(CODE, "causal_diagnostic.json")))
+    e, n_ = C["run_expanding_core"], C["run_normal_core"]
+    assert e["core_anti_trapped_with_exterior_in_causal_past"] == 0 and e["exterior_cells_with_core_anti_trapped_in_causal_future"] == 0
+    assert e["fraction_of_core_cells_whose_future_reaches_exterior"] > 0.99 and e["anti_trapped_in_core"] > 1000
+    assert e["anti_trapped_beyond_wall"] > 0 and e["u_last_row_with_anti_trapped_beyond_wall"] < 0.2 and e["wall_drift_max"] < 0.13
+    assert n_["anti_trapped_cells"] == 0 and n_["fractions"]["trapped"] > 0.05
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()

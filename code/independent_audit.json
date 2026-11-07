@@ -1,0 +1,248 @@
+{
+ "1_Gamma_in": "-R*q*rho_in/(3*sigma) - R*rho_in/(3*sigma) + R*sigma/4 + m/(R**2*sigma)",
+ "1_max_deviation_symbolic_vs_closed_form": 0.0,
+ "1_meeting_point": [
+  "sqrt(3)*(q*rho_in + rho_in - 3*sigma**2/4)/rho_in**(3/2)",
+  "sqrt(3)*(q*rho_in + rho_in - 3*sigma**2/4)/rho_in**(3/2)"
+ ],
+ "2_critical_mass_hp": [
+  {
+   "q": 0.5,
+   "sigma": 0.01,
+   "m_c_hp": 1.4999861112002744,
+   "R_at_max": 0.9999975308398112,
+   "series": 1.499986111111111,
+   "dev_from_series": 8.916334337527587e-11
+  },
+  {
+   "q": 0.5,
+   "sigma": 0.1,
+   "m_c_hp": 1.4986120027331076,
+   "R_at_max": 0.9997528427551893,
+   "series": 1.4986111111111111,
+   "dev_from_series": 8.916219964572036e-07
+  },
+  {
+   "q": 0.5,
+   "sigma": 0.3,
+   "m_c_hp": 1.4875722117612187,
+   "R_at_max": 0.9977581727428338,
+   "series": 1.4875,
+   "dev_from_series": 7.221176121863238e-05
+  },
+  {
+   "q": 0.5,
+   "sigma": 0.9,
+   "m_c_hp": 1.3933238688304697,
+   "R_at_max": 0.9785180499067399,
+   "series": 1.3875,
+   "dev_from_series": 0.005823868830469703
+  },
+  {
+   "q": 1.0,
+   "sigma": 0.01,
+   "m_c_hp": 1.999983333396991,
+   "R_at_max": 0.9999986110947144,
+   "series": 1.9999833333333332,
+   "dev_from_series": 6.36577457413523e-11
+  },
+  {
+   "q": 1.0,
+   "sigma": 0.1,
+   "m_c_hp": 1.9983339700947953,
+   "R_at_max": 0.9998609471250887,
+   "series": 1.9983333333333333,
+   "dev_from_series": 6.367614620028661e-07
+  },
+  {
+   "q": 1.0,
+   "sigma": 0.3,
+   "m_c_hp": 1.9850516981937447,
+   "R_at_max": 0.9987367048974072,
+   "series": 1.985,
+   "dev_from_series": 5.169819374462037e-05
+  },
+  {
+   "q": 1.0,
+   "sigma": 0.9,
+   "m_c_hp": 1.8692690633035238,
+   "R_at_max": 0.9876689401109146,
+   "series": 1.865,
+   "dev_from_series": 0.0042690633035238346
+  },
+  {
+   "q": 2.0,
+   "sigma": 0.01,
+   "m_c_hp": 2.999980555589849,
+   "R_at_max": 0.9999993827093812,
+   "series": 2.9999805555555557,
+   "dev_from_series": 3.4293456963041535e-11
+  },
+  {
+   "q": 2.0,
+   "sigma": 0.1,
+   "m_c_hp": 2.998055898630106,
+   "R_at_max": 0.9999382048900439,
+   "series": 2.9980555555555557,
+   "dev_from_series": 3.4307455010207377e-07
+  },
+  {
+   "q": 2.0,
+   "sigma": 0.3,
+   "m_c_hp": 2.982527879201024,
+   "R_at_max": 0.9994390191759773,
+   "series": 2.9825,
+   "dev_from_series": 2.7879201024205713e-05
+  },
+  {
+   "q": 2.0,
+   "sigma": 0.9,
+   "m_c_hp": 2.8448243464071177,
+   "R_at_max": 0.9945451139127012,
+   "series": 2.8425,
+   "dev_from_series": 0.002324346407117872
+  }
+ ],
+ "2_physical": {
+  "sigma_hat": 2.7091120705488397e-30,
+  "m_c_minus_limit": "-1.2232147e-60",
+  "series_prediction": "-1.2232147e-60",
+  "one_minus_R_at_max": "1.0193456e-61"
+ },
+ "3_horizons_at_mc": [
+  {
+   "q": -0.5,
+   "m_c": 0.5,
+   "roots": [
+    0.6180339887498949,
+    1.0
+   ],
+   "note": "Schwarzschild-de Sitter: black-hole horizon and cosmological horizon (both listed)"
+  },
+  {
+   "q": 0.0,
+   "m_c": 1.0,
+   "roots": [
+    1.0
+   ],
+   "note": "Schwarzschild: r_h = m"
+  },
+  {
+   "q": 0.5,
+   "m_c": 1.5,
+   "roots": [
+    1.0
+   ],
+   "note": "Schwarzschild-AdS: one horizon"
+  },
+  {
+   "q": 1.0,
+   "m_c": 2.0,
+   "roots": [
+    1.0
+   ],
+   "note": "Schwarzschild-AdS: one horizon"
+  },
+  {
+   "q": 2.0,
+   "m_c": 3.0,
+   "roots": [
+    1.0
+   ],
+   "note": "Schwarzschild-AdS: one horizon"
+  }
+ ],
+ "4_mass_definitions": [
+  {
+   "q": -0.5,
+   "parameter_m": 0.5,
+   "misner_sharp_exterior_at_wall": 1.0,
+   "misner_sharp_interior_at_wall": 1.0,
+   "note": "m is the Schwarzschild-(A)dS parameter m = 2GM (ADM-like only for q >= 0; for q < 0 there is no asymptotically flat region); the quasi-local mass at the wall at zero tension equals the interior de Sitter mass R_dS (in these units) for every q"
+  },
+  {
+   "q": 0.0,
+   "parameter_m": 1.0,
+   "misner_sharp_exterior_at_wall": 1.0,
+   "misner_sharp_interior_at_wall": 1.0,
+   "note": "m is the Schwarzschild-(A)dS parameter m = 2GM (ADM-like only for q >= 0; for q < 0 there is no asymptotically flat region); the quasi-local mass at the wall at zero tension equals the interior de Sitter mass R_dS (in these units) for every q"
+  },
+  {
+   "q": 0.5,
+   "parameter_m": 1.5,
+   "misner_sharp_exterior_at_wall": 1.0,
+   "misner_sharp_interior_at_wall": 1.0,
+   "note": "m is the Schwarzschild-(A)dS parameter m = 2GM (ADM-like only for q >= 0; for q < 0 there is no asymptotically flat region); the quasi-local mass at the wall at zero tension equals the interior de Sitter mass R_dS (in these units) for every q"
+  },
+  {
+   "q": 1.0,
+   "parameter_m": 2.0,
+   "misner_sharp_exterior_at_wall": 1.0,
+   "misner_sharp_interior_at_wall": 1.0,
+   "note": "m is the Schwarzschild-(A)dS parameter m = 2GM (ADM-like only for q >= 0; for q < 0 there is no asymptotically flat region); the quasi-local mass at the wall at zero tension equals the interior de Sitter mass R_dS (in these units) for every q"
+  },
+  {
+   "q": 2.0,
+   "parameter_m": 3.0,
+   "misner_sharp_exterior_at_wall": 1.0,
+   "misner_sharp_interior_at_wall": 1.0,
+   "note": "m is the Schwarzschild-(A)dS parameter m = 2GM (ADM-like only for q >= 0; for q < 0 there is no asymptotically flat region); the quasi-local mass at the wall at zero tension equals the interior de Sitter mass R_dS (in these units) for every q"
+  }
+ ],
+ "5_dimensional_restoration": {
+  "R_dS_Gpc": 5.3383939185651865,
+  "H_Lambda_km_s_Mpc": 56.15779999999999,
+  "q=-0.5": {
+   "M_c_kg": 5.545450757434773e+52,
+   "M_c_Msun": 2.7888028270151288e+22,
+   "M_misner_sharp_at_wall_Msun": 5.5776056540302575e+22
+  },
+  "q=0": {
+   "M_c_kg": 1.1090901514869546e+53,
+   "M_c_Msun": 5.5776056540302575e+22,
+   "M_misner_sharp_at_wall_Msun": 5.5776056540302575e+22
+  },
+  "q=0.25": {
+   "M_c_kg": 1.3863626893586932e+53,
+   "M_c_Msun": 6.972007067537822e+22,
+   "M_misner_sharp_at_wall_Msun": 5.5776056540302575e+22
+  },
+  "q=0.5": {
+   "M_c_kg": 1.663635227230432e+53,
+   "M_c_Msun": 8.366408481045386e+22,
+   "M_misner_sharp_at_wall_Msun": 5.5776056540302575e+22
+  },
+  "q=1": {
+   "M_c_kg": 2.2181803029739093e+53,
+   "M_c_Msun": 1.1155211308060515e+23,
+   "M_misner_sharp_at_wall_Msun": 5.5776056540302575e+22
+  },
+  "q=2": {
+   "M_c_kg": 3.327270454460864e+53,
+   "M_c_Msun": 1.6732816962090773e+23,
+   "M_misner_sharp_at_wall_Msun": 5.5776056540302575e+22
+  }
+ },
+ "5_comparison": {
+  "0.25": {
+   "independent_Msun": 6.972007067537822e+22,
+   "thinwall_json_Msun": 6.972007067537823e+22,
+   "rel_diff": -1.1102230246251565e-16
+  },
+  "0.5": {
+   "independent_Msun": 8.366408481045386e+22,
+   "thinwall_json_Msun": 8.366408481045386e+22,
+   "rel_diff": 0.0
+  },
+  "1.0": {
+   "independent_Msun": 1.1155211308060515e+23,
+   "thinwall_json_Msun": 1.1155211308060515e+23,
+   "rel_diff": 0.0
+  },
+  "2.0": {
+   "independent_Msun": 1.6732816962090773e+23,
+   "thinwall_json_Msun": 1.6732816962090773e+23,
+   "rel_diff": 0.0
+  }
+ }
+}

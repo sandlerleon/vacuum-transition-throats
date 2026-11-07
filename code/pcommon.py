@@ -13,8 +13,11 @@ SCAN = json.load(open(os.path.join(HERE, "collapse_scan.json"), encoding="utf-8"
 SCANQ = json.load(open(os.path.join(HERE, "collapse_scan_q.json"), encoding="utf-8"))
 VE = json.load(open(os.path.join(HERE, "validation_extra.json"), encoding="utf-8"))
 DOIS = json.load(open(os.path.join(HERE, "dois.json"), encoding="utf-8"))
+AUD = json.load(open(os.path.join(HERE, "independent_audit.json"), encoding="utf-8"))
+WALLX = json.load(open(os.path.join(HERE, "wall_extrapolation.json"), encoding="utf-8"))
+CAUS = json.load(open(os.path.join(HERE, "causal_diagnostic.json"), encoding="utf-8"))
 GITHUB = "https://github.com/sandlerleon/vacuum-transition-throats"
-VERSION = "1.1.0"
+VERSION = "2.0.0"
 TITLE = "Wormhole Formation in Matter-Coupled Vacuum Transitions: Gravitational Collapse, Horizon Constraints, and the Limits of Cosmological Rebirth"
 
 

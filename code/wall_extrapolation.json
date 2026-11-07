@@ -1,0 +1,357 @@
+{
+ "physical_wall": {
+  "sigma_hat": 2.7091120705488397e-30,
+  "thickness_over_RdS": 1.4508975208509527e-30,
+  "gravity_parameter": 5.504466158095067e-60
+ },
+ "theorems": [
+  "Proposition 1 (no minimum of the areal radius along a null ray): uses only the null energy condition of the scalar and the dust; independent of wall thickness and tension.",
+  "Anti-trapped points in the initial core exist iff the core radius exceeds R_dS (de Sitter interior): a statement about the initial data, independent of the wall except for an offset of the order of its width.",
+  "m_c(sigma) = (1+q) R_dS - sigma^2 [1/4 - 1/(6(1+q))] + O(sigma^4): the correction is 1e-60 at the physical tension, and a few per cent at the simulated tensions."
+ ],
+ "by_amplitude": {
+  "0.05": {
+   "n_trapped_normal_core": 12,
+   "thickness_over_RdS": 0.014433756729740644,
+   "sigma_hat_sim": 0.2309401076758503,
+   "median_abs_dev": 0.007536421478858968,
+   "max_abs_dev": 0.04113111478680043,
+   "mean_signed_dev": -0.013927895740518762,
+   "resolution_floor_median": 0.00955050544382684,
+   "resolution_floor_max": 0.038548506233152244,
+   "m_c_at_sim_tension": 1.991129246414826,
+   "m_c_shift": -0.004435376792586987,
+   "min_m_over_mc_expanding_core_thin_limit": 1.8436867845017872,
+   "min_m_over_mc_expanding_core_finite_tension": 1.851900661718952
+  },
+  "0.1": {
+   "n_trapped_normal_core": 12,
+   "thickness_over_RdS": 0.028867513459481287,
+   "sigma_hat_sim": 0.4618802153517006,
+   "median_abs_dev": 0.0019870490099093696,
+   "max_abs_dev": 0.011120323692015543,
+   "mean_signed_dev": -0.0028593385686673336,
+   "resolution_floor_median": 0.010391148869152631,
+   "resolution_floor_max": 0.03386193959451406,
+   "m_c_at_sim_tension": 1.9647359445046466,
+   "m_c_shift": -0.017632027747676693,
+   "min_m_over_mc_expanding_core_thin_limit": 1.7845570818246748,
+   "min_m_over_mc_expanding_core_finite_tension": 1.816587197700606
+  },
+  "0.2": {
+   "n_trapped_normal_core": 13,
+   "thickness_over_RdS": 0.057735026918962574,
+   "sigma_hat_sim": 0.9237604307034012,
+   "median_abs_dev": 0.004690596005055836,
+   "max_abs_dev": 0.06176891573786225,
+   "mean_signed_dev": -0.013001012909994737,
+   "resolution_floor_median": 0.011469510511713911,
+   "resolution_floor_max": 0.0378923319253396,
+   "m_c_at_sim_tension": 1.8625208440942183,
+   "m_c_shift": -0.06873957795289087,
+   "min_m_over_mc_expanding_core_thin_limit": 1.6429660737848526,
+   "min_m_over_mc_expanding_core_finite_tension": 1.7642391267667776
+  }
+ },
+ "deviation_slope_vs_A": {
+  "slope_median": 0.007911724575279399,
+  "ci95": [
+   -0.09404454438042723,
+   0.1416949174115384
+  ],
+  "consistent_with_zero": true
+ },
+ "by_width": {
+  "0.05": {
+   "n": 12,
+   "median_signed": -0.002921725849995449,
+   "median_abs": 0.002921725849995449,
+   "max_abs": 0.026596847102946408
+  },
+  "0.1": {
+   "n": 12,
+   "median_signed": -0.003507050377380583,
+   "median_abs": 0.003507050377380583,
+   "max_abs": 0.017639551547435017
+  },
+  "0.2": {
+   "n": 13,
+   "median_signed": -0.00919736301234264,
+   "median_abs": 0.00919736301234264,
+   "max_abs": 0.06176891573786225
+  }
+ },
+ "deviation_slope_vs_w": {
+  "slope_median": -0.09560606819198861,
+  "ci95": [
+   -0.17800008983038926,
+   -0.021610350837783156
+  ],
+  "visible": true,
+  "intercept_at_w0_median": 0.0015290612843951602,
+  "intercept_ci95": [
+   -0.005122364833356787,
+   0.008555080444080043
+  ],
+  "resolution_floor_median": 0.01000105520243033,
+  "intercept_consistent_with_zero": true
+ },
+ "deviation_points": [
+  {
+   "w": 0.05,
+   "dev": 0.002513326537086913
+  },
+  {
+   "w": 0.05,
+   "dev": -0.008401025161434483
+  },
+  {
+   "w": 0.05,
+   "dev": -0.002612597723508636
+  },
+  {
+   "w": 0.05,
+   "dev": -0.0009662088516362299
+  },
+  {
+   "w": 0.1,
+   "dev": -0.01046889598006695
+  },
+  {
+   "w": 0.1,
+   "dev": -0.006671817796283452
+  },
+  {
+   "w": 0.1,
+   "dev": -0.0036973707620835405
+  },
+  {
+   "w": 0.1,
+   "dev": -0.003316729992677625
+  },
+  {
+   "w": 0.2,
+   "dev": -0.04113111478680043
+  },
+  {
+   "w": 0.2,
+   "dev": -0.03210643164602489
+  },
+  {
+   "w": 0.2,
+   "dev": -0.03069111812963099
+  },
+  {
+   "w": 0.2,
+   "dev": -0.029584764593164836
+  },
+  {
+   "w": 0.05,
+   "dev": -0.011120323692015543
+  },
+  {
+   "w": 0.05,
+   "dev": -0.0029736662303646577
+  },
+  {
+   "w": 0.05,
+   "dev": -0.0038897575548784147
+  },
+  {
+   "w": 0.05,
+   "dev": -0.002022040513148804
+  },
+  {
+   "w": 0.1,
+   "dev": -0.002666473454735474
+  },
+  {
+   "w": 0.1,
+   "dev": -0.0019520575066699353
+  },
+  {
+   "w": 0.1,
+   "dev": -0.001211310310442082
+  },
+  {
+   "w": 0.1,
+   "dev": -0.0009735241830363117
+  },
+  {
+   "w": 0.2,
+   "dev": -0.005834511225077721
+  },
+  {
+   "w": 0.2,
+   "dev": -0.0013043416016141895
+  },
+  {
+   "w": 0.2,
+   "dev": -0.00018114130743096535
+  },
+  {
+   "w": 0.2,
+   "dev": -0.0001829152445939064
+  },
+  {
+   "w": 0.05,
+   "dev": -0.026596847102946408
+  },
+  {
+   "w": 0.05,
+   "dev": -0.002866093048598861
+  },
+  {
+   "w": 0.05,
+   "dev": -0.0028697854696262404
+  },
+  {
+   "w": 0.05,
+   "dev": -0.003347582051024367
+  },
+  {
+   "w": 0.1,
+   "dev": -0.017639551547435017
+  },
+  {
+   "w": 0.1,
+   "dev": -0.006009512390323879
+  },
+  {
+   "w": 0.1,
+   "dev": -0.00429996765812779
+  },
+  {
+   "w": 0.1,
+   "dev": -0.0022085836917608015
+  },
+  {
+   "w": 0.2,
+   "dev": -0.06176891573786225
+  },
+  {
+   "w": 0.2,
+   "dev": -0.024854493153594226
+  },
+  {
+   "w": 0.2,
+   "dev": -0.00919736301234264
+  },
+  {
+   "w": 0.2,
+   "dev": -0.004690596005055836
+  },
+  {
+   "w": 0.2,
+   "dev": -0.002663876961233269
+  }
+ ],
+ "core_threshold_brackets": [
+  {
+   "A": 0.05,
+   "w": 0.05,
+   "bracket": [
+    1.0,
+    1.2
+   ],
+   "bracket_width": 0.19999999999999996
+  },
+  {
+   "A": 0.05,
+   "w": 0.1,
+   "bracket": [
+    1.2,
+    1.5
+   ],
+   "bracket_width": 0.30000000000000004
+  },
+  {
+   "A": 0.05,
+   "w": 0.2,
+   "bracket": [
+    1.2,
+    1.5
+   ],
+   "bracket_width": 0.30000000000000004
+  },
+  {
+   "A": 0.1,
+   "w": 0.05,
+   "bracket": [
+    1.0,
+    1.2
+   ],
+   "bracket_width": 0.19999999999999996
+  },
+  {
+   "A": 0.1,
+   "w": 0.1,
+   "bracket": [
+    1.2,
+    1.5
+   ],
+   "bracket_width": 0.30000000000000004
+  },
+  {
+   "A": 0.1,
+   "w": 0.2,
+   "bracket": [
+    1.2,
+    1.5
+   ],
+   "bracket_width": 0.30000000000000004
+  },
+  {
+   "A": 0.2,
+   "w": 0.05,
+   "bracket": [
+    1.0,
+    1.2
+   ],
+   "bracket_width": 0.19999999999999996
+  },
+  {
+   "A": 0.2,
+   "w": 0.1,
+   "bracket": [
+    1.2,
+    1.5
+   ],
+   "bracket_width": 0.30000000000000004
+  },
+  {
+   "A": 0.2,
+   "w": 0.2,
+   "bracket": [
+    1.2,
+    1.5
+   ],
+   "bracket_width": 0.30000000000000004
+  }
+ ],
+ "extrapolation_factors": {
+  "thickness_ratio_sim_to_phys": 9.948157256161406e+27,
+  "tension_ratio_sim_to_phys": 8.524568259336133e+28,
+  "grid_points_needed_to_resolve_physical_wall": 6.892285537944122e+29,
+  "grid_points_used": 2.309401072
+ },
+ "classification": {
+  "insensitive_by_theorem": [
+   "no minimum of the areal radius along null rays (energy condition)",
+   "thin-wall critical mass m_c -> (1+q) R_dS as sigma -> 0, correction ~ sigma^2",
+   "existence of anti-trapped points in the initial core iff its radius exceeds R_dS (offset ~ wall width)"
+  ],
+  "insensitive_within_resolution": [
+   "formation of a trapped surface for m_ext < m_c (all runs)",
+   "radius of the first trapped point against the horizon radius of the measured mass (|dev| median below the resolution floor; no trend with A at 95%)",
+   "classification of every expanding-core run as m_ext > m_c at either the limit or the finite simulated tension"
+  ],
+  "not_extrapolable": [
+   "the dynamics of a wall 1e-30 R_dS thick (neither resolved nor tested)",
+   "any quantity at the 1e-3 level or finer in the horizon radius (below the resolution floor)",
+   "wall stability and energy exchange with the exterior",
+   "the fate of the matter after the code stops at the singularity",
+   "non-spherical or quantum wall dynamics"
+  ]
+ }
+}

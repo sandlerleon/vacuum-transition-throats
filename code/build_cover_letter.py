@@ -29,7 +29,7 @@ def para(t, bold=False, after=None):
 
 
 para("Leon Sandler", True, 0)
-for t in ("Independent Researcher", "Northbrook, Illinois, USA", "leon.sandler@alumni.swinburne.edu", "ORCID 0009-0007-4584-808X"):
+for t in ("Independent Researcher", "Northbrook, Illinois, USA", "sandler.leon@gmail.com", "ORCID 0009-0007-4584-808X"):
     para(t, after=0)
 para("")
 para(datetime.date.today().strftime("%d %B %Y").lstrip("0"))
@@ -43,7 +43,7 @@ resolved = sum(1 for r in VE["inconclusive"] if any(v["first_trapped"] is not No
 CRE = VE["creation"]
 para("The manuscript makes five contributions. (i) A short proof that the whole model satisfies the null energy condition, so that no null ray can have a minimum of the areal radius and no ordinary traversable "
      "throat can form in this classical model (non-traversable bridges and quantum or baby-universe continuations are not excluded); the question is narrowed to a non-traversable bridge. (ii) A finite-tension thin-wall criterion from the Israel junction conditions: a critical exterior mass m_c(sigma), "
-     "equal to (1+q) R_dS up to corrections of order sigma^2 (q the depth of the true vacuum, R_dS the de Sitter radius), below which every regular false-vacuum configuration is confined and collapses, "
+     "equal to (1+q) R_dS up to corrections of order sigma^2 (q the depth of the true vacuum, R_dS the de Sitter radius), below which, on the thin-wall branch analysed and for regular initial data, a false-vacuum configuration is confined and collapses, "
      "and the observation, stated as a geometric coincidence of the small-tension limit and not as a thermodynamic criterion, that at that limit the exterior horizon and the interior de Sitter horizon have "
      "equal area. (iii) A spherically symmetric Einstein–scalar code in double-null coordinates with a regular centre, validated against exact de Sitter and anti-de Sitter solutions, whose constraints and "
      "null expansions converge on the dynamical solutions, and which identifies trapped surfaces in %d of %d runs at the base resolution and in %d more after refinement (one remains unresolved). (iv) A separation of persistence from creation: a persistent expanding false-vacuum core coexists with the trapped "
@@ -57,17 +57,16 @@ para("The main finding is a conditional negative, stated as such. Localized coll
      "pre-existing, horizon-sized false-vacuum core that the collapse of its surroundings isolates; the mechanism is therefore not supported as a cosmological reset, and even a created daughter would be "
      "cosmological reproduction, not a cycle. The manuscript is explicit about what the numerical work is and is not: the walls it can resolve are far thicker and heavier than the physical wall "
      "(by thirty and sixty orders of magnitude), so the experiments test the structure of the thin-wall solution and not the physical values; the evolution is spherical and classical; the dark matter that "
-     "motivates the transition is not simulated; no spacelike slice through the bridge is constructed numerically; and the code does not follow the solution beyond the singularity. "
+     "motivates the transition is not simulated (the experiments are a scalar-only gravitational benchmark); no spacelike slice through the bridge is constructed numerically; and the code does not follow the solution beyond the singularity. "
      "It lists six criteria by which each of its statements can be falsified.")
 para("The geometry of false-vacuum bubbles, baby universes and the obstacle to creating them from regular data is classical, and the manuscript credits it (Blau, Guendelman and Guth; Farhi and Guth; "
-     "Farhi, Guth and Guven; Fischler, Morgan and Polchinski). The contribution is the application to a model with a fixed vacuum scale, the exact critical mass and its entropy interpretation, "
-     "and the numerical test with a regular centre.")
+     "Farhi, Guth and Guven; Fischler, Morgan and Polchinski). The contribution is the application to a model with a fixed vacuum scale, the exact critical mass (re-derived independently, with the exterior mass parameter distinguished from the quasi-local mass), "
+     "the numerical test with a regular centre, a quantitative extrapolation to the physical wall, and a causal diagnostic that separates the evolved domain from conjecture.")
 para("The code and results are openly available at %s and archived at https://doi.org/%s (code, all versions); the manuscript and its Supplementary Information are archived at https://doi.org/%s "
-     "(all versions). Every number in the text is read from the result files that the scripts write, fifteen automated checks run on the stored results, and one command per script regenerates each figure and table."
+     "(all versions). Every number in the text is read from the result files that the scripts write, twenty-one automated checks run on the stored results, and one command per script regenerates each figure and table."
      % (GITHUB, DOIS["code_concept"], DOIS["paper_concept"]))
-para("Author affiliation and email address. I am an independent researcher with no current institutional affiliation, and I am the sole author. My contact and corresponding-author address is the alumni "
-     "email address provided by my former university (Swinburne University of Technology, leon.sandler@alumni.swinburne.edu); it identifies me as a graduate and does not indicate a current "
-     "affiliation or employer.")
+para("Author affiliation and email address. I am an independent researcher with no current institutional affiliation, and I am the sole author. My corresponding-author address is my personal email address, "
+     "sandler.leon@gmail.com.")
 para("A generative AI tool (Claude, Anthropic) assisted with code development, numerical experiments, drafting and editing; I reviewed and checked all of it and take full responsibility for the content, as "
      "disclosed in the manuscript. The manuscript is original, has not been published elsewhere and is not under consideration at any other journal. I am the sole author, the work received no external funding "
      "and I have no competing interests.")
