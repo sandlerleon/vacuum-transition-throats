@@ -492,6 +492,22 @@ def phase3c4_polarized_spin_cross_terms():
     assert bc == sorted(bc, reverse=True) and bc[0] > 0.03 and bc[-1] < 1e-4
 
 
+@check
+def phase3c5_spin_transport_and_closure():
+    """Phase 3C.5: Frenkel-preserving spin transport is forced (lambda = 1) and gives d ln s/dtau = -Theta for any acceleration; [D_a,D_b]f = -omega_ab fdot on an explicit rotating-frame metric (so rest-space
+    homogeneity is incompatible with rotation plus time dependence); vector-constraint sign k = 2; the three laws (s ~ n, Helmholtz, cross-term energy balance) force beta_dot = 0; the cancellation surface is
+    left at rate -alpha_dot s; the shear is not removed when its source vanishes."""
+    C = json.load(open(os.path.join(CODE, "phase3c5_closure.json")))
+    assert C["A_frenkel_residual"] == ["0"] * 4 and C["A_s_squared"] == "s**2"
+    assert C["B_lambda_forced"] == ["{lambda: 1}"] and C["B_dlns_over_dtau"] == "-Theta"
+    assert all(abs(r + 1.0) < 1e-9 for r in C["C_commutator_ratio"]) and len(C["C_commutator_ratio"]) == 3
+    assert all(abs(k - 2.0) < 1e-9 for k in C["C_vector_constraint_k"])
+    assert C["D_mismatch"] == "beta_dot" and C["D_preservation_derivative"].replace(" ", "") == "-alpha_dot*s"
+    assert C["D_shear_fraction_at_alpha_dot_zero"] == "1/4"
+    assert all(r["max_abs_deviation"] > 1.0 for r in C["E_bianchi_ratio"] if r["outcome"] == "bounce")
+    assert C["E_dust_sigma2V2_spread"] < 1e-9 and C["E_dust_outcome"] == "singular"
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()

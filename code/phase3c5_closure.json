@@ -1,0 +1,66 @@
+{
+ "A_frenkel_residual": [
+  "0",
+  "0",
+  "0",
+  "0"
+ ],
+ "A_s_squared": "s**2",
+ "B_frenkel_rate": [
+  "0",
+  "A_y*s*(1 - lambda)",
+  "A_x*s*(lambda - 1)",
+  "0"
+ ],
+ "B_lambda_forced": [
+  "{lambda: 1}"
+ ],
+ "B_dlns_over_dtau": "-Theta",
+ "C_commutator_ratio": [
+  -1.0,
+  -1.0,
+  -1.0
+ ],
+ "C_vector_constraint_k": [
+  2.0,
+  2.0,
+  2.0
+ ],
+ "D_mismatch": "beta_dot",
+ "D_preservation_derivative": "-alpha_dot*s",
+ "D_preservation_derivative_enthalpy": "s*(-alpha_dot*h + hdot)/h",
+ "D_locus_ratio": "-4*B*n/(4*B*n - 1)",
+ "D_shear_fraction_at_alpha_dot_zero": "1/4",
+ "D_ratio_law": "d ln(s/omega~)/dt = -alpha_dot   (s ~ n, omega~ ~ a_perp^-2)",
+ "E_bianchi_ratio": [
+  {
+   "B": 0.01,
+   "outcome": "bounce",
+   "V_bounce": 0.007518796992487107,
+   "r_over_r0_at_bounce": 15.906943081301275,
+   "max_abs_deviation": 14.906943081301275,
+   "alpha_total_change": -2.7667556856927646,
+   "sigma2V2_ratio": 0.9999999999988394
+  },
+  {
+   "B": 0.03,
+   "outcome": "bounce",
+   "V_bounce": 0.027568922305773957,
+   "r_over_r0_at_bounce": 5.771398269948003,
+   "max_abs_deviation": 4.771398269948003,
+   "alpha_total_change": -1.7529143856414744,
+   "sigma2V2_ratio": 0.9999999999994602
+  },
+  {
+   "B": 0.1,
+   "outcome": "bounce",
+   "V_bounce": 0.0977443609022685,
+   "r_over_r0_at_bounce": 2.797958776726296,
+   "max_abs_deviation": 1.7979587767262961,
+   "alpha_total_change": -1.0288901430133464,
+   "sigma2V2_ratio": 1.000000000000401
+  }
+ ],
+ "E_dust_sigma2V2_spread": 3.535352999943529e-12,
+ "E_dust_outcome": "singular"
+}
