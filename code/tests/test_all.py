@@ -210,6 +210,28 @@ def phase1b_periodicity_and_dissipation():
     L = json.load(open(os.path.join(CODE, "closed_dissipation_lifetime.json")))
     assert max(x["max_bounces"] for x in L) <= 40
 
+
+@check
+def phase2_junction_conservation_and_counts():
+    """Phase 2 step 1: the shell stress of the comoving bridge obeys (sigma R^2)' + p (R^2)' = 0 to finite-difference accuracy, sigma > 0 iff m < m_max, and the stored feasibility map has the reported counts."""
+    import bridge_junction as BJ
+    B = json.load(open(os.path.join(CODE, "closed_stability_breather.json")))
+    o = [b for b in B if b["mu"] == 20.0 and b["rc"] == 0.2][0]
+    m, t, Y, acc = BJ.orbit_history(o, n=20001)
+    a, ad = Y[0], Y[1]
+    chi0, q = 0.7 * np.pi, 0.0
+    sn = np.sin(chi0)
+    R = a * sn
+    m_max = float(np.min(R * (sn ** 2 + (ad * sn) ** 2 + q * R ** 2)))
+    sg, p, Rr = BJ.shell(0.5 * m_max, q, chi0, a, ad, acc)
+    assert np.all(sg > 0)
+    lhs = np.gradient(sg * Rr ** 2, t) + p * np.gradient(Rr ** 2, t)
+    scale = np.max(np.abs(np.gradient(sg * Rr ** 2, t)))
+    assert np.max(np.abs(lhs[50:-50])) < 2e-3 * scale
+    assert np.any(BJ.shell(1.05 * m_max, q, chi0, a, ad, acc)[0] <= 0)
+    J = json.load(open(os.path.join(CODE, "bridge_junction.json")))
+    assert len(J) == 72 and sum(1 for r in J if r["frac_nec"] > 0) == 15
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()
