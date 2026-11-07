@@ -30,6 +30,8 @@ Every Gauss–Bonnet-driven closed bounce occurs only for λξ'' < 0 (the sign t
 
 **Comparison with 3E.0.** The one-loop-type correction does not change the no-go for k = 0 (proved) and gives no controlled closed bounce. Omitted comparable terms: all higher-order α′, loop corrections to other couplings, H-flux, compactification moduli stability, string-frame vs Einstein-frame matter couplings (the Einstein frame was used as physical; a different matter coupling could change the interpretation of proper times).
 
+**Independent check added in Phase 3F.0 (after review).** The flat-bounce statement was checked against the published Guo–Schwarz equations (Phys. Rev. D 81, 123520: 6H² = φ̇² + 2V + 24ξ̇H³; 2Ḣ = −φ̇² + 4ξ̈H² + 4ξ̇H(2Ḣ − H²), for the action R/2 − (∂φ)²/2 − V − ξR²_GB/2): the derived equations equal them exactly (E_N = (a³/2)·GS_F, E_a = 3a²·GS_R + (3a²/2)·GS_F, E_φ = −a³·GS_S), the Noether identity holds with residual 0, and the coefficient of Ḣ at H = 0 is 2 (no degeneracy), so Ḣ(H = 0) = −φ̇²/2 exactly. The theorem's scope remains: canonical scalars, arbitrary ξ and V, flat FLRW. The 37 tests check consistency with these equations; they do not by themselves establish the theorem, which rests on the symbolic derivation above and this literature comparison.
+
 ## Part B. Nested throats
 
 - **Topology.** In spherical symmetry two local minima of the areal radius need an intervening maximum. A profile R(r) = √(r² + a²) + β e^{−(r/w)²} (a = 1, β = 1.5, w = 0.8) has minima at r = ±1.117 and a maximum at r = 0 (the belly); R″ changes sign at r = ±0.498.

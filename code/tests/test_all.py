@@ -646,6 +646,26 @@ def phase3e1_field_dependent_gb_nested_throats_and_speeds():
     assert E["C_GT_residual"] == "0" and E["C_FT_residual"] == "0" and E["C_GT_bianchi_residual"] == "0"
 
 
+@check
+def phase3f0_causal_fluid_feasibility():
+    """Phase 3F.0: (0) the Phase 3E.1 EsGB equations equal the published Guo-Schwarz form exactly (E_N = a^3/2 GS_F, E_a = 3a^2 GS_R + 3a^2/2 GS_F, E_phi = -a^3 GS_S), Noether identity residual 0, coefficient of Hdot at H=0 is 2,
+    Hdot(H=0) = -phid^2/2; (1) causal bulk viscosity only lowers the Lemaitre bounce mass M_c; (2) shear viscosity damps Sigma^2 in contraction iff c^2 K > 3(1-w)/(4(1+w)) (12/12 admissible runs, inviscid radiation anisotropy grows 80x);
+    (3) the dissipative stress keeps the null energy condition (min ratio > 0.9)."""
+    F = json.load(open(os.path.join(CODE, "phase3f0_fluid.json")))
+    assert F["0_noether_residuals"][0] == "0" and F["0_EN_over_GSF"] == "A**3/2" and F["0_Ephi_over_GSS"] == "-A**3"
+    assert F["0_Ea_decomposition"] == ["{c1: 3*A**2, c2: 3*A**2/2}"] and F["0_coeff_Hd_at_H0"] == "2" and F["0_Hdot_at_H0"].replace(" ", "") == "-Pdot**2/2"
+    Mc = F["1_critical_dust_mass"]
+    assert abs(Mc["K=0.1 c_b2=0"] - Mc["K=1 c_b2=0"]) < 1e-6 and 14.0 < Mc["K=1 c_b2=0"] < 14.3
+    assert all(v < Mc["K=1 c_b2=0"] for k_, v in Mc.items() if "c_b2=0" not in k_ or "c_b2=0." in k_ or "c_b2=1" in k_)
+    assert Mc["K=1 c_b2=1"] < Mc["K=1 c_b2=0.25"] < Mc["K=1 c_b2=0"] and Mc["K=0.1 c_b2=1"] > Mc["K=1 c_b2=1"]
+    assert F["1_example_run"]["bounce"] and F["1_example_run"]["Pi_min"] >= 0.0
+    assert F["2_summary_admissible_agreement"] == F["2_summary"]["admissible_runs"] == 12
+    assert F["2_inviscid_baseline"]["0.3333333333333333"]["Sigma2_end"] > 50 * F["2_inviscid_baseline"]["0.3333333333333333"]["Sigma2_start"]
+    sh = F["2_shear_scan"]
+    assert all(r["nec_ratio_min"] > 0.9 and r["constraint_residual"] < 1e-4 for r in sh)
+    assert [r["damped"] for r in sh if r["w"] < 0.5 and r["K"] <= 1.0 and r["c2"] <= 1.0] == [False, False, False, False, False, True]
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()
