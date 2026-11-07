@@ -411,6 +411,43 @@ def phase2g_cap_spectrum_and_boundary_conditions():
     assert all(b > a for a, b in zip(hv, hv[1:])) and hv[0] > 1.9 and hv[-1] > 80
 
 
+@check
+def phase3_baseline_and_effective_fluid_feasibility():
+    """Phase 3A-3C: exact dust collapse baselines (OS, LTB) and the stored scalar scan form no daughter region; the spin-fluid (EC-type) effective fluid is thermodynamically consistent and coincides with the LQC-type
+    effective fluid for dust; a homogeneous bounce exists; vacuum-exterior matching fails (R_bounce < m in most cases, mass mismatch in all); sound speed is imaginary below n* and superluminal above;
+    perturbation transfer matrices are singular at n* and the spin term adds a k-dependent growth on top of the dust-collapse growth."""
+    A = json.load(open(os.path.join(CODE, "phase3a_baseline.json")))
+    os_ = A["oppenheimer_snyder"]
+    assert abs(os_["t_singular_num"] / os_["t_singular_exact"] - 1) < 1e-6 and abs(os_["t_horizon_num"] / os_["t_horizon_exact"] - 1) < 1e-6 and os_["mass_spread"] < 1e-12 and not os_["reexpands"]
+    L = A["ltb"]
+    assert L["n_trapped"] == L["n_shells"] and L["central_first"] and not L["shell_crossing_before_collapse"] and L["first_integral_residual"] < 1e-3
+    assert A["scalar_scan"]["n_trapped"] == 65 and A["scalar_scan"]["creation"]["n_created_later"] == 0 and A["scalar_scan"]["creation"]["n_initially_normal_core"] == 42
+    f1, f2 = A["scalar_fresh"]
+    assert f1["anti_trapped_points_max"] == 0 and f2["anti_trapped_points_max"] == 0 and abs(f1["u_first_trapped"] - f2["u_first_trapped"]) <= 1.01 * f1["h"]
+    E = json.load(open(os.path.join(CODE, "phase3c_ec_homogeneous.json")))
+    assert E["fluid"]["thermodynamic_identity_residual"] < 1e-9 and E["lqc_equivalence_max_diff"] < 1e-8
+    assert E["fluid"]["cs2_below_nstar_max"] < 0 and E["fluid"]["cs2_above_nstar_min"] > 1.0 and E["fluid"]["NEC_violated_above_nstar"] and E["fluid"]["NEC_holds_below_nstar"]
+    c = E["cycle"]
+    assert c["return_error"] < 1e-12 and c["friedmann_residual"] < 1e-9 and c["bounce_above_nstar"]
+    mt = E["matching"]
+    assert mt["counts"]["horizon_forms_bounce_inside_exterior_horizon"] >= 20 and E["theorem_check"]["n_cases_bounce_inside"] >= 25
+    assert all(abs(r["m_eff_max_over_m"] - r["m_eff_min_over_m"]) > 0.01 for r in mt["rows"])
+    W = json.load(open(os.path.join(CODE, "phase3c_ec_window.json")))
+    for w in W["windows"]:
+        for md in w["modes"]:
+            if md["n"] <= 6:
+                assert abs(md["det"] - 1.0) < 1e-2 and md["ln_growth"] > 10.0
+    Pt = json.load(open(os.path.join(CODE, "phase3c_ec_perturb.json")))
+    assert abs(np.log(Pt["modes"][0]["max_multiplier"]) - 22.57) < 0.2 and abs(Pt["modes"][0]["det"] - 1.0) > 1e3 and Pt["frac_imaginary_cs"] > 0.9
+    K = json.load(open(os.path.join(CODE, "phase3c_ec_control.json")))
+    for row in K:
+        d = {}
+        for cs in row["cases"]:
+            d.setdefault(cs["n"], {})[cs["B"] > 0] = cs["ln"]
+        extra = [d[n][True] - d[n][False] for n in (3, 6, 12)]
+        assert extra[0] < extra[1] < extra[2] and extra[2] > 2.0
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()
