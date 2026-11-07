@@ -666,6 +666,25 @@ def phase3f0_causal_fluid_feasibility():
     assert [r["damped"] for r in sh if r["w"] < 0.5 and r["K"] <= 1.0 and r["c2"] <= 1.0] == [False, False, False, False, False, True]
 
 
+@check
+def phase3g0_ringdown_and_repeated_bounces():
+    """Phase 3G.0: q^8 = 5.8% arithmetic; flat-universe scalar ringdown never reverses H (Hdot < 0), Hubble friction gives a power-law (ratios -> 1) not a geometric sequence, constant decay width gives ratios -> exp(-pi Gamma/2m);
+    ripples in addot/a (acceleration episodes) are not bounces; the Phase 1B closed model reaches >= 9 consecutive bounces but with accumulating entropy, shrinking necks, growing amplitude, ending singular."""
+    G = json.load(open(os.path.join(CODE, "phase3g0_ringdown.json")))
+    assert abs(G["A_ninth_peak"] - 0.7 ** 8) < 1e-12 and abs(G["A_gamma_over_omegad"] - 0.05677) < 1e-4
+    R = G["B_ringdown"]
+    assert all(v["H_zero_crossings"] == 0 and v["Hdot_max"] < 0 for v in R.values())
+    hub = R["Hubble friction only"]
+    assert hub["ratio"][-1] > 0.95 > hub["ratio"][0] and hub["ratio"][-1] > hub["ratio"][5] > hub["ratio"][0] and hub["accel_episodes"] >= 20
+    dec = R["Gamma/m = 0.2267 (extremum ratio 0.7 from decay alone)"]
+    assert 0.6 < dec["ratio"][-1] < 0.71 and dec["accel_episodes"] == 0 and dec["A9_over_A1"] < 0.058
+    C = G["C_closed_sequence"]
+    assert C["n_bounces"] >= 9 and C["end"] == "singular" and G["C_trends"]["S_monotone_increasing"] and G["C_trends"]["a_neck_log_slope"] < 0
+    d = G["C_amplitude_a_turn_minus_a_neck"]
+    assert d[-1] > d[0] and max(d[-4:]) > max(d[:4])
+    assert all(r["end"] == "singular" for r in G["C_lifetime_stats"] if r["max_bounces"] > 0)
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()
