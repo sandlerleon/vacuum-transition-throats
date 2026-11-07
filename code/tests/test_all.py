@@ -508,6 +508,25 @@ def phase3c5_spin_transport_and_closure():
     assert C["E_dust_sigma2V2_spread"] < 1e-9 and C["E_dust_outcome"] == "singular"
 
 
+@check
+def phase3d0_einstein_cartan_dirac_feasibility():
+    """Phase 3D.0: ECD contact interaction L_eff = -(3 kappa/16) A_a A^a derived from explicit gamma matrices (|c_K| = 1/4, vector/tensor torsion decouple, R_quad = 6 a.a); Hartree-Fock energies of fermion states all have the
+    Weyssenhoff form eps = p = -B n^2 (fully polarized NR gas: 0, Pauli); barotropic bounce necessarily has mu = 0 crossing and negative compressibility (random-EOS check); exact baseline numbers."""
+    E = json.load(open(os.path.join(CODE, "phase3d0_ecd.json")))
+    assert abs(E["A_cK_abs"] - 0.25) < 1e-12 and E["A_nonaxial_decoupling_residual"] < 1e-12
+    assert E["A_R_quadratic_over_aa"] == "6" and E["A_pairing_over_aA"] == "-6"
+    assert E["A_Leff_coefficient_times_AaAa"].replace(" ", "") == "-3*kappa/16"
+    hf = E["B_hf_eps_over_lam_n2"]
+    assert abs(hf["unpolarized massless (g=2, particles)"] + 0.5) < 1e-9 and abs(hf["single-helicity Weyl (g=1)"] + 2.0) < 1e-9
+    assert abs(hf["unpolarized nonrelativistic"] + 1.5) < 1e-9 and abs(hf["fully polarized NR"]) < 1e-9
+    for v in E["C_baseline"].values():
+        assert abs(v["n_bounce_numeric"] / v["n_bounce_analytic"] - 1) < 1e-6 and v["constraint_residual"] < 1e-9
+        assert abs(v["nstar_over_nb"] - (2 / 3) ** 1.5) < 1e-9 and abs(v["nsp_over_nb"] - (2 / 9) ** 1.5) < 1e-9
+        assert v["t_mu_zero"] is not None and v["t_spinodal"] is not None and v["t_spinodal"] < v["t_to_bounce"]
+    r = E["C_random_theorem_check"]
+    assert r["bounces"] > 100 and r["mu_cross"] == r["bounces"] and r["neg_compress"] == r["bounces"]
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()

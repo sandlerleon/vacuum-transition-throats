@@ -1,0 +1,67 @@
+{
+ "A_gamma3_coefficient": [
+  0.0,
+  1.0
+ ],
+ "A_nonaxial_decoupling_residual": 2.220446049250313e-16,
+ "A_cK_abs": 0.25,
+ "A_R_quadratic_over_aa": "6",
+ "A_pairing_over_aA": "-6",
+ "A_Leff_coefficient_times_AaAa": "-3*kappa/16",
+ "B_hf_eps_over_lam_n2": {
+  "unpolarized massless (g=2, particles)": -0.5,
+  "single-helicity Weyl (g=1)": -2.0,
+  "unpolarized nonrelativistic": -1.5,
+  "polarized NR, fraction 0.5": -1.125,
+  "fully polarized NR": -0.0
+ },
+ "B_weyssenhoff_over_lam": 0.3333333333333333,
+ "C_baseline": {
+  "unpolarized massless (g=2)": {
+   "B_over_lam": 0.5,
+   "C": 2.320250794710102,
+   "B": 2.356194490192345,
+   "n_bounce_analytic": 0.9772050238058398,
+   "n_bounce_numeric": 0.9772050238058893,
+   "n_star_mu_zero": 0.5319230405352436,
+   "n_spinodal": 0.1023686368803957,
+   "nstar_over_nb": 0.5443310539518175,
+   "nsp_over_nb": 0.10475656017578482,
+   "kF_over_Planck_at_bounce": 3.069980123839465,
+   "eps_int_over_eps_kin_at_spinodal": 0.2222222222222222,
+   "p_at_bounce": -1.5000000000001767,
+   "ricci_scalar_at_bounce": 113.09733552924398,
+   "constraint_residual": 6.348232528671343e-12,
+   "t_to_bounce": 1.732160953061579,
+   "t_mu_zero": 1.5567358002758975,
+   "t_spinodal": 1.1157906014220123
+  },
+  "single-helicity Weyl (g=1)": {
+   "B_over_lam": 2.0,
+   "C": 2.9233328172905653,
+   "B": 9.42477796076938,
+   "n_bounce_analytic": 0.17274707473566772,
+   "n_bounce_numeric": 0.17274707473566864,
+   "n_star_mu_zero": 0.09403159725795938,
+   "n_spinodal": 0.018096389329737776,
+   "nstar_over_nb": 0.5443310539518175,
+   "nsp_over_nb": 0.10475656017578484,
+   "kF_over_Planck_at_bounce": 2.1708037636748028,
+   "eps_int_over_eps_kin_at_spinodal": 0.22222222222222227,
+   "p_at_bounce": -0.18750000000000222,
+   "ricci_scalar_at_bounce": 14.137166941154215,
+   "constraint_residual": 9.378428593642102e-12,
+   "t_to_bounce": 4.899291024065606,
+   "t_mu_zero": 4.403113763563838,
+   "t_spinodal": 3.1559324025989004
+  }
+ },
+ "C_random_theorem_check": {
+  "tested": 4000,
+  "bounces": 312,
+  "mu_cross": 312,
+  "neg_compress": 312
+ },
+ "D_bounce_not_trapped": true,
+ "D_flat_MS_mass_at_bounce": 0.0
+}
