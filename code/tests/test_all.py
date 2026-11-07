@@ -608,6 +608,22 @@ def phase3d4_propertime_and_instability_window():
     assert all(r["dt_killing"] >= fl[r["case"]]["light_crossing_killing_time"] - 1e-6 for r in T["D_amplification"])
 
 
+@check
+def phase3e0_string_inspired_homogeneous_baseline():
+    """Phase 3E.0: heterotic tree-level string-frame minisuperspace (dilaton + Gauss-Bonnet). Identities verified by brute-force curvature; dilaton-vacuum limit reproduced; flat collapse has no bounce (H=0 forces Phi'=0, addot=0);
+    closed collapse has no bounce (H=0 would need Phi'^2<0); shear-sector kinetic coefficient 1 - 8cH Phi'; open (k=-1) string-frame bounces exist but all of them also occur without the GB term and none is an Einstein-frame bounce."""
+    S = json.load(open(os.path.join(CODE, "phase3e0_string.json")))
+    assert S["A_GB_total_derivative_residual"] == "0" and S["A_bruteforce_R_residual"] == "0" and S["A_bruteforce_G_residual"] == "0"
+    assert S["B_prebigbang_branches"] == ["1"]
+    assert S["B_flat_constraint_H0"].replace(" ", "") == "4*A**3*Pd**2" and S["B_flat_H0_addot"] == ["A*Pdd"] and S["B_flat_H0_Phidd"] == ["3*addot/(2*A)"]
+    assert S["B_closed_constraint_H0"].replace(" ", "") == "4*A**3*Pd**2+6*A"
+    assert S["C_Kshear_normalised"].replace(" ", "") == "32*H*Pd*c-4"
+    D = S["D_summary"]
+    assert D["0"]["string_frame_bounces"] == 0 and D["1"]["string_frame_bounces"] == 0
+    assert D["-1"]["string_frame_bounces"] > 100 and D["-1"]["string_bounces_also_without_GB"] == D["-1"]["string_frame_bounces"] and D["-1"]["einstein_frame_bounces"] == 0
+    assert D["-1"]["gs_max_over_bounces"] > 1.0 and D["-1"]["ghost_runs"] > 0
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()
