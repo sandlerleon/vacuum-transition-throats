@@ -285,6 +285,40 @@ def phase2c_moving_shell_and_elliptic_cycle():
     assert all(v["bounces"] >= 300 for v in P["controls"]["coupling_off"].values())
 
 
+@check
+def phase2d_independent_cycle_and_bridge_geometry():
+    """Phase 2D: (a) an independent re-implementation reproduces the stable cycle (orbit, period, neck-map trace, monodromy eigenvalues on the unit circle, tolerance convergence) and the multiplier = -1 point
+    at C/Cc = 0.3458 with no local 2-cycle (winding number of P^2 - id equals the index of the fixed point); (b) the two-ended geometry: ordering a > R > r_h, sigma > 0 and the NEC all cycle, rays all cross the shell,
+    60-period survival under perturbations, interior identical to the no-bridge baseline, constraint residuals; (c) the stiffest shell is only linearly stable (recorded failure at 1e-3)."""
+    import phase2d_cycle_validation as PV
+    V = json.load(open(os.path.join(CODE, "phase2d_cycle_validation.json")))
+    r = [x for x in V["reproduction"] if abs(x["x"] - 0.35) < 1e-9][0]
+    assert abs(r["phi0_over_v"] - 0.22294841) < 2e-8 and abs(r["period"] - 0.596356281) < 1e-8 and r["return_err_full_state"] < 1e-12
+    assert abs(r["conformal_period"] - r["period"]) < 1e-10
+    assert abs(r["neck_map_trace"] + 1.704348) < 1e-4 and abs(r["neck_map_det"] - 1.0) < 1e-6
+    for e in r["monodromy_eigs"]:
+        assert abs(abs(complex(*e)) - 1.0) < 1e-6
+    assert abs(V["flip"]["C_over_Ccrit_star"] - 0.345844) < 1e-5
+    c = PV.Cycle(0.35)
+    p = c.orbit(0.2229, span=0.05)
+    J = c.jac_neck(p, 0.0)
+    assert abs(np.trace(J) + 1.704348) < 1e-4 and abs(np.linalg.det(J) - 1.0) < 1e-6
+    W = json.load(open(os.path.join(CODE, "phase2d_winding.json")))
+    for rec in W:
+        idx = -1.0 if rec["dx"] < 0 else 1.0
+        assert all(rec["windings"][k] == idx for k in ("0.002", "0.005", "0.01", "0.02"))
+    B = json.load(open(os.path.join(CODE, "phase2d_bridge.json")))
+    A = B["analysis"][0]
+    assert A["ordering_equator_gt_shell_gt_throat"] and A["sigma_pos"] == 1.0 and A["nec_fraction"] == 1.0 and A["shell_over_throat_min"] > 90 and A["rays_crossed"] == 24
+    assert A["interior_trapped_fraction"] == 0.0 and A["exterior_trapped_fraction"] == 0.0 and A["shell_outside_horizon_always"]
+    L = [x for x in B["long"] if x["shell_index"] == 0]
+    assert len(L) == 8 and all(x["completed"] and x["periods_reached"] >= 59.99 and x["interior_vs_alone_diff"] < 1e-8 and x["R_over_rh_min"] > 80 for x in L)
+    L4 = [x for x in B["long"] if x["shell_index"] == 4 and x["pert"] >= 1e-3]
+    assert L4 and all(not x["completed"] for x in L4)
+    K = json.load(open(os.path.join(CODE, "phase2d_convergence.json")))["residuals"]
+    assert K["friedmann"] < 1e-12 and K["gamma_in"] < 1e-12 and K["israel_p"] < 1e-12 and K["mass"] < 1e-10 and K["flux"] < 1e-5
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()
