@@ -56,6 +56,10 @@ The window needs 5.59 a² ≤ N ≤ a²: **empty for every a, by a factor 5.59, 
 | causal classification of surviving solutions | none survive; benchmark's causal structure in 3D.2 |
 | **go/no-go** | **NO-GO** for a physically admissible Goldilocks window with the sources examined; stop before a large scan |
 
+## Scope (qualification added after review)
+
+The factor-5.6 non-overlap is a conditional exclusion within the selected estimates (flat-space free-field quantum-inequality bound, species-bound cutoff, order-one coefficients), not a universal theorem against all quantum-supported wormholes. The no-go applies to the source models actually tested; no concrete modified-gravity model was evaluated.
+
 ## What this does and does not exclude
 
 It does not prove recycling impossible: S6 (modified gravity with a derivable action), strongly interacting fields and fully dynamical torsion are unevaluated, and the species-bound argument is heuristic. It excludes (with the stated caveats) the three simplest routes: ghost-supported throats, free-field vacuum support, and barotropic ECD bounce.

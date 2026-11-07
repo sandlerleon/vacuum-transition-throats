@@ -585,6 +585,29 @@ def phase3d3_source_census_and_goldilocks_closure():
     assert G["C_census"]["S2 phantom scalar + magnetic NED (Bronnikov-Walia source of the benchmark)"]["H3"] == "FAIL"
 
 
+@check
+def phase3d4_propertime_and_instability_window():
+    """Phase 3D.4: invariant curvature profile validated (3D.1 values, Schwarzschild limit); proper transit time through K >= eps K(0) is finite, scales ~ a and falls ~1/E; redshift formula from four-momenta verified
+    (observed frequency 1/(E + sqrt(E^2 - f)), regular at the horizon); Killing time diverges logarithmically near the horizon; test-field tachyonic instability exists above xi_c (computed); Killing-time residence has a
+    light-crossing floor independent of E, so fast transit cannot beat it."""
+    T = json.load(open(os.path.join(CODE, "phase3d4_propertime.json")))
+    for k_, (x, y) in T["A_validation"].items():
+        assert abs(x / y - 1) < 1e-9
+    assert all(v["peak_at_throat"] for v in T["A_profile"].values())
+    s = T["B_scaling_dtau_vs_a"]
+    assert s["0.5"] < s["1.0"] < s["1.9"] < s["3.0"] < s["6.0"]
+    m = T["B_transit_maps"]
+    assert m["a/m=3.0 eps=0.1 E=5 L/Lc=0"]["dtau"] < 0.2 * m["a/m=3.0 eps=0.1 E=1 L/Lc=0"]["dtau"]
+    hz = T["B_horizon_clock"]
+    assert 90 < hz["tau_R0_to_horizon"] < 100 and hz["killing_time_to_r_h_plus_delta"]["1e-06"] - hz["killing_time_to_r_h_plus_delta"]["0.0001"] > 5
+    g = T["D_tachyonic_test_field"]
+    assert g["wormhole a/m=3"]["xi_critical"] > 1.0 and g["wormhole a/m=6"]["xi_critical"] < g["wormhole a/m=3"]["xi_critical"]
+    assert all(r["gamma_killing"] == 0.0 for r in g["wormhole a/m=3"]["rows"] if r["xi"] <= 1.0)
+    fl = T["D_killing_time_floor"]
+    assert all(v["light_crossing_killing_time"] > 10 for v in fl.values())
+    assert all(r["dt_killing"] >= fl[r["case"]]["light_crossing_killing_time"] - 1e-6 for r in T["D_amplification"])
+
+
 if __name__ == "__main__":
     for f in CHECKS:
         f()
